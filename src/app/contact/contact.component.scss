@@ -1,0 +1,23 @@
+.contact-container{
+    display: grid;
+    
+    .background{
+        grid-row: 1;
+        grid-column: 1;
+        background-image: url("/assets/svg/Footer_gradiente.svg");
+        background-size: cover;
+        width: 100%;
+        height: 20rem;
+    }
+
+    .logos{
+        grid-row: 1;
+        grid-column: 1;
+        opacity: .3;
+        mix-blend-mode: soft-light;
+        background-image: url("/assets/svg/Footer_logos.svg");
+        background-size: cover;
+        width: 100%;
+        height: 20rem;
+    }
+}
