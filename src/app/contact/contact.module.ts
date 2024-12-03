@@ -8,7 +8,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactHeadingComponent } from './contact-heading/contact-heading.component';
 import { ButtonModule } from 'primeng/button';
-import { StyleClassModule } from 'primeng/styleclass';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { StyleClassModule } from 'primeng/styleclass';
     ContactRoutingModule,
     FormsModule,
     ButtonModule,
-    StyleClassModule,
+    InputTextModule,
   ],
 })
 export class ContactModule {}

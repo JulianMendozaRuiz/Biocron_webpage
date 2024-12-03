@@ -1,12 +1,13 @@
 .p-button {
-    color: $buttonTextColor;
+    color: $primaryDarkColor;
     background: $buttonBg;
     border: $buttonBorder;
     padding: $buttonPadding;
-    font-size: $fontSize;
+    font-size: $buttonTextSize;
     transition: $formElementTransition;
-    border-radius: $borderRadius;
+    border-radius: $buttonBorderRadius;
     outline-color: transparent;
+    font-weight: 700;
 
     &:not(:disabled):hover {
         background: $buttonHoverBg;

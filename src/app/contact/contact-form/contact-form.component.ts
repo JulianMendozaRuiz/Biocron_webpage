@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import ContactFormClass from '../../models/contact';
 
 @Component({
@@ -7,6 +7,7 @@ import ContactFormClass from '../../models/contact';
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent implements OnInit {
+  @Input() content: any;
   submitted: boolean = false;
 
   model = new ContactFormClass('name', 'email', 'phone', 'message');

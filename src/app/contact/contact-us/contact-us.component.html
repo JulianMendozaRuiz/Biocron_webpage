@@ -1,1 +1,23 @@
-<div></div>
+<div class="container">
+  <div class="contact-section">
+    <div class="contact-section-title">{{ content.title }}</div>
+    <div class="contact-section-description">{{ content.description }}</div>
+    <p-button [label]="content.contact_button" />
+  </div>
+  <div class="info">
+    <div class="info-section">
+      <div class="info-section-title">{{ content.phone_title }}</div>
+      <div class="info-description info-phone">{{ content.phone_number }}</div>
+    </div>
+    <div class="info-section">
+      <div class="info-section-title">{{ content.email_title }}</div>
+      <div class="info-description info-email">{{ content.email }}</div>
+    </div>
+    <div class="info-section">
+      <div class="info-section-title">{{ content.open_hours_title }}</div>
+      <div class="info-description info-open-hours">
+        {{ content.open_hours }}
+      </div>
+    </div>
+  </div>
+</div>

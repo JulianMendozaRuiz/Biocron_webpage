@@ -10,6 +10,10 @@ $inputBg: #ffffff;
 /// @group form
 $inputTextFontSize: 1rem;
 
+/// Border radius of an input field
+/// @group form
+$inputRadius: .375rem;
+
 /// Text color of an input field
 /// @group form
 $inputTextColor: $textColor;

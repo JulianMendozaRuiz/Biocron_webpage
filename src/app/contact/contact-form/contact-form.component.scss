@@ -1,0 +1,101 @@
+@import '../contact.component.scss';
+
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  width: 70.5rem;
+  height: 42rem;
+
+  background-color: $unpureWhite;
+
+  box-shadow: 0 0 1rem 0.5rem $unpureWhite;
+
+  padding: 1.25rem;
+
+  border: solid 2px rgba(10, 13, 23, 0.05);
+
+  margin-block: 4.5rem;
+  margin-inline: auto;
+  border-radius: 1rem;
+
+  .form-image-box {
+    border-radius: 0.5rem;
+
+    background: linear-gradient(
+      rgba(29, 63, 55, 0) 55%,
+      rgba(29, 63, 55, 0.9) 85%
+    );
+  }
+
+  .form-image-box,
+  .form-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 2rem;
+
+    .form-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .form-heading-title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .form-inputs {
+      width: 100%;
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+
+      .input-name {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+
+      .input-email {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+
+      .input-phone {
+        grid-area: 2 / 1 / 3 / 3;
+      }
+
+      .input-message {
+        grid-area: 3 / 1 / 4 / 3;
+        textarea{
+          resize: none;
+          border-radius: 0.375rem;
+        }
+      }
+
+      .input-button {
+        grid-area: 4 / 1 / 5 / 3;
+        margin-top: 2rem;
+      }
+
+      .input-name,
+      .input-email,
+      .input-phone,
+      .input-message {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .input-title {
+          font-weight: bold;
+          line-height: 1.5rem;
+        
+        }
+      }
+    }
+  }
+}

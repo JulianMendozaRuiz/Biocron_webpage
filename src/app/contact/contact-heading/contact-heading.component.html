@@ -1,11 +1,12 @@
 <div class="contact-heading">
   <div class="contact-heading-section">
     <p-button
-      [label]="contentObject.tag"
+      [label]="content.tag"
       [rounded]="true"
       [outlined]="true"
+      disabled
     ></p-button>
   </div>
-  <div class="contact-heading-title">{{ contentObject.title }}</div>
-  <div class="contact-heading-description">{{ contentObject.description }}</div>
+  <div class="contact-heading-title">{{ content.title }}</div>
+  <div class="contact-heading-description">{{ content.description }}</div>
 </div>

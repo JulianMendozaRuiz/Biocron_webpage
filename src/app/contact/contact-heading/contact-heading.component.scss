@@ -1,11 +1,13 @@
-@import '../../../styles.scss';
+@import '../contact.component.scss';
 
 .contact-heading {
   margin-top: 5rem;
   align-self: center;
   justify-self: center;
   width: 46.5rem;
-  
+  gap: 1.5rem;
+
+
   display: flex;
   flex-direction: column;
 
@@ -19,6 +21,7 @@
 
   .contact-heading-title {
     max-width: 46.5rem;
+    line-height: 5rem;
 
     font-size: 4.5rem;
     font-weight: 600;

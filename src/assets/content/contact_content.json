@@ -3,5 +3,28 @@
     "tag": "Contacto",
     "title": "Estamos aquí para asesorarte",
     "description": "En Biocron, estamos comprometidos en brindar soluciones y asesoramiento especializado. Si desea obtener mas información sobre nuestros servicios, discutir un proyecto o solicitar una consulta, no dude en ponerse en contacto con nosotros"
+  },
+  "form": {
+    "title": "Formulario de contacto",
+    "description": "Complete el formulario y uno de nuestros expertos se pondrá en contacto con usted lo antes posible",
+    "contact_name_title": "Nombre de contacto",
+    "contact_name_placeholder": "Nombre",
+    "email_title": "Correo electrónico",
+    "email_placeholder": "examples@eamail.com",
+    "phone_number_title": "Número telefónico",
+    "phone_number_placeholder": "+57 300 000 0000",
+    "message_title": "Mensaje",
+    "message_placeholder": "Me interesan los servicios de Biocron y por eso..."
+  },
+  "contact_us": {
+    "title": "Contáctanos",
+    "description": "¿Quieres llevar tus proyectos a un siguiente nivel?",
+    "contact_button": "Habla con nosotros",
+    "phone_title": "Teléfono",
+    "phone_number": "+57 300 373 2180",
+    "email_title": "Email",
+    "email": "Info@biocronanalisis.com",
+    "open_hours_title": "Horario de atención",
+    "open_hours": "Lunes a viernes, 8am - 6pm"
   }
 }

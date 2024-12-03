@@ -1,8 +1,9 @@
 <div class="contact-container">
   <div class="contact-form">
-    <comp-contact-heading></comp-contact-heading>
+    <comp-contact-heading [content]="headingContent"></comp-contact-heading>
     <div class="contact-form-container-wrapper">
-      <comp-contact-form></comp-contact-form>
+      <comp-contact-form [content]="formContent"></comp-contact-form>
     </div>
+    <comp-contact-us [content]="contactUsContent"></comp-contact-us>
   </div>
 </div>
