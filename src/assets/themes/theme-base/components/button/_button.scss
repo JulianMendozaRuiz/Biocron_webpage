@@ -23,18 +23,18 @@
 
     &.p-button-outlined {
         background-color: transparent;
-        color: $buttonBg;
+        color: $primaryColorRoundedButton;
         border: $outlinedButtonBorder;
 
         &:not(:disabled):hover {
-            background: rgba($buttonBg, $textButtonHoverBgOpacity);
-            color: $buttonBg;
+            background: rgba($primaryColorRoundedButton, $textButtonHoverBgOpacity);
+            color: $primaryColorRoundedButton;
             border: $outlinedButtonBorder;
         }
 
         &:not(:disabled):active {
-            background: rgba($buttonBg, $textButtonActiveBgOpacity);
-            color: $buttonBg;
+            background: rgba($primaryColorRoundedButton, $textButtonActiveBgOpacity);
+            color: $primaryColorRoundedButton;
             border: $outlinedButtonBorder;
         }
 
@@ -214,6 +214,8 @@
         background-color: transparent;
         color: $secondaryButtonBg;
         border: $outlinedButtonBorder;
+        border-radius: $roundedOutlinedButtonBorderRadius;
+
 
         &:not(:disabled):hover {
             background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);

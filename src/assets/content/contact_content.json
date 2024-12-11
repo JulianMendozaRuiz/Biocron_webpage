@@ -10,9 +10,9 @@
     "contact_name_title": "Nombre de contacto",
     "contact_name_placeholder": "Nombre",
     "email_title": "Correo electrónico",
-    "email_placeholder": "examples@eamail.com",
+    "email_placeholder": "examples@email.com",
     "phone_number_title": "Número telefónico",
-    "phone_number_placeholder": "+57 300 000 0000",
+    "phone_number_placeholder": "(57) 999-999-9999",
     "message_title": "Mensaje",
     "message_placeholder": "Me interesan los servicios de Biocron y por eso..."
   },

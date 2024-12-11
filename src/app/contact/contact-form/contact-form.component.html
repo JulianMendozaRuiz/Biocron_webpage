@@ -5,32 +5,54 @@
       <div class="form-heading-title">{{ content.title }}</div>
       <div class="form-heading-description">{{ content.description }}</div>
     </div>
-    <div class="form-inputs">
+    <form class="form-inputs" [formGroup]="contactForm">
       <div class="input-name">
         <label for="contact_name" class="input-title">{{
           content.contact_name_title
         }}</label>
-        <input id="contact_name" type="text" pInputText />
+        <input
+          id="contact_name"
+          type="text"
+          [placeholder]="content.contact_name_placeholder"
+          pInputText
+        />
       </div>
       <div class="input-email">
         <label for="contact_email" class="input-title">{{
           content.email_title
         }}</label>
-        <input id="contact_email" type="text" pInputText />
+        <input
+          id="contact_email"
+          type="email"
+          formControlName="email"
+          [placeholder]="content.email_placeholder"
+          pInputText
+        />
       </div>
       <div class="input-phone">
         <label for="contact_phone" class="input-title">{{
           content.phone_number_title
         }}</label>
-        <input id="contact_phone" type="text" pInputText />
+        <p-inputMask
+          id="contact_phone"
+          type="text"
+          formControlName="phone"
+          [mask]="content.phone_number_placeholder"
+          [placeholder]="content.phone_number_placeholder"
+        />
       </div>
       <div class="input-message">
         <label for="message" class="input-title">{{
           content.message_title
         }}</label>
-        <textarea id="message" rows="6" pInputTextarea></textarea>
+        <textarea
+          id="message"
+          rows="6"
+          [placeholder]="content.message_placeholder"
+          pTextArea
+        ></textarea>
       </div>
       <p-button class="input-button" label="Enviar" />
-    </div>
+    </form>
   </div>
 </div>

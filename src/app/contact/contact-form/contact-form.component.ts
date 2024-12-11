@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import ContactFormClass from '../../models/contact';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'comp-contact-form',
@@ -12,9 +13,15 @@ export class ContactFormComponent implements OnInit {
 
   model = new ContactFormClass('name', 'email', 'phone', 'message');
 
-  ngOnInit(): void {
-    console.log('current model', this.model);
-  }
+  public contactForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl<string | null>(''),
+    phone: new FormControl<string | null>(null),
+    value: new FormControl<string | null>(null),
+    message: new FormControl(''),
+  });
+
+  ngOnInit(): void {}
 
   onSubmit(): void {
     this.submitted = true;
