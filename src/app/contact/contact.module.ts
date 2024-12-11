@@ -5,22 +5,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ContactHeadingComponent } from './contact-heading/contact-heading.component';
-import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
+import { SharedModule } from '../shared/shared.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
     ContactComponent,
     ContactFormComponent,
-    ContactUsComponent,
     ContactHeadingComponent,
   ],
   imports: [
     CommonModule,
     ContactRoutingModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,

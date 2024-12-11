@@ -1,4 +1,4 @@
-@import '../contact.component.scss';
+@import '../../../styles.scss';
 
 .container {
   width: 100%;
@@ -51,9 +51,11 @@
       .info-email {
         text-decoration: underline;
       }
-      
-      .info-email, .info-open-hours{
-      font-size: 1.5rem;}
+
+      .info-email,
+      .info-open-hours {
+        font-size: 1.5rem;
+      }
     }
   }
 }
