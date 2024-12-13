@@ -1,0 +1,47 @@
+@import '../../industries.component.scss';
+
+.industries-area-container {
+  display: flex;
+  flex-direction: column;
+
+ margin-top: 2.5rem;
+
+  padding-block: 2.5rem;
+
+  align-self: center;
+  justify-self: center;
+
+  gap: 4rem;
+
+  .industries-area-tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+
+    justify-self: center;
+    align-self: center;
+
+    .tab {
+      font-size: 1.5rem;
+      border: solid;
+      border-radius: 2.5rem;
+
+      padding-inline: 1.5rem;
+      padding-block: .5rem;
+    }
+
+    .active-tab {
+      background-color: $primaryLightColor;
+      color: $primaryDarkColor;
+
+      border-color: $primaryColor;
+    }
+
+    .innactive-tab {
+      color: $lightgray;
+      border-color: $lighterGray;
+
+      cursor: pointer;
+    }
+  }
+}

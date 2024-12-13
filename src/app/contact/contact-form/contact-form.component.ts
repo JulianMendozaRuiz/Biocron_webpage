@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import ContactFormClass from '../../models/contact';
+import ContactFormClass from '../../models/contactForm';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({

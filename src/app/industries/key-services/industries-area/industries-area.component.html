@@ -1,1 +1,11 @@
-<p>industries-area works!</p>
+<div class="industries-area-container">
+  <div class="industries-area-tabs">
+    <div
+      *ngFor="let industry of industryService.industries"
+      class="tab active-tab"
+    >
+      {{ industry.name }}
+    </div>
+  </div>
+  <div class="industries-area-content"></div>
+</div>

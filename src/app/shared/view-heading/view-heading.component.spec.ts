@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactHeadingComponent } from './contact-heading.component';
+import { ViewHeadingComponent } from './view-heading.component';
 
-describe('ContactHeadingComponent', () => {
-  let component: ContactHeadingComponent;
-  let fixture: ComponentFixture<ContactHeadingComponent>;
+describe('ViewHeadingComponent', () => {
+  let component: ViewHeadingComponent;
+  let fixture: ComponentFixture<ViewHeadingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ContactHeadingComponent]
+      declarations: [ViewHeadingComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContactHeadingComponent);
+    fixture = TestBed.createComponent(ViewHeadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

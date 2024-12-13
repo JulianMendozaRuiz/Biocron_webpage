@@ -5,9 +5,15 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ViewHeadingComponent } from './view-heading/view-heading.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, ContactUsComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ContactUsComponent,
+    ViewHeadingComponent,
+  ],
   imports: [
     CommonModule,
     RouterOutlet,
@@ -15,6 +21,11 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     RouterLinkActive,
     ButtonModule,
   ],
-  exports: [HeaderComponent, FooterComponent, ContactUsComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ContactUsComponent,
+    ViewHeadingComponent,
+  ],
 })
 export class SharedModule {}
