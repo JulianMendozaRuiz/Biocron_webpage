@@ -44,5 +44,9 @@
       "services": [""],
       "benefits": [""]
     }
-  ]
+  ],
+  "team": {
+    "title": "¿Por qué elegir a Biocron?",
+    "description": "Independientemente del sector en el que opere tu empresa, en Biocron ofrecemos servicios personalizados basados en un profundo conocimiento técnico y una visión de sostenibilidad. Nuestro equipo de expertos se compromete a garantizar que cada proyecto se desarrolle con eficiencia, seguridad y respeto por el medio ambiente."
+  }
 }

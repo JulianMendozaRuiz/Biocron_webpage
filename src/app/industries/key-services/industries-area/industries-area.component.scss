@@ -4,11 +4,15 @@
   display: flex;
   flex-direction: column;
 
- margin-top: 2.5rem;
+  max-width: 70.5rem;
+
+  margin-top: 2.5rem;
+
+  margin-inline: 9.75rem;
 
   padding-block: 2.5rem;
 
-  align-self: center;
+  justify-content: center;
   justify-self: center;
 
   gap: 4rem;
@@ -27,7 +31,7 @@
       border-radius: 2.5rem;
 
       padding-inline: 1.5rem;
-      padding-block: .5rem;
+      padding-block: 0.5rem;
     }
 
     .active-tab {
@@ -38,10 +42,127 @@
     }
 
     .innactive-tab {
+      background-color: rgba(255, 0, 0, 0);
       color: $lightgray;
       border-color: $lighterGray;
 
       cursor: pointer;
+    }
+  }
+
+  .industries-area-content {
+    margin-inline: 6rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.5rem;
+
+    .content-description {
+      display: flex;
+      flex-direction: row;
+
+      margin-inline: 6rem;
+
+      gap: 4rem;
+
+      .industry-photo {
+        height: auto;
+      }
+
+      .industry-description {
+        align-self: center;
+        width: 28.5rem;
+
+        line-height: 1.5rem;
+      }
+    }
+
+    .content-bullets {
+      margin: 0.5rem;
+
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 2.5rem;
+
+      li{
+        line-height: 1.5rem;
+      }
+
+      .industry-services {
+        display: flex;
+        flex-direction: column;
+
+        .services-title {
+          font-size: 1.25rem;
+          color: $primaryDarkColor;
+          line-height: 1.75rem;
+        }
+
+        ul {
+          padding-left: 0;
+          list-style: none;
+
+          .list-item:not(:last-child){
+            margin-bottom: 1rem;
+          }
+
+          .list-item {
+            display: flex;
+            flex-direction: row;
+
+            align-items: flex-start;
+
+            .marker {
+              background-image: url('/assets/svg/biocron_bullet_marker_palynomorph.svg') ;
+              min-height: 1.5rem;
+              min-width: 1.5rem;
+              margin-right: 0.5rem;
+            }
+          }
+
+          li:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      .industry-benefits {
+        display: flex;
+        flex-direction: column;
+
+        .benefits-title {
+          font-size: 1.25rem;
+          color: $secondaryDarkColor;
+          line-height: 1.75rem;
+        }
+
+        ul {
+          padding-left: 0;
+          list-style: none;
+
+          .list-item:not(:last-child){
+            margin-bottom: 1rem;
+          }
+
+          .list-item {
+            display: flex;
+            flex-direction: row;
+
+            align-items: flex-start;
+
+            .marker {
+              background-image: url('/assets/svg/biocron_bullet_marker_big_check.svg') ;
+              min-height: 1.5rem;
+              min-width: 1.5rem;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
     }
   }
 }

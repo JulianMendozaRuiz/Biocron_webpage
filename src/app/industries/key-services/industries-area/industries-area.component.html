@@ -3,9 +3,57 @@
     <div
       *ngFor="let industry of industryService.industries"
       class="tab active-tab"
+      [ngClass]="
+        industry.name === industryService.currentIndustry?.name
+          ? 'active-tab'
+          : 'innactive-tab'
+      "
     >
       {{ industry.name }}
     </div>
   </div>
-  <div class="industries-area-content"></div>
+  <div class="industries-area-content">
+    <div class="content-description">
+      <div class="industry-photo">
+        <img
+          [src]="'/assets/svg/biocron_industry_image.svg'"
+          style="height: 100%; width: 100%"
+          alt=""
+        />
+      </div>
+      <div class="industry-description">
+        {{ industryService.currentIndustry?.description }}
+      </div>
+    </div>
+    <div class="content-bullets">
+      <div class="industry-services">
+        <div class="services-title">Servicios</div>
+        <ul>
+          <div
+            *ngFor="let item of industryService.currentIndustry?.services"
+            class="list-item"
+          >
+            <div class="marker"></div>
+            <li>
+              {{ item }}
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="industry-benefits">
+        <div class="benefits-title">Beneficios</div>
+        <ul>
+          <div
+            *ngFor="let item of industryService.currentIndustry?.benefits"
+            class="list-item"
+          >
+            <div class="marker"></div>
+            <li>
+              {{ item }}
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
