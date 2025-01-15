@@ -1,0 +1,19 @@
+@import "../services.component.scss";
+
+.key-services-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-width: 71rem;
+
+    margin-top: 4.5rem;
+
+    gap: 1.5rem;
+
+    align-self: center;
+
+    justify-self: center;
+    justify-content: space-between;
+
+}

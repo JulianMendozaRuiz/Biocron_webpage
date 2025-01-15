@@ -4,10 +4,9 @@
       *ngFor="let industry of industryService.industries"
       class="tab active-tab"
       [ngClass]="
-        industry.name === industryService.currentIndustry?.name
-          ? 'active-tab'
-          : 'innactive-tab'
+        industry.name === currentIndustry?.name ? 'active-tab' : 'innactive-tab'
       "
+      (click)="setCurrentIndustry(industry)"
     >
       {{ industry.name }}
     </div>
@@ -16,23 +15,20 @@
     <div class="content-description">
       <div class="industry-photo">
         <img
-          [src]="'/assets/svg/biocron_industry_image.svg'"
+          [src]="currentIndustry?.img_location"
           style="height: 100%; width: 100%"
           alt=""
         />
       </div>
       <div class="industry-description">
-        {{ industryService.currentIndustry?.description }}
+        {{ currentIndustry?.description }}
       </div>
     </div>
     <div class="content-bullets">
       <div class="industry-services">
         <div class="services-title">Servicios</div>
         <ul>
-          <div
-            *ngFor="let item of industryService.currentIndustry?.services"
-            class="list-item"
-          >
+          <div *ngFor="let item of currentIndustry?.services" class="list-item">
             <div class="marker"></div>
             <li>
               {{ item }}
@@ -43,10 +39,7 @@
       <div class="industry-benefits">
         <div class="benefits-title">Beneficios</div>
         <ul>
-          <div
-            *ngFor="let item of industryService.currentIndustry?.benefits"
-            class="list-item"
-          >
+          <div *ngFor="let item of currentIndustry?.benefits" class="list-item">
             <div class="marker"></div>
             <li>
               {{ item }}

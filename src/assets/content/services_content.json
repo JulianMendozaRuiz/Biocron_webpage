@@ -1,0 +1,15 @@
+{
+  "heading": {
+    "name": "Servicios",
+    "title": "Soluciones geocientíficas especializadas",
+    "description": "Navega por nuestros servicios y accede a la experiencia de un equipo científico altamente capacitado"
+  },
+  "services": [
+    {
+      "title": "Análisis Palinológicos",
+      "description": "Análisis de indicadores bioestratigráficos con polen, esporas y dinoflagelados para determinar la edad relativa de las rocas. Los palinomorfos son igualmente indicadores de ambientes sedimentarios.",
+      "deep_description": "Bioestratigrafía: Determinación de la edad unidades estratigráficas mediante el análisis de dinoflagelados, polen y esporas fósiles.Paleoambiente: Reconstrucción de paleoambientes sedimentarios mediante proxis que se aproximen a los medios se depósito para una mejor prospectividad en la formación de yacimientos. Correlación de pozos: Conexión de datos y eventos palinológicos entre diferentes pozos para los análisis regionales y de cuenca.",
+      "image": "/assets/svg/biocron_card_image.svg"
+    }
+  ]
+}
