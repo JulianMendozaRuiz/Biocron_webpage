@@ -26,6 +26,9 @@
       border-radius: 0.75rem 0.75rem 0 0;
 
       background-position: center;
+      background-size: 100%;
+      transition: all 0.3s ease-in-out;
+      transition-behavior: allow-discrete;
 
       background-color: $primaryLightColor;
     }
@@ -74,7 +77,6 @@
       font-size: 1.75rem;
 
       font-weight: 500;
-
     }
     .card-description,
     .card-deep-description {
@@ -83,11 +85,13 @@
     }
 
     .card-deep-description {
+      transition: all 0.3s ease-in-out;
+      transition-behavior: allow-discrete;
       display: none;
     }
   }
 
-  .card-info-even{
+  .card-info-even {
     background-color: $primaryDarkColor;
 
     .card-title {
@@ -100,7 +104,7 @@
     }
   }
 
-  .card-info-odd{
+  .card-info-odd {
     background-color: $smoothWhite;
 
     .card-title {
@@ -122,8 +126,6 @@
   }
 
   .card-info {
-    transition: all 1s ease-in-out;
-    transition-behavior: allow-discrete;
     .card-deep-description {
       display: flex;
     }
