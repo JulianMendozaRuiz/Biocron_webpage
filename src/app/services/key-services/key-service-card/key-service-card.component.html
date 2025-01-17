@@ -1,11 +1,17 @@
 <div class="card">
   <div class="background">
-    <div class="background-image"></div>
-    <div class="background-gradient"></div>
+    <div
+      class="background-image"
+      [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+    ></div>
+    <div
+      class="background-gradient"
+      [ngClass]="even ? 'background-gradient-even' : 'background-gradient-odd'"
+    ></div>
   </div>
-  <div class="card-info">
-    <div class="card-title"></div>
-    <div class="card-description"></div>
-    <div class="card-deep-description"></div>
+  <div class="card-info" [ngClass]="even ? 'card-info-even' : 'card-info-odd'">
+    <div class="card-title">{{ title }}</div>
+    <div class="card-description">{{ description }}</div>
+    <div class="card-deep-description">{{ deep_description }}</div>
   </div>
 </div>

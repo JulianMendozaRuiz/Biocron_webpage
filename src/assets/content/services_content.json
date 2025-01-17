@@ -8,8 +8,14 @@
     {
       "title": "Análisis Palinológicos",
       "description": "Análisis de indicadores bioestratigráficos con polen, esporas y dinoflagelados para determinar la edad relativa de las rocas. Los palinomorfos son igualmente indicadores de ambientes sedimentarios.",
-      "deep_description": "Bioestratigrafía: Determinación de la edad unidades estratigráficas mediante el análisis de dinoflagelados, polen y esporas fósiles.Paleoambiente: Reconstrucción de paleoambientes sedimentarios mediante proxis que se aproximen a los medios se depósito para una mejor prospectividad en la formación de yacimientos. Correlación de pozos: Conexión de datos y eventos palinológicos entre diferentes pozos para los análisis regionales y de cuenca.",
+      "deep_description": "Bioestratigrafía: Determinación de la edad unidades estratigráficas mediante el análisis de dinoflagelados, polen y esporas fósiles. Paleoambiente: Reconstrucción de paleoambientes sedimentarios mediante proxis que se aproximen a los medios se depósito para una mejor prospectividad en la formación de yacimientos. Correlación de pozos: Conexión de datos y eventos palinológicos entre diferentes pozos para los análisis regionales y de cuenca.",
       "image": "/assets/svg/biocron_card_image.svg"
+    },
+    {
+      "title": "Estudios Sedimentológicos y Estratigráficos",
+      "description": "Descripción rocas de afloramiento, núcleos y cortes de perforación para análisis de facies y elaboración de perfiles estratigráficos.",
+      "deep_description": "Descripción de núcleos: Descripción de núcleos de perforaciones estratigráficas y cortes de muestras de roca para identificar variaciones litologícas, microestructuras sedimentarias, contenido fósil y demás rasgos caracterizables para establecer unidades-roca.nálisis de facies: Interpretación de asociaciones litogenéticasa para establecer ambientes de depósito y procesos de evolución intra cuencas. Secciones estratigráficas: Elaboración de perfiles estratigráficos detallados para la interpretación de la historia geológica de una región o cuenca sedimentaria.Modelado estratigráfico: Creación de modelos 2D y 3D para visualizar la arquitectura y temporalidad de las unidades-roca  del subsuelo.",
+      "image": "/assets/svg/biocron_card_image_alt.svg"
     }
   ]
 }

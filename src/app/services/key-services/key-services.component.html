@@ -1,6 +1,7 @@
 <div class="key-services-container">
   <comp-key-service-card
-    *ngFor="let service of serviceService.services"
+    *ngFor="let service of serviceService.services; index as i"
     [service]="service"
+    [even]="i % 2 == 0"
   ></comp-key-service-card>
 </div>

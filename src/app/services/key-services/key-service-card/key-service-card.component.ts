@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import ServiceClass from '../../../models/service';
 
 @Component({
@@ -6,14 +6,17 @@ import ServiceClass from '../../../models/service';
   templateUrl: './key-service-card.component.html',
   styleUrl: './key-service-card.component.scss',
 })
-export class KeyServiceCardComponent {
+export class KeyServiceCardComponent implements OnInit {
   @Input() service: ServiceClass | null = null;
+  @Input() even!: boolean;
   title: string = '';
   description: string = '';
   deep_description: string = '';
   image: string = '';
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     if (this.service !== null) {
       this.title = this.service.title;
       this.description = this.service.description;
