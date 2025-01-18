@@ -8,7 +8,7 @@ import ServiceClass from '../../../models/service';
 })
 export class KeyServiceCardComponent implements OnInit {
   @Input() service: ServiceClass | null = null;
-  @Input() even!: boolean;
+  @Input() position!: number;
   title: string = '';
   description: string = '';
   deep_description: string = '';

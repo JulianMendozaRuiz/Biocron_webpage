@@ -41,14 +41,14 @@
       height: 100%;
       border-radius: 0.75rem 0.75rem 0 0;
     }
-    .background-gradient-even {
+    .background-gradient-dark {
       background: linear-gradient(
         rgba(29, 63, 55, 0) 65%,
         rgba(29, 63, 55, 1) 95%
       );
     }
 
-    .background-gradient-odd {
+    .background-gradient-light {
       background: linear-gradient(
         rgba(244, 244, 244, 0) 65%,
         rgba(244, 244, 244, 1) 95%
@@ -72,6 +72,10 @@
     padding-block-start: 0.5rem;
     padding-block-end: 2rem;
 
+    transition: all 0.3s ease-in-out;
+    transition-behavior: allow-discrete;
+
+
     .card-title {
       text-align: center;
       font-size: 1.75rem;
@@ -85,13 +89,21 @@
     }
 
     .card-deep-description {
+      gap: 1rem;
+
       transition: all 0.3s ease-in-out;
       transition-behavior: allow-discrete;
-      display: none;
+
+      display: grid;
+      grid-template-rows: 0fr;
+
+    }
+    .card-deep-description > div {
+      overflow: hidden;
     }
   }
 
-  .card-info-even {
+  .card-info-dark {
     background-color: $primaryDarkColor;
 
     .card-title {
@@ -104,7 +116,7 @@
     }
   }
 
-  .card-info-odd {
+  .card-info-light {
     background-color: $smoothWhite;
 
     .card-title {
@@ -119,6 +131,7 @@
 }
 
 .card:hover {
+  overflow: visible;
   .background {
     .background-image {
       background-size: 120%;
@@ -127,7 +140,7 @@
 
   .card-info {
     .card-deep-description {
-      display: flex;
+      grid-template-rows: 1fr;
     }
   }
 }

@@ -6,12 +6,25 @@
     ></div>
     <div
       class="background-gradient"
-      [ngClass]="even ? 'background-gradient-even' : 'background-gradient-odd'"
+      [ngClass]="
+        position === 0 || position === 3
+          ? 'background-gradient-dark'
+          : 'background-gradient-light'
+      "
     ></div>
   </div>
-  <div class="card-info" [ngClass]="even ? 'card-info-even' : 'card-info-odd'">
+  <div
+    class="card-info"
+    [ngClass]="
+      position === 0 || position === 3 ? 'card-info-dark' : 'card-info-light'
+    "
+  >
     <div class="card-title">{{ title }}</div>
     <div class="card-description">{{ description }}</div>
-    <div class="card-deep-description">{{ deep_description }}</div>
+    <div class="card-deep-description">
+      <div class=".">
+        {{ deep_description }}
+      </div>
+    </div>
   </div>
 </div>
