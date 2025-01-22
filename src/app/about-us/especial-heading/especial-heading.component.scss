@@ -1,35 +1,41 @@
-@import "../../../styles.scss";
+@import '../about-us.component.scss';
 
-.view-heading {
-    padding-top: 10rem;
+.especial-heading-container {
+  width: 100%;
+  padding-top: 10rem;
+
+  background-image: url("/assets/svg/especial_heading_background.svg");
+  
+
+  .view-heading {
     align-self: center;
     justify-self: center;
     width: 46.5rem;
     gap: 1.5rem;
-  
+
     display: flex;
     flex-direction: column;
-  
+
     align-items: center;
     text-align: center;
-  
+
     .view-heading-section {
       width: fit-content;
       align-self: center;
-  
+
       .view-tag {
-          font-size: 1rem ;
-          padding: 0.75rem 1rem;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
       }
     }
-  
+
     .view-heading-title {
       max-width: 46.5rem;
       line-height: 5rem;
-  
+
       font-size: 3rem;
       font-weight: 600;
-  
+
       background: -webkit-linear-gradient(
         45deg,
         $primaryDarkColor,
@@ -41,7 +47,8 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .view-heading-description{
+    .view-heading-description {
       white-space: break-spaces;
     }
   }
+}
