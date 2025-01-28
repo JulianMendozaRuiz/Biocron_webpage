@@ -1,0 +1,144 @@
+@import '../about-us.component.scss';
+
+.mision-vision-container {
+  width: 100%;
+  height: 45.57rem;
+
+  display: flex;
+  flex-direction: row;
+
+  .mision,
+  .vision {
+    width: 50%;
+    display: grid;
+  }
+
+  .mision {
+    .mision-image {
+      background-color: $primaryDarkColor;
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .mision-gradient {
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        $pureBlackTransparent 0%,
+        $pureBlack 100%
+      );
+      z-index: -1;
+    }
+
+    .mision-content {
+      grid-row: 1;
+      grid-column: 1;
+
+      height: fit-content;
+      margin-inline: 4.5rem;
+      margin-bottom: 4.5rem;
+
+      align-self: end;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 0;
+
+      .mision-title,
+      .mision-description {
+        color: $contrastWhite;
+      }
+
+      .mision-title {
+        line-height: 3.5rem;
+        font-size: 3rem;
+
+        font-weight: bold;
+      }
+
+      .mision-description {
+        line-height: 1.5rem;
+        font-size: 1rem;
+
+        white-space: break-spaces;
+      }
+    }
+  }
+
+  .vision {
+    .vision-image {
+      background-color: $primaryLightColor;
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .vision-gradient {
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        $primaryDarkColorTransparent 0%,
+        $primaryDarkColor 100%
+      );
+      z-index: -1;
+    }
+
+    .vision-content {
+      grid-row: 1;
+      grid-column: 1;
+
+      height: fit-content;
+      margin-inline: 4.5rem;
+      margin-bottom: 4.5rem;
+
+      align-self: end;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .vision-title,
+      .vision-description {
+        color: $contrastWhite;
+      }
+
+      .vision-title {
+        line-height: 3.5rem;
+        font-size: 3rem;
+
+        font-weight: bold;
+      }
+
+      .vision-description {
+        line-height: 1.5rem;
+        font-size: 1rem;
+
+        white-space: break-spaces;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="company-values-container">
+  <div class="title">Nuestros valores</div>
+  <div class="content">
+    <div class="content-img">
+      <img [src]="image" alt="value" />
+    </div>
+    <div class="values">
+      <div *ngFor="let value of values; index as i" class="value">
+        <div
+          class="value-title"
+          [ngClass]="i != 0 ? 'innactive-tab' : 'active-tab'"
+        >
+          <img
+            class="value-marker"
+            [ngClass]="i != 0 ? 'innactive' : 'active'"
+            [src]="'/assets/svg/biocron_right_arrow_marker.svg'"
+          />
+          {{ value.title }}
+        </div>
+        <div
+          class="value-description"
+          [ngClass]="i != 0 ? 'innactive' : 'active'"
+        >
+          {{ value.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

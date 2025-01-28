@@ -4,5 +4,37 @@
     "title": "Quienes somos",
     "description": "Biocron es una consultora especializada en geociencias, comprometida en la conceptualización del desarrollo sostenible y la utilización responsable de los recursos naturales del sector geocientífico y minero-energético. El equipo de expertos es altamente capacitado para ofrecer estudios geológicos y asesoramiento técnico a nuestros clientes en tomar decisiones informadas."
   },
-  "about_us": {}
+  "about_us": {
+    "mision": {
+      "image": "/assets/svg/biocron_mision_background.svg",
+      "title": "Nuestra mision",
+      "description": "Impulsar el conocimiento y el desarrollo sostenible en el campo de las Geociencias a través de servicios especializados de investigación, asesoría y como aliados estratégicos de nuestros clientes. Ofrecemos soluciones integrales y personalizadas, basadas en metodologías de alta calidad, que contribuyan al éxito de sus proyectos en áreas de los recursos naturales y ambientales."
+    },
+    "vision": {
+      "image": "/assets/svg/biocron_vision_background.svg",
+      "title": "Nuestra visión",
+      "description": "Ser reconocidos en la provisión de soluciones geocientíficas innovadoras, a través de la investigación y asesoría especializada. Nuestro objetivo es impulsar el conocimiento del funcionamiento de los sistemas naturales y su aprovechamiento, contribuyendo a un futuro sostenible mediante soluciones basadas en la comprensión y análisis de los procesos geocientíficos."
+    },
+    "company_values": {
+      "content_image": "/assets/svg/biocron_about_us_values_img.svg",
+      "values": [
+        {
+          "title": "Excelencia Científica",
+          "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
+        },
+        {
+          "title": "Excelencia Científica",
+          "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
+        },
+        {
+          "title": "Excelencia Científica",
+          "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
+        },
+        {
+          "title": "Excelencia Científica",
+          "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
+        }
+      ]
+    }
+  }
 }

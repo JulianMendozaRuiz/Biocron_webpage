@@ -3,8 +3,10 @@
 .especial-heading-container {
   width: 100%;
   padding-top: 10rem;
+  padding-bottom: 8.75rem;
 
   background-image: url("/assets/svg/especial_heading_background.svg");
+  background-size: cover;
   
 
   .view-heading {
@@ -49,6 +51,7 @@
 
     .view-heading-description {
       white-space: break-spaces;
+      line-height: 1.5rem;
     }
   }
 }

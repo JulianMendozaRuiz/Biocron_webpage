@@ -6,9 +6,11 @@ import { AboutUsComponent } from './about-us.component';
 import { SharedModule } from '../shared/shared.module';
 import { EspecialHeadingComponent } from './especial-heading/especial-heading.component';
 import { ButtonModule } from 'primeng/button';
+import { MisionVisionComponent } from './mision-vision/mision-vision.component';
+import { CompanyValuesComponent } from './company-values/company-values.component';
 
 @NgModule({
-  declarations: [AboutUsComponent, EspecialHeadingComponent],
+  declarations: [AboutUsComponent, EspecialHeadingComponent, MisionVisionComponent, CompanyValuesComponent],
   imports: [CommonModule, AboutUsRoutingModule, SharedModule, ButtonModule],
 })
 export class AboutUsModule {}

@@ -1,0 +1,113 @@
+@import '../about-us.component.scss';
+
+.company-values-container {
+  width: 100%;
+  margin-block: 7.5rem;
+
+  gap: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+  .title {
+    color: $primaryDarkColor;
+    line-height: 3.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: center;
+  }
+
+  .content {
+    height: 33.5rem;
+    align-self: center;
+
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+
+    align-items: center;
+
+    .content-img {
+      width: 28.5rem;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        border-radius: 0.5rem;
+      }
+    }
+
+    .values {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+
+      width: 28.5rem;
+      height: 100%;
+
+      .value {
+        width: 100%;
+
+        padding-block: 1.5rem;
+
+        gap: 1rem;
+
+        display: flex;
+        flex-direction: column;
+
+        text-align: start;
+
+        border-bottom: $borderGray 1px solid;
+
+        .value-title {
+          display: flex;
+
+          gap: 0.5rem;
+
+          font-size: 2rem;
+          font-weight: 500;
+
+          line-height: 2.5rem;
+
+          .value-marker {
+            align-self: center;
+            justify-self: start;
+
+            min-height: 1.25rem;
+            min-width: 2.5rem;
+
+            margin-right: 0.5rem;
+          }
+        }
+
+        .value-description {
+          line-height: 1.5rem;
+        }
+
+        .active-tab {
+          cursor: default;
+        }
+
+        .innactive-tab {
+          cursor: pointer;
+        }
+
+        .innactive {
+          display: none;
+        }
+
+        .active {
+          display: block;
+        }
+      }
+    }
+  }
+}
