@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 // TODO: Remove content and centralize it in the service
 import content from '../../assets/content/services_content.json';
-import { ServiceService } from '../app-services/service.service';
+import { ServiceService } from '../_app-services/service.service';
 
 @Component({
   selector: 'comp-services',

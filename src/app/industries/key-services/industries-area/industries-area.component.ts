@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IndustryService } from '../../../app-services/industry.service';
+import { IndustryService } from '../../../_app-services/industry.service';
 import IndustryClass from '../../../models/industry';
 
 @Component({
@@ -25,6 +25,6 @@ export class IndustriesAreaComponent implements OnInit {
   }
 
   setCurrentIndustry(pIndustry: IndustryClass): void {
-    this.industryService.setCurrentIndustryByName(pIndustry);
+    this.industryService.setCurrentIndustry(pIndustry);
   }
 }

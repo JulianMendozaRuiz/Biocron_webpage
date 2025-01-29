@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServiceService } from '../../app-services/service.service';
+import { ServiceService } from '../../_app-services/service.service';
 
 @Component({
   selector: 'comp-key-services',

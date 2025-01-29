@@ -23,18 +23,23 @@
           "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
         },
         {
-          "title": "Excelencia Científica",
+          "title": "Sostenibilidad",
           "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
         },
         {
-          "title": "Excelencia Científica",
+          "title": "Innovación",
           "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
         },
         {
-          "title": "Excelencia Científica",
+          "title": "Enfoque en el cliente",
           "description": "Biocron se destaca por su compromiso con la investigación y el conocimiento científico de alta calidad. La empresa se basa en la experiencia y el rigor científico para ofrecer soluciones innovadoras y confiables"
         }
       ]
+    },
+    "team": {
+      "title": "Nuestro equipo",
+      "description": "Contamos con un equipo de geólogos, ingenieros y expertos en geociencias con años de experiencia en el sector de hidrocarburos. Cada miembro de nuestro equipo está comprometido con la excelencia técnica y la sostenibilidad, aportando un enfoque multidisciplinario a cada proyecto.",
+      "background_img": ""
     }
   }
 }
