@@ -40,6 +40,30 @@
       "title": "Nuestro equipo",
       "description": "Contamos con un equipo de geólogos, ingenieros y expertos en geociencias con años de experiencia en el sector de hidrocarburos. Cada miembro de nuestro equipo está comprometido con la excelencia técnica y la sostenibilidad, aportando un enfoque multidisciplinario a cada proyecto.",
       "background_img": ""
+    },
+    "why_us": {
+      "title_section": {
+        "title": "¿Por qué elegirnos?",
+        "description": "Impulsamos la excelencia en la industria de los hidrocarburos."
+      },
+      "reasons": [
+        {
+          "title": "Experiencia y conocimiento sin igual:",
+          "description": "Contamos con un equipo de geólogos y expertos altamente capacitados y actualizados en las últimas tecnologías y metodologías."
+        },
+        {
+          "title": "Experiencia y conocimiento sin igual:",
+          "description": "Contamos con un equipo de geólogos y expertos altamente capacitados y actualizados en las últimas tecnologías y metodologías."
+        },
+        {
+          "title": "Experiencia y conocimiento sin igual:",
+          "description": "Contamos con un equipo de geólogos y expertos altamente capacitados y actualizados en las últimas tecnologías y metodologías."
+        },
+        {
+          "title": "Experiencia y conocimiento sin igual:",
+          "description": "Contamos con un equipo de geólogos y expertos altamente capacitados y actualizados en las últimas tecnologías y metodologías."
+        }
+      ]
     }
   }
 }

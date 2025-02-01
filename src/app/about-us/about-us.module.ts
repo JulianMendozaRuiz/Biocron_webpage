@@ -9,9 +9,19 @@ import { ButtonModule } from 'primeng/button';
 import { MisionVisionComponent } from './mision-vision/mision-vision.component';
 import { CompanyValuesComponent } from './company-values/company-values.component';
 import { TeamComponent } from './team/team.component';
+import { WhyUsComponent } from './why-us/why-us.component';
+import { ReasonCardComponent } from './why-us/reason-card/reason-card.component';
 
 @NgModule({
-  declarations: [AboutUsComponent, EspecialHeadingComponent, MisionVisionComponent, CompanyValuesComponent, TeamComponent],
+  declarations: [
+    AboutUsComponent,
+    EspecialHeadingComponent,
+    MisionVisionComponent,
+    CompanyValuesComponent,
+    TeamComponent,
+    WhyUsComponent,
+    ReasonCardComponent,
+  ],
   imports: [CommonModule, AboutUsRoutingModule, SharedModule, ButtonModule],
 })
 export class AboutUsModule {}

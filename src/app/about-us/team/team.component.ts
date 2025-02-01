@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './team.component.scss',
 })
 export class TeamComponent {
-  @Input() teamContent!: string;
+  @Input() teamContent!: any;
 }
