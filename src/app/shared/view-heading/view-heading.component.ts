@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './view-heading.component.scss',
 })
 export class ViewHeadingComponent {
-  @Input() viewName: any;
-  @Input() viewTitle: any;
-  @Input() viewDescription: any;
+  @Input() viewName: String | null = null;
+  @Input() viewTitle: String | null = null;
+  @Input() viewDescription: String | null = null;
+  @Input() compact: boolean = false;
 }

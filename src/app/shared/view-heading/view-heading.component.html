@@ -1,12 +1,18 @@
-<div class="view-heading">
+<div
+  class="view-heading"
+  [ngClass]="compact ? 'view-heading-compact' : 'view-heading-padded'"
+>
   <div class="view-heading-section">
     <button
+      *ngIf="viewName"
       class="view-tag p-button p-button-outlined p-button-rounded"
       disabled
     >
       {{ viewName }}
     </button>
   </div>
-  <div class="view-heading-title">{{ viewTitle }}</div>
-  <div class="view-heading-description">{{ viewDescription }}</div>
+  <div *ngIf="viewTitle" class="view-heading-title">{{ viewTitle }}</div>
+  <div *ngIf="viewDescription" class="view-heading-description">
+    {{ viewDescription }}
+  </div>
 </div>

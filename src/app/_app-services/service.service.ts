@@ -10,6 +10,8 @@ export class ServiceService {
   services: ServiceClass[] | null = null;
 
   public setServicesFromContent(pServicesContent: any): void {
+    console.log('pServicesContent', pServicesContent);
+
     if (
       pServicesContent === null ||
       typeof pServicesContent !== 'object' ||

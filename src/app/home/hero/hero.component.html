@@ -12,8 +12,10 @@
       [showNavigators]="false"
       [showIndicators]="false"
     >
-      <ng-template let-image pTemplate="img">
-        <img [src]="image.src" [alt]="image.alt" class="carousel-image" />
+      <ng-template let-image pTemplate="item">
+        <div class="carousel-image-container">
+          <img [src]="image.src" [alt]="image.alt" class="carousel-image" />
+        </div>
       </ng-template>
     </p-carousel>
   </div>

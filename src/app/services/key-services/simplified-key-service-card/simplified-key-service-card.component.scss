@@ -1,0 +1,122 @@
+@import '../key-services.component.scss';
+
+.card {
+  border-radius: 0.5rem;
+
+  height: 22.5rem;
+  width: 22.5rem;
+
+  transition: all 0.4s ease-out;
+  transition-behavior: allow-discrete;
+
+  display: grid;
+
+  .background {
+    width: 100%;
+    height: 100%;
+
+    grid-row: 1;
+    grid-column: 1;
+
+    border-radius: 0.5rem;
+
+    display: grid;
+
+    .background-image {
+      grid-row: 1;
+      grid-column: 1;
+
+      height: 100%;
+      width: 100%;
+      border-radius: 0.5rem;
+      background-position: center;
+
+      background-color: $primaryLightColor;
+    }
+
+    .background-gradient {
+      grid-row: 1;
+      grid-column: 1;
+
+      display: flex;
+      align-self: flex-end;
+
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+    }
+
+    .background-gradient-dark {
+      height: 50%;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        $primaryDarkColor 73%
+      );
+
+      transition: all 0.4s ease-out;
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  .card-info {
+    grid-row: 1;
+    grid-column: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.25rem;
+
+    justify-content: end;
+
+    padding-inline: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    color: $contrastWhite;
+
+    .card-name {
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .card-description {
+      font-size: 0.875rem;
+      line-height: 1rem;
+
+      display: grid;
+      grid-template-rows: 0fr;
+
+      transition: all 0.4s ease-out;
+      transition-behavior: allow-discrete;
+    }
+
+    .card-description > div {
+      overflow: hidden;
+    }
+  }
+}
+
+.card:hover {
+  height: 23.75rem;
+  width: 23.75rem;
+
+  .background {
+    .background-gradient-dark {
+      height: 100%;
+    }
+  }
+
+  .card-info {
+    .card-description {
+      grid-template-rows: 1fr;
+    }
+  }
+}

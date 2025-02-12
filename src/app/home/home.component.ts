@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 // TODO: remove this and centralize to separate service
-import content from '../../assets/content/home_content.json';
+import homeContent from '../../assets/content/home_content.json';
+import servicesContent from '../../assets/content/services_content.json';
 
 @Component({
   selector: 'comp-home',
@@ -9,8 +10,10 @@ import content from '../../assets/content/home_content.json';
 })
 export class HomeComponent {
   heroContent: any;
+  servicesContent: any;
 
   constructor() {
-    this.heroContent = content.hero;
+    this.heroContent = homeContent.hero;
+    this.servicesContent = servicesContent.services;
   }
 }
