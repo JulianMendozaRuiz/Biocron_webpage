@@ -11,9 +11,11 @@ import servicesContent from '../../assets/content/services_content.json';
 export class HomeComponent {
   heroContent: any;
   servicesContent: any;
+  clientsContent: any;
 
   constructor() {
     this.heroContent = homeContent.hero;
     this.servicesContent = servicesContent.services;
+    this.clientsContent = homeContent.clients;
   }
 }

@@ -12,5 +12,74 @@
     ],
     "title": "Expertos en geociencias",
     "description": "Somos Biocron,  su socio estratégico en sus proyectos en recursos naturales, con enfoque en la sostenibildiad y la innovación a través de las geociencias."
+  },
+  "clients": {
+    "side_image": "/assets/svg/home/biocron_clients.svg",
+    "tag": "Industrias",
+    "title": "Nuestros Clientes",
+    "description": "Descubre las opiniones de nuestros clientes sobre nuestro trabajo, a quienes ayudándolas a optimizar sus operaciones.",
+    "button_text": "Conoce más",
+    "client_logos": [
+      {
+        "src": "/assets/svg/home/logos/ecopetrol.svg",
+        "alt": "Logo Ecopetrol"
+      },
+      {
+        "src": "/assets/svg/home/logos/reficar.svg",
+        "alt": "Logo Reficar"
+      },
+      {
+        "src": "/assets/svg/home/logos/cenit.svg",
+        "alt": "Logo Cenit"
+      },
+      {
+        "src": "/assets/svg/home/logos/terpel.svg",
+        "alt": "Logo Terpel"
+      },
+      {
+        "src": "/assets/svg/home/logos/primax.svg",
+        "alt": "Logo Primax"
+      },
+      {
+        "src": "/assets/svg/home/logos/ecopetrol.svg",
+        "alt": "Logo Ecopetrol"
+      },
+      {
+        "src": "/assets/svg/home/logos/reficar.svg",
+        "alt": "Logo Reficar"
+      },
+      {
+        "src": "/assets/svg/home/logos/cenit.svg",
+        "alt": "Logo Cenit"
+      },
+      {
+        "src": "/assets/svg/home/logos/terpel.svg",
+        "alt": "Logo Terpel"
+      },
+      {
+        "src": "/assets/svg/home/logos/primax.svg",
+        "alt": "Logo Primax"
+      },
+      {
+        "src": "/assets/svg/home/logos/ecopetrol.svg",
+        "alt": "Logo Ecopetrol"
+      },
+      {
+        "src": "/assets/svg/home/logos/reficar.svg",
+        "alt": "Logo Reficar"
+      },
+      {
+        "src": "/assets/svg/home/logos/cenit.svg",
+        "alt": "Logo Cenit"
+      },
+      {
+        "src": "/assets/svg/home/logos/terpel.svg",
+        "alt": "Logo Terpel"
+      },
+      {
+        "src": "/assets/svg/home/logos/primax.svg",
+        "alt": "Logo Primax"
+      }
+    ]
   }
 }
