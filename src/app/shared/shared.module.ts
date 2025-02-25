@@ -6,6 +6,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ViewHeadingComponent } from './view-heading/view-heading.component';
+import { BoldPipe } from './pipes/bold.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ViewHeadingComponent } from './view-heading/view-heading.component';
     FooterComponent,
     ContactUsComponent,
     ViewHeadingComponent,
+    BoldPipe,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { ViewHeadingComponent } from './view-heading/view-heading.component';
     FooterComponent,
     ContactUsComponent,
     ViewHeadingComponent,
+    BoldPipe,
   ],
 })
 export class SharedModule {}
