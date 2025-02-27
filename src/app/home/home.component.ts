@@ -13,11 +13,13 @@ export class HomeComponent {
   aboutUsContent: any;
   servicesContent: any;
   clientsContent: any;
+  contactUsContent: any;
 
   constructor() {
     this.heroContent = homeContent.hero;
     this.aboutUsContent = homeContent.about_us;
     this.servicesContent = servicesContent.services;
     this.clientsContent = homeContent.clients;
+    this.contactUsContent = homeContent.contact_us;
   }
 }

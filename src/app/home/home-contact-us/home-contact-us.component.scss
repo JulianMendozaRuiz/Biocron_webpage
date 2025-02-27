@@ -1,0 +1,107 @@
+@import '../home.component.scss';
+
+.home-contact-us-container {
+  width: 100%;
+  height: 40.25rem;
+  display: flex;
+
+  justify-content: center;
+
+  padding-inline: 5rem;
+  border-image: linear-gradient(
+
+      to right,
+      $primaryLightColorGradient 0%,
+      $primaryLightColor 25%,
+      $primaryDarkColor 50%,
+      $primaryLightColor 75%,
+      $primaryLightColorGradient 100%
+    )
+    1;
+  border-width: 0.125rem 0 0;
+  border-style: solid;
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 34.5rem;
+
+    gap: 2rem;
+
+    .section-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+
+      .view-tag {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+
+        width: fit-content;
+      }
+
+      .title {
+        font-size: 3rem;
+        font-weight: bold;
+
+        line-height: 3.5rem;
+      }
+    }
+
+    .form-inputs {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+
+      .top-section {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        gap: 1.5rem;
+
+        .text-input {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+
+          label {
+            line-height: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+      .message-input {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        width: 100%;
+
+        label {
+          line-height: 1.5rem;
+          font-weight: bold;
+        }
+
+        textarea {
+          resize: none;
+          border-radius: 0.375rem;
+        }
+      }
+    }
+  }
+}

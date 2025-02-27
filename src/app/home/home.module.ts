@@ -11,9 +11,10 @@ import { HomeKeyServicesComponent } from './home-key-services/home-key-services.
 import { ServicesModule } from '../services/services.module';
 import { ClientsComponent } from './clients/clients.component';
 import { HomeAboutUsComponent } from './home-about-us/home-about-us.component';
+import { HomeContactUsComponent } from './home-contact-us/home-contact-us.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent, HomeKeyServicesComponent, ClientsComponent, HomeAboutUsComponent],
+  declarations: [HomeComponent, HeroComponent, HomeKeyServicesComponent, ClientsComponent, HomeAboutUsComponent, HomeContactUsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
