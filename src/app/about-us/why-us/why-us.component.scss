@@ -1,0 +1,42 @@
+@import '../about-us.component.scss';
+
+.why-us-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 2.5rem;
+
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  align-items: center;
+
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+
+      line-height: 3.5rem;
+    }
+
+    .description {
+      line-height: 1.5rem;
+    }
+  }
+  .reasons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    max-width: 48rem;
+
+    gap: 1.5rem;
+
+  }
+}

@@ -1,0 +1,56 @@
+<div class="home-contact-us-container">
+  <div class="content-container">
+    <div class="section-heading">
+      <button
+        class="view-tag p-button p-button-outlined p-button-rounded"
+        disabled
+      >
+        {{ tag }}
+      </button>
+
+      <div class="title">{{ title }}</div>
+    </div>
+    <form class="form-inputs" [formGroup]="contactForm">
+      <div class="top-section">
+        <div id="email-input" class="text-input">
+          <label for="email">{{ formContent.email.label }}</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            [placeholder]="formContent.email.placeholder"
+            pInputText
+            required
+          />
+        </div>
+        <div id="name-input" class="text-input">
+          <label for="name">{{ formContent.name.label }}</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            [placeholder]="formContent.name.placeholder"
+            pInputText
+            required
+          />
+        </div>
+      </div>
+      <div class="message-input">
+        <label for="message" class="title-input">{{
+          formContent.message.label
+        }}</label>
+        <textarea
+          id="message"
+          rows="6"
+          [placeholder]="formContent.message.placeholder"
+          pTextArea
+        ></textarea>
+      </div>
+      <p-button
+        class="button-input"
+        [label]="formContent.button_text"
+        (click)="onSubmit()"
+      />
+    </form>
+  </div>
+</div>

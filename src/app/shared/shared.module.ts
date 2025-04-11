@@ -6,6 +6,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ViewHeadingComponent } from './view-heading/view-heading.component';
+import { BoldPipe } from './pipes/bold.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
   declarations: [
@@ -13,6 +17,7 @@ import { ViewHeadingComponent } from './view-heading/view-heading.component';
     FooterComponent,
     ContactUsComponent,
     ViewHeadingComponent,
+    BoldPipe,
   ],
   imports: [
     CommonModule,
@@ -20,12 +25,22 @@ import { ViewHeadingComponent } from './view-heading/view-heading.component';
     RouterLink,
     RouterLinkActive,
     ButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    InputMaskModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     ContactUsComponent,
     ViewHeadingComponent,
+    BoldPipe,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    InputTextModule,
+    InputMaskModule,
   ],
 })
 export class SharedModule {}

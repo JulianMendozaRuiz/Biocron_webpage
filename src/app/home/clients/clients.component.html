@@ -1,0 +1,45 @@
+<div class="clients-container">
+  <div class="clients-info">
+    <div class="content-image">
+      <img [src]="sideImage" alt="clients" />
+    </div>
+    <div class="content-section">
+      <div class="content-header">
+        <button
+          *ngIf="tag"
+          class="tag p-button p-button-outlined p-button-rounded"
+          disabled
+        >
+          {{ tag }}
+        </button>
+
+        <div class="title">{{ title }}</div>
+      </div>
+      <div class="description">{{ description }}</div>
+      <p-button
+        [routerLink]="['/industrias']"
+        class="services-button"
+        [label]="buttonText"
+      ></p-button>
+    </div>
+  </div>
+  <div class="clients-logos-carousel">
+    <div class="carousel-gradient"></div>
+
+    <p-carousel
+      class="clients-carousel"
+      [value]="clientLogos"
+      [numVisible]="10"
+      [numScroll]="2"
+      [circular]="true"
+      [orientation]="'horizontal'"
+      [showNavigators]="false"
+      [showIndicators]="false"
+      [autoplayInterval]="2000"
+    >
+      <ng-template let-logo pTemplate="item">
+        <img [src]="logo.src" [alt]="logo.alt" class="carousel-image" />
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

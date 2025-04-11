@@ -1,0 +1,7 @@
+<div class="key-services-container">
+  <comp-key-service-card
+    *ngFor="let service of serviceService.services; index as i"
+    [service]="service"
+    [position]="i % 4"
+  ></comp-key-service-card>
+</div>

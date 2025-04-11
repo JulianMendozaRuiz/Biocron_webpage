@@ -7,7 +7,7 @@
   "industries": [
     {
       "name": "Hidrocarburos",
-      "img_location": "",
+      "img_location": "/assets/svg/biocron_industry_image.svg",
       "description": "Impulsamos el éxito de la industria de los recursos energéticos a través de soluciones geocientíficas integrales que optimizan la exploración y producción, a la vez que minimizan los riesgos ambientales. Nuestro equipo de expertos ofrece estudios geológicos de vanguardia, análisis de riesgos, y estrategias de optimización para operaciones en el subsuelo. Facilitamos el cumplimiento normativo y la obtención de permisos, con un enfoque en la sostenibilidad y la responsabilidad ambiental.",
       "services": [
         "Estudios geológicos y geofísicos para la exploración y caracterización de yacimientos.",

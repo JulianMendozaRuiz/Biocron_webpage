@@ -1,0 +1,72 @@
+@import '../about-us.component.scss';
+
+.team-container {
+  display: grid;
+  height: 26.25rem;
+  width: 70.5rem;
+
+  border-radius: 1rem;
+
+  justify-self: center;
+  align-self: center;
+
+  .team-background {
+    background-image: url('/assets/svg/biocron_team_background.svg');
+
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    border-radius: 1rem;
+
+    overflow: hidden;
+  }
+
+  .team-gradient {
+    background-image: url('/assets/svg/biocron_team_gradient.svg');
+
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .team-content {
+    grid-row: 1;
+    grid-column: 1;
+    height: 100;
+    width: 100%;
+    z-index: 0;
+
+    display: flex;
+
+    .content-container {
+      display: flex;
+      flex-direction: column; 
+      gap: 1.5rem;
+
+      margin-block: 2.5rem;
+      margin-inline: 2.5rem;
+
+      justify-self: start;
+      align-self: flex-end;
+
+      color: $smoothWhite;
+
+      .title{
+        font-size: 2.5rem;
+        font-weight: bold;
+
+        line-height: 3rem;
+      }
+
+      .description{
+        line-height: 1.5rem;
+
+        max-width: 33rem;
+      }
+    }
+  }
+}

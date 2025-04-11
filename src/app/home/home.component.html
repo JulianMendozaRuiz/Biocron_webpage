@@ -1,0 +1,30 @@
+<div class="home-container">
+  <comp-hero
+    [images]="heroContent.images"
+    [title]="heroContent.title"
+    [description]="heroContent.description"
+  ></comp-hero>
+  <comp-home-about-us
+    [backgroundImage]="aboutUsContent.background_image"
+    [backgroundParticles]="aboutUsContent.background_particles"
+    [tag]="aboutUsContent.tag"
+    [description]="aboutUsContent.description"
+  ></comp-home-about-us>
+  <comp-home-key-services [keyServicesContent]="servicesContent">
+  </comp-home-key-services>
+  <comp-clients
+    [sideImage]="clientsContent.side_image"
+    [tag]="clientsContent.tag"
+    [title]="clientsContent.title"
+    [description]="clientsContent.description"
+    [buttonText]="clientsContent.button_text"
+    [clientLogos]="clientsContent.client_logos"
+  ></comp-clients>
+
+  <comp-home-contact-us
+    [tag]="contactUsContent.tag"
+    [title]="contactUsContent.title"
+    [formContent]="contactUsContent.form_content"
+  >
+  </comp-home-contact-us>
+</div>

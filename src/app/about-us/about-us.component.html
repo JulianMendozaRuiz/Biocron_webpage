@@ -1,1 +1,19 @@
-<p>about-us works!</p>
+<div>
+  <comp-especial-heading
+    [viewName]="headingContent.name"
+    [viewTitle]="headingContent.title"
+    [viewDescription]="headingContent.description"
+  ></comp-especial-heading>
+
+  <comp-mision-vision
+    [mision]="aboutUsContent.mision"
+    [vision]="aboutUsContent.vision"
+  ></comp-mision-vision>
+  <comp-company-values
+    [valuesContent]="aboutUsContent.company_values.values"
+    [image]="aboutUsContent.company_values.content_image"
+  ></comp-company-values>
+  <comp-team [teamContent]="aboutUsContent.team"> </comp-team>
+
+  <comp-why-us [whyUsContent]="aboutUsContent.why_us"></comp-why-us>
+</div>

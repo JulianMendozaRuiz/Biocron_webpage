@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="background">
+    <div
+      class="background-image"
+      [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+    ></div>
+    <div
+      class="background-gradient"
+      [ngClass]="
+        position === 0 || position === 3
+          ? 'background-gradient-dark'
+          : 'background-gradient-light'
+      "
+    ></div>
+  </div>
+  <div
+    class="card-info"
+    [ngClass]="
+      position === 0 || position === 3 ? 'card-info-dark' : 'card-info-light'
+    "
+  >
+    <div class="card-title">{{ title }}</div>
+    <div class="card-description">{{ description }}</div>
+    <div class="card-deep-description">
+      <div class=".">
+        {{ deep_description }}
+      </div>
+    </div>
+  </div>
+</div>

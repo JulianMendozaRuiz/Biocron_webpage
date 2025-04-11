@@ -1,0 +1,146 @@
+@import '../key-services.component.scss';
+
+.card {
+  border-radius: 0.75rem;
+
+  height: 36rem;
+  width: 34.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  .background {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    .background-image {
+      grid-row: 1;
+      grid-column: 1;
+
+      height: 100%;
+      width: 100%;
+      border-radius: 0.75rem 0.75rem 0 0;
+
+      background-position: center;
+      background-size: 100%;
+      transition: all 0.3s ease-in-out;
+      transition-behavior: allow-discrete;
+
+      background-color: $primaryLightColor;
+    }
+
+    .background-gradient {
+      grid-row: 1;
+      grid-column: 1;
+
+      width: 100%;
+      height: 100%;
+      border-radius: 0.75rem 0.75rem 0 0;
+    }
+    .background-gradient-dark {
+      background: linear-gradient(
+        rgba(29, 63, 55, 0) 65%,
+        rgba(29, 63, 55, 1) 95%
+      );
+    }
+
+    .background-gradient-light {
+      background: linear-gradient(
+        rgba(244, 244, 244, 0) 65%,
+        rgba(244, 244, 244, 1) 95%
+      );
+    }
+  }
+
+  .card-info {
+    border-radius: 0 0 0.75rem 0.75rem;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-self: flex-end;
+
+    gap: 1.5rem;
+
+    padding-inline: 2rem;
+    padding-block-start: 0.5rem;
+    padding-block-end: 2rem;
+
+    transition: all 0.3s ease-in-out;
+    transition-behavior: allow-discrete;
+
+
+    .card-title {
+      text-align: center;
+      font-size: 1.75rem;
+
+      font-weight: 500;
+    }
+    .card-description,
+    .card-deep-description {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+
+    .card-deep-description {
+      gap: 1rem;
+
+      transition: all 0.3s ease-in-out;
+      transition-behavior: allow-discrete;
+
+      display: grid;
+      grid-template-rows: 0fr;
+
+    }
+    .card-deep-description > div {
+      overflow: hidden;
+    }
+  }
+
+  .card-info-dark {
+    background-color: $primaryDarkColor;
+
+    .card-title {
+      color: $primaryLightColor;
+    }
+
+    .card-description,
+    .card-deep-description {
+      color: $primaryTextColor;
+    }
+  }
+
+  .card-info-light {
+    background-color: $smoothWhite;
+
+    .card-title {
+      color: $primaryDarkColor;
+    }
+
+    .card-description,
+    .card-deep-description {
+      color: $smoothGray;
+    }
+  }
+}
+
+.card:hover {
+  overflow: visible;
+  .background {
+    .background-image {
+      background-size: 120%;
+    }
+  }
+
+  .card-info {
+    .card-deep-description {
+      grid-template-rows: 1fr;
+    }
+  }
+}

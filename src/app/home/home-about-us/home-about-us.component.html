@@ -1,0 +1,17 @@
+<div class="home-about-us-container">
+  <div
+    class="background-image"
+    [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  ></div>
+  <div class="gradient"></div>
+  <div
+    class="particles"
+    [ngStyle]="{ 'background-image': 'url(' + backgroundParticles + ')' }"
+  ></div>
+  <div class="content">
+    <button class="tag p-button p-button-outlined p-button-rounded" disabled>
+      {{ tag }}
+    </button>
+    <div class="description" [innerHTML]="description | bold"></div>
+  </div>
+</div>
