@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06eb278b-c513-4c79-8af1-71d417db92c9/deploy-status)](https://app.netlify.com/sites/biocron/deploys)
+
 # BiocronWebpage
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
