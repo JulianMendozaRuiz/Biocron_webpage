@@ -1,0 +1,18 @@
+<div class="featured-article-container">
+  <div
+    class="featured-article-background-image"
+    [ngStyle]="{ 'background-image': 'url(' + article.mainImage + ')' }"
+  ></div>
+  <div class="featured-article-background-gradient"></div>
+  <div class="featured-article-content">
+    <div class="featured-article-content-tag">
+      <button *ngIf="article.tag" class="tag p-button" disabled>
+        {{ article.tag }}
+      </button>
+    </div>
+    <div class="featured-article-content-title">{{ article.title }}</div>
+    <div class="featured-article-content-published-date">
+      {{ article.datePublished | date : 'MMMM d, y' }}
+    </div>
+  </div>
+</div>

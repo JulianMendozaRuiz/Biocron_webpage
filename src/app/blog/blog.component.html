@@ -1,1 +1,10 @@
-<p>blog works!</p>
+<div>
+  <comp-view-heading
+    [viewName]="headingContent.name"
+    [viewTitle]="headingContent.title"
+    [viewDescription]="headingContent.description"
+  ></comp-view-heading>
+  <comp-articles
+    [loadMoreText]="articlesContent.load_more_button"
+  ></comp-articles>
+</div>
