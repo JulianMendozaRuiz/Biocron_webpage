@@ -18,6 +18,52 @@ export class WixService {
     });
   }
 
+  async getArticle(pId: string): Promise<ArticleClass | null> {
+    try {
+      if (!this.wixClient) {
+        await this.createClient();
+      }
+
+      const response = await this.wixClient.items
+        .query('ColombiaEnergyBlog')
+        .eq('_id', pId)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('Article not found');
+      }
+
+      console.log('Response from Wix:', response);
+
+      const {
+        _id: id,
+        tag,
+        title,
+        mainImage,
+        publishDate: datePublished,
+        content,
+        author,
+        originalPostLink,
+        featured: isFeatured,
+      } = response.items[0];
+
+      return new ArticleClass(
+        id,
+        tag,
+        title,
+        mainImage,
+        datePublished,
+        content,
+        author,
+        originalPostLink,
+        isFeatured
+      );
+    } catch (error) {
+      console.error('Error fetching article:', error);
+      throw error;
+    }
+  }
+
   async getFeaturedArticleForBoard(): Promise<ArticleClass | null> {
     try {
       if (!this.wixClient) {

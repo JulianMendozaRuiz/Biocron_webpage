@@ -6,5 +6,10 @@
   },
   "articles": {
     "load_more_button": "Ver más"
+  },
+  "article": {
+    "author": "Fuente: ",
+    "read_more": "Para leer la noticia completa hacer ",
+    "link": "click aquí"
   }
 }
