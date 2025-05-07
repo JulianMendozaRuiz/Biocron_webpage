@@ -11,17 +11,26 @@
     <div class="article-date-published">
       {{ article!.datePublished | date : 'MMMM d, y' }}
     </div>
+    <div class="article-image">
+      <img
+        *ngIf="article!.mainImage"
+        [src]="article!.mainImage"
+        [alt]="article!.title"
+      />
+    </div>
   </div>
-  <div class="article-content"></div>
+  <div class="article-content">
+    <comp-ricos-viewer [content]="article!.content"></comp-ricos-viewer>
+  </div>
   <div class="article-footer">
     <div class="article-author">
-      <b>{{ articleContent.author }}</b
+      <b>{{ articleContentLabels.author }}</b
       >{{ article!.author }}
     </div>
     <div class="article-link">
-      <div>{{ articleContent.read_more }}</div>
+      <div>{{ articleContentLabels.read_more }}</div>
       <a [href]="article!.originalPostLink" target="_blank">
-        {{ articleContent.link }}
+        {{ articleContentLabels.link }}
       </a>
     </div>
   </div>

@@ -41,7 +41,7 @@ export class WixService {
         title,
         mainImage,
         publishDate: datePublished,
-        content,
+        mainBody: content,
         author,
         originalPostLink,
         featured: isFeatured,

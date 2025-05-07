@@ -10,7 +10,13 @@ import { ArticleCardComponent } from './article-card/article-card.component';
 import { ArticleViewComponent } from './article-view/article-view.component';
 
 @NgModule({
-  declarations: [BlogComponent, ArticlesComponent, FeaturedArticleComponent, ArticleCardComponent, ArticleViewComponent],
+  declarations: [
+    BlogComponent,
+    ArticlesComponent,
+    FeaturedArticleComponent,
+    ArticleCardComponent,
+    ArticleViewComponent,
+  ],
   imports: [CommonModule, BlogRoutingModule, SharedModule],
 })
 export class BlogModule {}

@@ -10,6 +10,8 @@ import { BoldPipe } from './pipes/bold.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
+import { RicosViewerComponent } from './ricos-viewer/ricos-viewer.component';
+import { ReactComponentDirective } from '../directives/react-component.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     ContactUsComponent,
     ViewHeadingComponent,
     BoldPipe,
+    RicosViewerComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     ReactiveFormsModule,
     InputTextModule,
     InputMaskModule,
+    ReactComponentDirective,
   ],
   exports: [
     HeaderComponent,
@@ -41,6 +45,7 @@ import { InputMaskModule } from 'primeng/inputmask';
     ButtonModule,
     InputTextModule,
     InputMaskModule,
+    RicosViewerComponent,
   ],
 })
 export class SharedModule {}
