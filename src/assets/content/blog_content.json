@@ -10,6 +10,7 @@
   "article": {
     "author": "Fuente: ",
     "read_more": "Para leer la noticia completa hacer ",
-    "link": "click aquí"
+    "link": "click aquí",
+    "other_articles": "Más avances en las geociencias"
   }
 }

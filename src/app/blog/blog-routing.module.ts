@@ -8,7 +8,11 @@ const routes: Routes = [
     path: '',
     component: BlogComponent,
   },
-  { path: 'article/:id', component: ArticleViewComponent },
+  {
+    path: 'article/:id',
+    component: ArticleViewComponent,
+    runGuardsAndResolvers: 'always',
+  },
 ];
 
 @NgModule({

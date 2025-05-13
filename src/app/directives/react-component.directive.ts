@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { create } from 'domain';
 import { ComponentProps, createElement, ElementType } from 'react';
 import ReactDOM from 'react-dom/client';
 

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import GalleryClass from '../../models/content/gallery';
 
 @Component({
   selector: 'comp-hero',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-  @Input() images: any;
+  @Input() images!: GalleryClass;
   @Input() title: any;
   @Input() description: any;
 }

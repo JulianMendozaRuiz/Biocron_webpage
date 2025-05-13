@@ -1,37 +1,54 @@
 <div class="article-view-container" *ngIf="article">
-  <div class="article-head">
-    <div class="article-tag">
-      <button *ngIf="article!.tag" class="tag p-button" disabled>
-        {{ article!.tag }}
-      </button>
+  <div class="article">
+    <div class="article-head">
+      <div class="article-tag">
+        <button *ngIf="article!.tag" class="tag p-button" disabled>
+          {{ article!.tag }}
+        </button>
+      </div>
+      <div class="article-headline">
+        {{ article!.title }}
+      </div>
+      <div class="article-date-published">
+        {{ article!.datePublished | date : 'MMMM d, y' }}
+      </div>
+      <div class="article-image">
+        <img
+          *ngIf="article!.mainImage"
+          [src]="article!.mainImage"
+          [alt]="article!.title"
+        />
+      </div>
     </div>
-    <div class="article-headline">
-      {{ article!.title }}
+    <div class="article-content">
+      <comp-ricos-viewer
+        *ngIf="article"
+        [content]="article.content"
+      ></comp-ricos-viewer>
     </div>
-    <div class="article-date-published">
-      {{ article!.datePublished | date : 'MMMM d, y' }}
-    </div>
-    <div class="article-image">
-      <img
-        *ngIf="article!.mainImage"
-        [src]="article!.mainImage"
-        [alt]="article!.title"
-      />
+    <div class="article-footer">
+      <div class="article-author">
+        <b>{{ articleContentLabels.author }}</b
+        >{{ article!.author }}
+      </div>
+      <div class="article-link">
+        <div>{{ articleContentLabels.read_more }}</div>
+        <a [href]="article!.originalPostLink" target="_blank">
+          {{ articleContentLabels.link }}
+        </a>
+      </div>
     </div>
   </div>
-  <div class="article-content">
-    <comp-ricos-viewer [content]="article!.content"></comp-ricos-viewer>
-  </div>
-  <div class="article-footer">
-    <div class="article-author">
-      <b>{{ articleContentLabels.author }}</b
-      >{{ article!.author }}
+
+  <div class="other-articles">
+    <div class="other-articles-title">
+      {{ articleContentLabels.other_articles }}
     </div>
-    <div class="article-link">
-      <div>{{ articleContentLabels.read_more }}</div>
-      <a [href]="article!.originalPostLink" target="_blank">
-        {{ articleContentLabels.link }}
-      </a>
+    <div class="other-articles-list">
+      <comp-article-card
+        *ngFor="let article of otherArticles"
+        [article]="article"
+      ></comp-article-card>
     </div>
   </div>
 </div>

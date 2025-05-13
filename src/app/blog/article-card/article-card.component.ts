@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import ArticleCardClass from '../../models/articleCard';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'comp-article-card',
@@ -10,11 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ArticleCardComponent {
   @Input() article!: ArticleCardClass;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router) {}
 
   async goToArticle() {
-    await this.router.navigate([`article`, this.article.id], {
-      relativeTo: this.route,
+    await this.router.navigate(['blog', `article`, this.article.id], {
+      onSameUrlNavigation: 'reload',
+      replaceUrl: true,
+      skipLocationChange: false,
     });
   }
 }

@@ -1,10 +1,11 @@
 <div class="hero-container">
   <div class="background">
     <!-- TODO: add autoplay interval time after implementing the rest of the home components -->
-    <!-- [autoplayInterval]="6000" -->
     <p-carousel
+      *ngIf="images"
+      [autoplayInterval]="6000"
       class="hero-carousel"
-      [value]="images"
+      [value]="images.images"
       [numVisible]="1"
       [numScroll]="1"
       [circular]="true"
@@ -14,7 +15,11 @@
     >
       <ng-template let-image pTemplate="item">
         <div class="carousel-image-container">
-          <img [src]="image.src" [alt]="image.alt" class="carousel-image" />
+          <img
+            [src]="image.media.url"
+            [alt]="image.alt"
+            class="carousel-image"
+          />
         </div>
       </ng-template>
     </p-carousel>

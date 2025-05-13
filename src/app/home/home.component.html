@@ -1,6 +1,7 @@
 <div class="home-container">
   <comp-hero
-    [images]="heroContent.images"
+    *ngIf="heroContent"
+    [images]="heroImages"
     [title]="heroContent.title"
     [description]="heroContent.description"
   ></comp-hero>
