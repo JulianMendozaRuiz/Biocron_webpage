@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { WixService } from '../../_app-services/wix.service';
 import ArticleClass from '../../models/article';
+import { BlogService } from '../../_app-services/blog/blog.service';
 
 @Component({
   selector: 'comp-articles',
@@ -17,13 +17,14 @@ export class ArticlesComponent implements OnInit {
   articlesPerPage = 3;
   currentPage = 1;
 
-  constructor(private wixService: WixService) {}
+  constructor(private blogService: BlogService) {}
 
   async ngOnInit() {
     try {
-      this.featuredArticle = await this.wixService.getFeaturedArticleForBoard();
+      this.featuredArticle =
+        await this.blogService.getFeaturedArticleForBoard();
 
-      this.articles = await this.wixService.getNonFeaturedArticlesForBoard(
+      this.articles = await this.blogService.getNonFeaturedArticlesForBoard(
         this.articlesPerPage,
         this.currentPage
       );
@@ -39,7 +40,7 @@ export class ArticlesComponent implements OnInit {
     this.currentPage++;
     this.loading = true;
     try {
-      const newArticles = await this.wixService.getNonFeaturedArticlesForBoard(
+      const newArticles = await this.blogService.getNonFeaturedArticlesForBoard(
         this.articlesPerPage,
         this.currentPage
       );

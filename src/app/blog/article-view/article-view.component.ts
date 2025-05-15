@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { WixService } from '../../_app-services/wix.service';
 import ArticleClass from '../../models/article';
 import { ActivatedRoute } from '@angular/router';
 import content from '../../../assets/content/blog_content.json';
 import ArticleCardClass from '../../models/articleCard';
+import { BlogService } from '../../_app-services/blog/blog.service';
 
 @Component({
   selector: 'comp-article-view',
@@ -18,7 +18,7 @@ export class ArticleViewComponent implements OnInit {
   articleContentLabels: any;
 
   constructor(
-    private wixService: WixService,
+    private blogService: BlogService,
     private readonly route: ActivatedRoute,
     protected readonly elementRef: ElementRef
   ) {
@@ -36,8 +36,8 @@ export class ArticleViewComponent implements OnInit {
   }
 
   async loadArticle(id: string) {
-    this.article = await this.wixService.getArticle(id);
-    this.otherArticles = await this.wixService.getOtherArticles(
+    this.article = await this.blogService.getArticle(id);
+    this.otherArticles = await this.blogService.getOtherArticles(
       this.articleId!,
       this.otherArticlesQuantity
     );
