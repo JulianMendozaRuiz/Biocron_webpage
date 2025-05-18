@@ -4,6 +4,8 @@ import servicesContent from '../../assets/content/services_content.json';
 import GalleryClass from '../models/content/gallery';
 import WixImageClass from '../models/content/wix-image';
 import { HomeService } from '../_app-services/home/home.service';
+import HomeAboutUsClass from '../models/content/home/home_about_us';
+import HomeHeroClass from '../models/content/home/home_hero';
 
 @Component({
   selector: 'comp-home',
@@ -11,16 +13,17 @@ import { HomeService } from '../_app-services/home/home.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  heroContent: any;
+  heroContent: HomeHeroClass | null = null;
   heroImages!: GalleryClass;
-  aboutUsContent: any;
+  aboutUsContent: HomeAboutUsClass | null = null;
   aboutUsBackgroundImage: WixImageClass | null = null;
+  aboutUsBackgroundParticles: WixImageClass | null = null;
   servicesContent: any;
   clientsContent: any;
   contactUsContent: any;
 
   constructor(private homeService: HomeService) {
-    this.aboutUsContent = homeContent.about_us;
+    // this.aboutUsContent = homeContent.about_us;
     this.servicesContent = servicesContent.services;
     this.clientsContent = homeContent.clients;
     this.contactUsContent = homeContent.contact_us;
@@ -28,7 +31,8 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      this.loadHeroFiles();
+      await this.loadHeroFiles();
+      await this.loadAboutUsFiles();
     } catch (error) {
       console.error('Error fetching home content:', error);
     }
@@ -36,11 +40,14 @@ export class HomeComponent implements OnInit {
 
   async loadHeroFiles() {
     this.heroContent = await this.homeService.getHomeHeroContent();
-    const heroImagesObj = await this.homeService.getHomeHeroMediaGallery();
-    this.heroImages = heroImagesObj;
+    this.heroImages = await this.homeService.getHomeHeroMediaGallery();
   }
 
   async loadAboutUsFiles() {
     this.aboutUsContent = await this.homeService.getHomeAboutUsContent();
+    const aboutUsImages = await this.homeService.getHomeAboutUsImages();
+
+    this.aboutUsBackgroundParticles = aboutUsImages.images[0];
+    this.aboutUsBackgroundImage = aboutUsImages.images[1];
   }
 }

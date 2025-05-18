@@ -1,10 +1,12 @@
 <div class="home-about-us-container">
   <div
+    *ngIf="backgroundImage"
     class="background-image"
     [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
   ></div>
   <div class="gradient"></div>
   <div
+    *ngIf="backgroundParticles"
     class="particles"
     [ngStyle]="{ 'background-image': 'url(' + backgroundParticles + ')' }"
   ></div>

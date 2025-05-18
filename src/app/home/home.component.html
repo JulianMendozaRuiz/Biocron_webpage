@@ -6,8 +6,11 @@
     [description]="heroContent.description"
   ></comp-hero>
   <comp-home-about-us
-    [backgroundImage]="aboutUsContent.background_image"
-    [backgroundParticles]="aboutUsContent.background_particles"
+    *ngIf="
+      aboutUsContent && aboutUsBackgroundImage && aboutUsBackgroundParticles
+    "
+    [backgroundImage]="aboutUsBackgroundImage.media.url"
+    [backgroundParticles]="aboutUsBackgroundParticles.media.url"
     [tag]="aboutUsContent.tag"
     [description]="aboutUsContent.description"
   ></comp-home-about-us>
