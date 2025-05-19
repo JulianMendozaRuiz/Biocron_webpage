@@ -21,7 +21,7 @@ export class KeyServiceCardComponent implements OnInit {
       this.title = this.service.title;
       this.description = this.service.description;
       this.deep_description = this.service.deep_description;
-      this.image = this.service.image;
+      this.image = this.service.image.url;
     }
   }
 }

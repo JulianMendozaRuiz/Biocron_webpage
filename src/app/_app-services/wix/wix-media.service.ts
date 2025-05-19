@@ -10,7 +10,6 @@ export class WixMediaService {
 
   createMediaGallery(pGallery: any[]): WixImageClass[] {
     try {
-      console.log('Creating media gallery with images:', pGallery);
       const gallery: WixImageClass[] = pGallery.map((image) => {
         const mediaObj = media.getImageUrl(image.src);
 

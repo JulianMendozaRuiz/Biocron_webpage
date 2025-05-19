@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { WixService } from '../wix.service';
-import { WixMediaService } from '../wix-media.service';
 import HomeHeroClass from '../../models/content/home/home_hero';
 import ModulesEnum from '../../models/content/modules_enum';
 import GalleryClass from '../../models/content/gallery';
 import typeEnum from '../../models/content/home/type_enum';
 import HomeAboutUsClass from '../../models/content/home/home_about_us';
+import HomeHeadingClass from '../../models/content/home/home_heading';
+import { WixService } from '../wix/wix.service';
+import { WixMediaService } from '../wix/wix-media.service';
 
 @Injectable({
   providedIn: 'root',
@@ -133,6 +134,32 @@ export class HomeService {
         'Error fetching home about us images media gallery:',
         error
       );
+      throw error;
+    }
+  }
+
+  async getHomeServicesHead(): Promise<HomeHeadingClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.HOME)
+        .eq('sub_module', 'services')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { view_name, view_title } = response.items[0]['content'][0];
+
+      return new HomeHeadingClass(view_name, view_title);
+    } catch (error) {
+      console.error('Error fetching home services head:', error);
       throw error;
     }
   }

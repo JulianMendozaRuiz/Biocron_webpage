@@ -14,7 +14,12 @@
     [tag]="aboutUsContent.tag"
     [description]="aboutUsContent.description"
   ></comp-home-about-us>
-  <comp-home-key-services [keyServicesContent]="servicesContent">
+  <comp-home-key-services
+    *ngIf="servicesHead && servicesContent"
+    [viewName]="servicesHead.name"
+    [viewTitle]="servicesHead.title"
+    [keyServicesContent]="servicesContent"
+  >
   </comp-home-key-services>
   <comp-clients
     [sideImage]="clientsContent.side_image"

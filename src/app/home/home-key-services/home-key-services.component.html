@@ -1,7 +1,7 @@
 <div class="home-key-services-container">
   <comp-view-heading
-    [viewName]="'Servicios'"
-    [viewTitle]="'Conoce nuestros servicios'"
+    [viewName]="viewName"
+    [viewTitle]="viewTitle"
     [compact]="true"
   ></comp-view-heading>
   <div class="key-services-cards" *ngIf="servicesService.services">
@@ -10,7 +10,7 @@
       [name]="'Servicios'"
       [title]="service.title"
       [description]="service.description"
-      [background_image]="service.image"
+      [background_image]="service.image.url"
     ></comp-simplified-key-service-card>
   </div>
 </div>

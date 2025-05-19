@@ -13,6 +13,10 @@
     "title": "Expertos en geociencias",
     "description": "Somos Biocron,  su socio estratégico en sus proyectos en recursos naturales, con enfoque en la sostenibildiad y la innovación a través de las geociencias."
   },
+  "services": {
+    "view_name": "Servicios",
+    "view_title": "Conoce nuestros servicios"
+  },
   "clients": {
     "side_image": "/assets/svg/home/biocron_clients.svg",
     "tag": "Industrias",

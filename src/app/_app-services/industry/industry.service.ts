@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import IndustryClass from '../models/industry';
+import IndustryClass from '../../models/industry';
 import { Subject } from 'rxjs';
 
 @Injectable({

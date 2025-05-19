@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IndustryService } from '../../../_app-services/industry.service';
+import { IndustryService } from '../../../_app-services/industry/industry.service';
 import IndustryClass from '../../../models/industry';
 
 @Component({

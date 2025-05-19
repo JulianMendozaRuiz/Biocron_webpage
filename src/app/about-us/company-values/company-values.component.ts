@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AboutUsService } from '../../_app-services/about-us.service';
 import ValueClass from '../../models/value';
+import { AboutUsService } from '../../_app-services/about-us/about-us.service';
 
 @Component({
   selector: 'comp-company-values',

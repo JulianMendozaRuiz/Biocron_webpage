@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import homeContent from '../../assets/content/home_content.json';
-import servicesContent from '../../assets/content/services_content.json';
 import GalleryClass from '../models/content/gallery';
 import WixImageClass from '../models/content/wix-image';
 import { HomeService } from '../_app-services/home/home.service';
 import HomeAboutUsClass from '../models/content/home/home_about_us';
 import HomeHeroClass from '../models/content/home/home_hero';
+import { ServiceService } from '../_app-services/service/service.service';
+import ServiceClass from '../models/service';
+import HomeHeadingClass from '../models/content/home/home_heading';
 
 @Component({
   selector: 'comp-home',
@@ -18,13 +20,15 @@ export class HomeComponent implements OnInit {
   aboutUsContent: HomeAboutUsClass | null = null;
   aboutUsBackgroundImage: WixImageClass | null = null;
   aboutUsBackgroundParticles: WixImageClass | null = null;
-  servicesContent: any;
+  servicesHead: HomeHeadingClass | null = null;
+  servicesContent: ServiceClass[] | null = null;
   clientsContent: any;
   contactUsContent: any;
 
-  constructor(private homeService: HomeService) {
-    // this.aboutUsContent = homeContent.about_us;
-    this.servicesContent = servicesContent.services;
+  constructor(
+    private homeService: HomeService,
+    private serviceService: ServiceService
+  ) {
     this.clientsContent = homeContent.clients;
     this.contactUsContent = homeContent.contact_us;
   }
@@ -33,6 +37,7 @@ export class HomeComponent implements OnInit {
     try {
       await this.loadHeroFiles();
       await this.loadAboutUsFiles();
+      await this.loadServicesFiles();
     } catch (error) {
       console.error('Error fetching home content:', error);
     }
@@ -49,5 +54,10 @@ export class HomeComponent implements OnInit {
 
     this.aboutUsBackgroundParticles = aboutUsImages.images[0];
     this.aboutUsBackgroundImage = aboutUsImages.images[1];
+  }
+
+  async loadServicesFiles() {
+    this.servicesHead = await this.homeService.getHomeServicesHead();
+    this.servicesContent = await this.serviceService.getServices();
   }
 }

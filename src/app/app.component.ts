@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
-import { WixService } from './_app-services/wix.service';
+import { WixService } from './_app-services/wix/wix.service';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,6 @@
 <div>
   <comp-view-heading
+    *ngIf="headingContent"
     [viewName]="headingContent.name"
     [viewTitle]="headingContent.title"
     [viewDescription]="headingContent.description"
