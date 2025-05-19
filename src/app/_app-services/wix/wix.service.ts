@@ -7,7 +7,7 @@ import {
   WixClient,
 } from '@wix/sdk';
 import { files } from '@wix/media';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

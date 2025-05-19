@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { media } from '@wix/sdk';
-import WixImageClass from '../models/content/wix-image';
+import WixImageClass from '../../models/content/wix-image';
 
 @Injectable({
   providedIn: 'root',
