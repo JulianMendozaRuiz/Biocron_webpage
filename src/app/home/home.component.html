@@ -1,6 +1,6 @@
 <div class="home-container">
   <comp-hero
-    *ngIf="heroContent"
+    *ngIf="heroContent && heroImages"
     [images]="heroImages"
     [title]="heroContent.title"
     [description]="heroContent.description"
@@ -22,12 +22,13 @@
   >
   </comp-home-key-services>
   <comp-clients
-    [sideImage]="clientsContent.side_image"
+    *ngIf="clientsContent && clientsSideImage && clientsLogos"
+    [sideImage]="clientsSideImage"
     [tag]="clientsContent.tag"
     [title]="clientsContent.title"
     [description]="clientsContent.description"
     [buttonText]="clientsContent.button_text"
-    [clientLogos]="clientsContent.client_logos"
+    [clientLogos]="clientsLogos"
   ></comp-clients>
 
   <comp-home-contact-us

@@ -6,7 +6,7 @@ export default class WixImageClass {
     width: number;
     height: number;
     focalPoint: number[];
-  };
+  } | null;
   slug: string;
   src: string;
   media: {
@@ -28,7 +28,7 @@ export default class WixImageClass {
       width: number;
       height: number;
       focalPoint: number[];
-    },
+    } | null,
     slug: string,
     src: string,
     media: {

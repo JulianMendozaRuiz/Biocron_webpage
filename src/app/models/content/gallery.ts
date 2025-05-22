@@ -8,4 +8,11 @@ export default class GalleryClass {
     this.id = id;
     this.images = images;
   }
+
+  get Images(): any[] {
+    return this.images.map((image) => ({
+      src: image.media.url,
+      alt: image.alt,
+    }));
+  }
 }

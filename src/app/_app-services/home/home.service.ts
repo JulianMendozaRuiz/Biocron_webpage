@@ -7,6 +7,8 @@ import HomeAboutUsClass from '../../models/content/home/home_about_us';
 import HomeHeadingClass from '../../models/content/home/home_heading';
 import { WixService } from '../wix/wix.service';
 import { WixMediaService } from '../wix/wix-media.service';
+import HomeClientsClass from '../../models/content/home/home_clients';
+import WixImageClass from '../../models/content/wix-image';
 
 @Injectable({
   providedIn: 'root',
@@ -127,8 +129,10 @@ export class HomeService {
 
       const { _id: id, media_gallery: images } = response.items[0];
 
-      const gallery = this.wixMediaService.createMediaGallery(images);
-      return new GalleryClass(id, gallery);
+      return new GalleryClass(
+        id,
+        this.wixMediaService.createMediaGallery(images)
+      );
     } catch (error) {
       console.error(
         'Error fetching home about us images media gallery:',
@@ -160,6 +164,92 @@ export class HomeService {
       return new HomeHeadingClass(view_name, view_title);
     } catch (error) {
       console.error('Error fetching home services head:', error);
+      throw error;
+    }
+  }
+
+  async getHomeClientsContent(): Promise<HomeClientsClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.HOME)
+        .eq('sub_module', 'clients')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { tag, title, description, button_text } =
+        response.items[0]['content'][0];
+
+      return new HomeClientsClass(tag, title, description, button_text);
+    } catch (error) {
+      console.error('Error fetching home clients content:', error);
+      throw error;
+    }
+  }
+
+  async getHomeClientsLogos(): Promise<GalleryClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.HOME)
+        .eq('sub_module', 'clients')
+        .eq('section', 'client_logos')
+        .eq('type', typeEnum.MEDIA_GALLERY)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+      console.log('response.items', response);
+
+      const { _id: id, media_gallery: images } = response.items[0];
+
+      return new GalleryClass(
+        id,
+        this.wixMediaService.createMediaGallery(images)
+      );
+    } catch (error) {
+      console.error('Error fetching home clients logos:', error);
+      throw error;
+    }
+  }
+
+  async getHomeClientsSideImage(): Promise<WixImageClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.HOME)
+        .eq('sub_module', 'clients')
+        .eq('section', 'side_image')
+        .eq('type', typeEnum.IMAGE)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { single_image } = response.items[0];
+
+      return this.wixMediaService.createImageFromUrl(single_image);
+    } catch (error) {
+      console.error('Error fetching home clients side image:', error);
       throw error;
     }
   }

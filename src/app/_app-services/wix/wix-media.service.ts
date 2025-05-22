@@ -11,21 +11,41 @@ export class WixMediaService {
   createMediaGallery(pGallery: any[]): WixImageClass[] {
     try {
       const gallery: WixImageClass[] = pGallery.map((image) => {
-        const mediaObj = media.getImageUrl(image.src);
-
-        return new WixImageClass(
-          image.alt,
-          image.description,
-          image.fileName,
-          image.settings,
-          image.slug,
-          image.src,
-          mediaObj,
-          image.title,
-          image.type
-        );
+        return this.createImage(image);
       });
       return gallery;
+    } catch (error) {
+      console.error('Error fetching image:', error);
+      throw error;
+    }
+  }
+
+  createImageFromUrl(pImage: string): WixImageClass {
+    try {
+      const mediaObj = media.getImageUrl(pImage);
+
+      return new WixImageClass('', '', '', null, '', '', mediaObj, '', '');
+    } catch (error) {
+      console.error('Error fetching image:', error);
+      throw error;
+    }
+  }
+
+  createImage(pImage: any): WixImageClass {
+    try {
+      const mediaObj = media.getImageUrl(pImage.src);
+
+      return new WixImageClass(
+        pImage.alt,
+        pImage.description,
+        pImage.fileName,
+        pImage.settings,
+        pImage.slug,
+        pImage.src,
+        mediaObj,
+        pImage.title,
+        pImage.type
+      );
     } catch (error) {
       console.error('Error fetching image:', error);
       throw error;

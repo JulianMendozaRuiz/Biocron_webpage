@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import WixImageClass from '../../models/content/wix-image';
+import GalleryClass from '../../models/content/gallery';
 
 @Component({
   selector: 'comp-clients',
@@ -6,10 +8,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './clients.component.scss',
 })
 export class ClientsComponent {
-  @Input() sideImage: string = '';
+  @Input() sideImage: WixImageClass | null = null;
   @Input() tag: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() buttonText: string = '';
-  @Input() clientLogos: Array<any> = [];
+  @Input() clientLogos: GalleryClass | null = null;
 }
