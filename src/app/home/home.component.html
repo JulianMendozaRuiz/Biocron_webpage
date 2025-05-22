@@ -32,6 +32,7 @@
   ></comp-clients>
 
   <comp-home-contact-us
+    *ngIf="contactUsContent"
     [tag]="contactUsContent.tag"
     [title]="contactUsContent.title"
     [formContent]="contactUsContent.form_content"

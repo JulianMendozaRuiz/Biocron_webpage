@@ -9,6 +9,7 @@ import { WixService } from '../wix/wix.service';
 import { WixMediaService } from '../wix/wix-media.service';
 import HomeClientsClass from '../../models/content/home/home_clients';
 import WixImageClass from '../../models/content/wix-image';
+import HomeContactUsClass from '../../models/content/home/home_contact_us';
 
 @Injectable({
   providedIn: 'root',
@@ -213,8 +214,6 @@ export class HomeService {
       if (response.items.length === 0) {
         throw new Error('No content found');
       }
-      console.log('response.items', response);
-
       const { _id: id, media_gallery: images } = response.items[0];
 
       return new GalleryClass(
@@ -250,6 +249,38 @@ export class HomeService {
       return this.wixMediaService.createImageFromUrl(single_image);
     } catch (error) {
       console.error('Error fetching home clients side image:', error);
+      throw error;
+    }
+  }
+
+  async getHomeContactUsContent(): Promise<any> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.HOME)
+        .eq('sub_module', 'contact_us')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { tag, title, form_content } = response.items[0]['content'][0];
+
+      return new HomeContactUsClass(
+        response.items[0]._id,
+        tag,
+        title,
+        form_content
+      );
+    } catch (error) {
+      console.error('Error fetching contact us content:', error);
       throw error;
     }
   }

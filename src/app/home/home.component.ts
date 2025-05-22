@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import homeContent from '../../assets/content/home_content.json';
 import GalleryClass from '../models/content/gallery';
 import WixImageClass from '../models/content/wix-image';
 import { HomeService } from '../_app-services/home/home.service';
@@ -9,6 +8,7 @@ import { ServiceService } from '../_app-services/service/service.service';
 import ServiceClass from '../models/service';
 import HomeHeadingClass from '../models/content/home/home_heading';
 import HomeClientsClass from '../models/content/home/home_clients';
+import HomeContactUsClass from '../models/content/home/home_contact_us';
 
 @Component({
   selector: 'comp-home',
@@ -26,15 +26,12 @@ export class HomeComponent implements OnInit {
   clientsSideImage: WixImageClass | null = null;
   clientsContent: HomeClientsClass | null = null;
   clientsLogos: GalleryClass | null = null;
-  contactUsContent: any;
+  contactUsContent: HomeContactUsClass | null = null;
 
   constructor(
     private homeService: HomeService,
     private serviceService: ServiceService
-  ) {
-    this.clientsContent = homeContent.clients;
-    this.contactUsContent = homeContent.contact_us;
-  }
+  ) {}
 
   async ngOnInit(): Promise<void> {
     try {
@@ -42,6 +39,7 @@ export class HomeComponent implements OnInit {
       await this.loadAboutUsFiles();
       await this.loadServicesFiles();
       await this.loadClientsFiles();
+      await this.loadContactUsFiles();
     } catch (error) {
       console.error('Error fetching home content:', error);
     }
@@ -82,6 +80,14 @@ export class HomeComponent implements OnInit {
       this.clientsContent = await this.homeService.getHomeClientsContent();
       this.clientsLogos = await this.homeService.getHomeClientsLogos();
       this.clientsSideImage = await this.homeService.getHomeClientsSideImage();
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async loadContactUsFiles() {
+    try {
+      this.contactUsContent = await this.homeService.getHomeContactUsContent();
     } catch (error) {
       throw error;
     }
