@@ -42,11 +42,14 @@
         <textarea
           id="message"
           rows="6"
+          formControlName="message"
           [placeholder]="formContent.message.placeholder"
           pTextArea
+          required
         ></textarea>
       </div>
       <p-button
+        [disabled]="!contactForm.valid"
         class="button-input"
         [label]="formContent.button_text"
         (click)="onSubmit()"

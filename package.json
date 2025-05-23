@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@emailjs/browser": "^4.4.1",
     "@wix/data": "^1.0.222",
     "@wix/media": "^1.0.162",
     "@wix/ricos": "^10.128.0",

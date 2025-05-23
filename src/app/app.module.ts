@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 
 import localeEs from '@angular/common/locales/es';
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -23,7 +23,7 @@ registerLocaleData(localeEs, 'es');
     BrowserAnimationsModule,
     SharedModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }, DatePipe],
   bootstrap: [AppComponent],
   exports: [SharedModule],
 })
