@@ -35,11 +35,13 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     try {
-      await this.loadHeroFiles();
-      await this.loadAboutUsFiles();
-      await this.loadServicesFiles();
-      await this.loadClientsFiles();
-      await this.loadContactUsFiles();
+      await Promise.all([
+        this.loadHeroFiles(),
+        this.loadAboutUsFiles(),
+        this.loadServicesFiles(),
+        this.loadClientsFiles(),
+        this.loadContactUsFiles(),
+      ]);
     } catch (error) {
       console.error('Error fetching home content:', error);
     }

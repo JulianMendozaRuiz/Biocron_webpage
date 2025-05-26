@@ -1,8 +1,10 @@
 <div>
   <comp-especial-heading
+    *ngIf="headingContent && headingBackgroundImage"
     [viewName]="headingContent.name"
     [viewTitle]="headingContent.title"
     [viewDescription]="headingContent.description"
+    [backgroundImage]="headingBackgroundImage"
   ></comp-especial-heading>
 
   <comp-mision-vision
