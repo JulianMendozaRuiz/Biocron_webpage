@@ -8,12 +8,21 @@
   ></comp-especial-heading>
 
   <comp-mision-vision
-    [mision]="aboutUsContent.mision"
-    [vision]="aboutUsContent.vision"
+    *ngIf="
+      missionContent &&
+      visionContent &&
+      missionBackgroundImage &&
+      visionBackgroundImage
+    "
+    [mision]="missionContent"
+    [missionBackgroundImage]="missionBackgroundImage"
+    [vision]="visionContent"
+    [visionBackgroundImage]="visionBackgroundImage"
   ></comp-mision-vision>
   <comp-company-values
-    [valuesContent]="aboutUsContent.company_values.values"
-    [image]="aboutUsContent.company_values.content_image"
+    *ngIf="companyValuesContent && companyValuesSideImage"
+    [content]="companyValuesContent"
+    [image]="companyValuesSideImage"
   ></comp-company-values>
   <comp-team [teamContent]="aboutUsContent.team"> </comp-team>
 
