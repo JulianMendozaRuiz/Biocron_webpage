@@ -6,6 +6,8 @@ import AboutUsHeadingClass from '../models/about_us/about_us_heading';
 import { AboutUsService } from '../_app-services/about-us/about-us.service';
 import AboutUsCoreClass from '../models/about_us/about_us_core';
 import AboutUsCompanyValuesClass from '../models/about_us/about_us_company_values';
+import AboutUsTeamClass from '../models/about_us/about_us_team';
+import AboutUsWhyUsClass from '../models/about_us/about_us_why_us';
 
 @Component({
   selector: 'comp-about-us',
@@ -21,6 +23,9 @@ export class AboutUsComponent implements OnInit {
   visionBackgroundImage: WixImageClass | null = null;
   companyValuesContent: AboutUsCompanyValuesClass | null = null;
   companyValuesSideImage: WixImageClass | null = null;
+  teamContent: AboutUsTeamClass | null = null;
+  teamBackgroundImage: WixImageClass | null = null;
+  whyUsContent: AboutUsWhyUsClass | null = null;
 
   aboutUsContent: any;
 
@@ -34,6 +39,8 @@ export class AboutUsComponent implements OnInit {
         this.loadHeadingContent(),
         this.loadCoreContent(),
         this.loadCompanyValuesContent(),
+        this.loadTeamContent(),
+        this.loadWhyUsContent(),
       ]);
     } catch (error) {
       console.error('Error fetching about us content:', error);
@@ -76,6 +83,25 @@ export class AboutUsComponent implements OnInit {
           this.aboutUsService.getAboutUsCompanyValuesContent(),
           this.aboutUsService.getAboutUsCompanyValuesSideImage(),
         ]);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async loadTeamContent() {
+    try {
+      [this.teamContent, this.teamBackgroundImage] = await Promise.all([
+        this.aboutUsService.getAboutUsTeamContent(),
+        this.aboutUsService.getAboutUsTeamBackgroundImage(),
+      ]);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async loadWhyUsContent() {
+    try {
+      this.whyUsContent = await this.aboutUsService.getAboutUsWhyUsContent();
     } catch (error) {
       throw error;
     }

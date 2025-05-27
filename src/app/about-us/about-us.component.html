@@ -21,10 +21,15 @@
   ></comp-mision-vision>
   <comp-company-values
     *ngIf="companyValuesContent && companyValuesSideImage"
-    [content]="companyValuesContent"
+    [valuesContent]="companyValuesContent"
     [image]="companyValuesSideImage"
   ></comp-company-values>
-  <comp-team [teamContent]="aboutUsContent.team"> </comp-team>
+  <comp-team
+    *ngIf="teamContent && teamBackgroundImage"
+    [teamContent]="teamContent"
+    [backgroundImage]="teamBackgroundImage"
+  >
+  </comp-team>
 
-  <comp-why-us [whyUsContent]="aboutUsContent.why_us"></comp-why-us>
+  <comp-why-us *ngIf="whyUsContent" [whyUsContent]="whyUsContent"></comp-why-us>
 </div>

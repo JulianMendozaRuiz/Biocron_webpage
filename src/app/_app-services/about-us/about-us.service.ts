@@ -9,6 +9,7 @@ import { WixMediaService } from '../wix/wix-media.service';
 import WixImageClass from '../../models/content/wix-image';
 import AboutUsCoreClass from '../../models/about_us/about_us_core';
 import AboutUsCompanyValuesClass from '../../models/about_us/about_us_company_values';
+import AboutUsTeamClass from '../../models/about_us/about_us_team';
 
 @Injectable({
   providedIn: 'root',
@@ -281,6 +282,85 @@ export class AboutUsService {
       return this.wixMediaservice.createImageFromUrl(single_image);
     } catch (error) {
       console.error('Error fetching about us content:', error);
+      throw error;
+    }
+  }
+
+  async getAboutUsTeamContent(): Promise<AboutUsTeamClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('about_us_static_content')
+        .eq('module', ModulesEnum.ABOUT_US)
+        .eq('sub_module', 'team')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { title, description } = response.items[0]['content'][0];
+
+      return new AboutUsTeamClass(response.items[0]._id, title, description);
+    } catch (error) {
+      console.error('Error fetching about us content:', error);
+      throw error;
+    }
+  }
+
+  async getAboutUsTeamBackgroundImage(): Promise<WixImageClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('about_us_static_content')
+        .eq('module', ModulesEnum.ABOUT_US)
+        .eq('sub_module', 'team')
+        .eq('section', 'background')
+        .eq('type', typeEnum.IMAGE)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      const { single_image } = response.items[0];
+
+      return this.wixMediaservice.createImageFromUrl(single_image);
+    } catch (error) {
+      console.error('Error fetching about us content:', error);
+      throw error;
+    }
+  }
+
+  async getAboutUsWhyUsContent(): Promise<any> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('about_us_static_content')
+        .eq('module', ModulesEnum.ABOUT_US)
+        .eq('sub_module', 'why_us')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No content found');
+      }
+
+      return response.items[0]['content'][0];
+    } catch (error) {
+      console.error('Error fetching about us why us content:', error);
       throw error;
     }
   }
