@@ -10,7 +10,7 @@ import ServiceHeadingClass from '../models/content/_service/service_heading';
 export class ServicesComponent implements OnInit {
   headingContent: ServiceHeadingClass | null = null;
 
-  constructor(private servicesServices: ServiceService) {}
+  constructor(protected servicesServices: ServiceService) {}
 
   async ngOnInit(): Promise<void> {
     try {

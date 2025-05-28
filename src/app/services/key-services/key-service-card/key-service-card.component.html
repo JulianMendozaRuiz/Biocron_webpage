@@ -22,9 +22,7 @@
     <div class="card-title">{{ title }}</div>
     <div class="card-description">{{ description }}</div>
     <div class="card-deep-description">
-      <div class=".">
-        {{ deep_description }}
-      </div>
+      <div class="." [innerHTML]="deep_description"></div>
     </div>
   </div>
 </div>

@@ -23,11 +23,12 @@ export class ServiceService {
         .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.SERVICES)
         .eq('sub_module', 'heading')
+        .eq('section', 'heading')
         .eq('type', 'json')
         .find();
 
       if (response.items.length === 0) {
-        throw new Error('No services found');
+        throw new Error('No service heading found');
       }
 
       console.log('Service content response:', response);
