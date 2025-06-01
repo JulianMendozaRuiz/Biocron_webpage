@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import ArticleClass from '../../models/article';
 import { ActivatedRoute } from '@angular/router';
 import content from '../../../assets/content/blog_content.json';
-import ArticleCardClass from '../../models/articleCard';
 import { BlogService } from '../../_app-services/blog/blog.service';
+import ArticleClass from '../../models/blog/article';
+import ArticleCardClass from '../../models/blog/articleCard';
 
 @Component({
   selector: 'comp-article-view',

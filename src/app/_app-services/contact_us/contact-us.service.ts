@@ -29,8 +29,6 @@ export class ContactUsService {
         throw new Error('No contact us content found');
       }
 
-      console.log('Contact Us content response:', response);
-
       const content = response.items[0]['content'][0];
       this.contactUsContent = new SharedContactUsClass(
         content.title,

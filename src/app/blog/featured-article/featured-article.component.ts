@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import ArticleCardClass from '../../models/articleCard';
 import { ActivatedRoute, Router } from '@angular/router';
+import ArticleCardClass from '../../models/blog/articleCard';
 
 @Component({
   selector: 'comp-featured-article',

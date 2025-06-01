@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import ArticleCardClass from '../../models/articleCard';
-import ArticleClass from '../../models/article';
 import { WixService } from '../wix/wix.service';
+import ArticleClass from '../../models/blog/article';
+import ArticleCardClass from '../../models/blog/articleCard';
 
 @Injectable({
   providedIn: 'root',

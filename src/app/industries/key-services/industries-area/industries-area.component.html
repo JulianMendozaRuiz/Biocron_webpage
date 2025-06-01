@@ -14,11 +14,10 @@
   <div class="industries-area-content">
     <div class="content-description">
       <div class="industry-photo">
-        <img
-          [src]="currentIndustry?.img_location"
-          style="height: 100%; width: 100%"
-          alt=""
-        />
+        <div class="mask">
+          <img src="/assets/test_content/test_image.jpg" alt="" />
+        </div>
+        <img class="frame" alt="" />
       </div>
       <div class="industry-description">
         {{ currentIndustry?.description }}

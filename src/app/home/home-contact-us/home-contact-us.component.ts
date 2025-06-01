@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import ContactFormClass from '../../models/contactForm';
+import ContactFormClass from '../../models/contact_us/contactForm';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import ContactUsSimplifiedClass from '../../models/contact_us/contact_us_simplified';
 import { EmailService } from '../../_app-services/email.service';

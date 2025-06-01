@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import ArticleClass from '../../models/article';
 import { BlogService } from '../../_app-services/blog/blog.service';
+import ArticleClass from '../../models/blog/article';
 
 @Component({
   selector: 'comp-articles',

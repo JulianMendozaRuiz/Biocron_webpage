@@ -1,8 +1,9 @@
 <div>
   <comp-view-heading
-    [viewName]="headingContent.name"
-    [viewTitle]="headingContent.title"
-    [viewDescription]="headingContent.description"
+    *ngIf="heading"
+    [viewName]="heading.name"
+    [viewTitle]="heading.title"
+    [viewDescription]="heading.description"
   ></comp-view-heading>
   <comp-industries-area
     [industriesContent]="industriesContent"
