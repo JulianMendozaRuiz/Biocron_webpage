@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// TODO: Remove content and centralize it in the service
-import content from '../../assets/content/about_us_content.json';
 import WixImageClass from '../models/content/wix-image';
 import AboutUsHeadingClass from '../models/about_us/about_us_heading';
 import { AboutUsService } from '../_app-services/about-us/about-us.service';
@@ -27,11 +25,7 @@ export class AboutUsComponent implements OnInit {
   teamBackgroundImage: WixImageClass | null = null;
   whyUsContent: AboutUsWhyUsClass | null = null;
 
-  aboutUsContent: any;
-
-  constructor(private aboutUsService: AboutUsService) {
-    this.aboutUsContent = content.about_us;
-  }
+  constructor(private aboutUsService: AboutUsService) {}
 
   async ngOnInit(): Promise<void> {
     try {

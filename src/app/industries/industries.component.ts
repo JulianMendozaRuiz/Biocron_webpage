@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import content from '../../assets/content/industries_content.json';
 import IndustriesHeadingClass from '../models/industries/industries_heading';
 import { IndustryService } from '../_app-services/industry/industry.service';
+import IndustriesTeamClass from '../models/industries/industries_team';
+import WixImageClass from '../models/content/wix-image';
 
 @Component({
   selector: 'comp-industries',
@@ -9,16 +10,20 @@ import { IndustryService } from '../_app-services/industry/industry.service';
   styleUrl: './industries.component.scss',
 })
 export class IndustriesComponent implements OnInit {
-  industriesContent: any;
   industriesHeading: IndustriesHeadingClass | null = null;
+  industriesTeamContent: IndustriesTeamClass | null = null;
+  industriesTeamBackground: WixImageClass | null = null;
 
-  constructor(protected readonly industryService: IndustryService) {
-    this.industriesContent = content;
-  }
+  constructor(protected readonly industryService: IndustryService) {}
 
   async ngOnInit(): Promise<void> {
     try {
-      await Promise.all([this.loadIndustriesHeading()]);
+      await Promise.all([
+        this.loadIndustriesHeading(),
+        this.loadIndustriesTeamContent(),
+        this.loadIndustriesTeamBackground(),
+        this.loadIndustriesContent(),
+      ]);
     } catch (error) {
       console.error('Error fetching industries heading:', error);
     }
@@ -26,5 +31,31 @@ export class IndustriesComponent implements OnInit {
 
   async loadIndustriesHeading() {
     this.industriesHeading = await this.industryService.getIndustriesHeading();
+  }
+
+  async loadIndustriesTeamContent() {
+    try {
+      this.industriesTeamContent =
+        await this.industryService.getIndustriesTeamContent();
+    } catch (error) {
+      console.error('Error fetching industries team content:', error);
+    }
+  }
+
+  async loadIndustriesTeamBackground() {
+    try {
+      this.industriesTeamBackground =
+        await this.industryService.getIndustriesTeamBackground();
+    } catch (error) {
+      console.error('Error fetching industries team background:', error);
+    }
+  }
+
+  async loadIndustriesContent() {
+    try {
+      await this.industryService.getIndustriesContent();
+    } catch (error) {
+      console.error('Error fetching industries content:', error);
+    }
   }
 }

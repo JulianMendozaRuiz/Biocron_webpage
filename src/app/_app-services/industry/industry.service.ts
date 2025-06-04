@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import IndustryClass from '../../models/industries/industry';
 import { Subject } from 'rxjs';
 import { WixService } from '../wix/wix.service';
-// TODO: Uncomment when WixMediaService after implementation requieres it
-// import { WixMediaService } from '../wix/wix-media.service';
+import { WixMediaService } from '../wix/wix-media.service';
 import IndustriesHeadingClass from '../../models/industries/industries_heading';
 import ModulesEnum from '../../models/content/modules_enum';
 import typeEnum from '../../models/content/home/type_enum';
+import IndustriesTeamClass from '../../models/industries/industries_team';
+import WixImageClass from '../../models/content/wix-image';
 
 @Injectable({
   providedIn: 'root',
 })
 export class IndustryService {
   constructor(
-    private wixService: WixService // private wixMediaService: WixMediaService
+    private wixService: WixService,
+    private wixMediaService: WixMediaService
   ) {}
 
   industries: IndustryClass[] | null = null;
@@ -32,7 +34,7 @@ export class IndustryService {
       this.industries = pIndustriesContent.map((industryData: any) => {
         return new IndustryClass(
           industryData.name,
-          industryData.img_location,
+          industryData.img,
           industryData.description,
           industryData.services,
           industryData.benefits
@@ -76,6 +78,92 @@ export class IndustryService {
       );
     } catch (error) {
       console.error('Error fetching industries headings:', error);
+      throw error;
+    }
+  }
+
+  async getIndustriesTeamContent(): Promise<IndustriesTeamClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.INDUSTRIES)
+        .eq('sub_module', 'team')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No industries team content found');
+      }
+
+      const { title, description } = response.items[0]['content'][0];
+      return new IndustriesTeamClass(response.items[0]._id, title, description);
+    } catch (error) {
+      console.error('Error fetching industries team content:', error);
+      throw error;
+    }
+  }
+
+  async getIndustriesTeamBackground(): Promise<WixImageClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.INDUSTRIES)
+        .eq('sub_module', 'team')
+        .eq('section', 'background')
+        .eq('type', typeEnum.IMAGE)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No industries team background found');
+      }
+
+      const { single_image } = response.items[0];
+
+      return this.wixMediaService.createImageFromUrl(single_image);
+    } catch (error) {
+      console.error('Error fetching industries team background:', error);
+      throw error;
+    }
+  }
+
+  async getIndustriesContent(): Promise<void> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Industries-content')
+        .ascending('order_number')
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('No industries content found');
+      }
+
+      const industries = response.items.map((item: any) => {
+        return new IndustryClass(
+          item.name,
+          this.wixMediaService.createImageFromUrl(item.image),
+          item.description,
+          item.services,
+          item.benefits
+        );
+      });
+
+      this.setCurrentIndustry(industries[0]); // Set the first industry as default
+      this.setIndustriesFromContent(industries);
+    } catch (error) {
+      console.error('Error fetching industries content:', error);
       throw error;
     }
   }

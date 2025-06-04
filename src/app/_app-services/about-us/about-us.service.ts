@@ -23,7 +23,7 @@ export class AboutUsService {
   values: ValueClass[] | null = null;
   currentValue: Subject<ValueClass | null> = new Subject<ValueClass | null>();
 
-  public setValuesFromContent(pValuesContent: any): void {
+  public setValuesFromContent(pValuesContent: ValueClass[]): void {
     if (
       pValuesContent === null ||
       typeof pValuesContent !== 'object' ||
@@ -221,7 +221,7 @@ export class AboutUsService {
     }
   }
 
-  async getAboutUsCompanyValuesContent(): Promise<any> {
+  async getAboutUsCompanyValuesContent(): Promise<AboutUsCompanyValuesClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();

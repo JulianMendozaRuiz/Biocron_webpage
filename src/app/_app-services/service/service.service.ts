@@ -31,8 +31,6 @@ export class ServiceService {
         throw new Error('No service heading found');
       }
 
-      console.log('Service content response:', response);
-
       const { name, title, description } = response.items[0]['content'][0];
 
       return new ServiceHeadingClass(
