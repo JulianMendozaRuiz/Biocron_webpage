@@ -3,11 +3,11 @@ import IndustryClass from '../../models/industries/industry';
 import { Subject } from 'rxjs';
 import { WixService } from '../wix/wix.service';
 import { WixMediaService } from '../wix/wix-media.service';
-import IndustriesHeadingClass from '../../models/industries/industries_heading';
 import ModulesEnum from '../../models/content/modules_enum';
 import typeEnum from '../../models/content/home/type_enum';
 import IndustriesTeamClass from '../../models/industries/industries_team';
 import WixImageClass from '../../models/content/wix-image';
+import HeadingClass from '../../models/shared/heading';
 
 @Injectable({
   providedIn: 'root',
@@ -51,7 +51,7 @@ export class IndustryService {
     this.currentIndustry.next(industry);
   }
 
-  async getIndustriesHeading(): Promise<IndustriesHeadingClass> {
+  async getIndustriesHeading(): Promise<HeadingClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();
@@ -70,12 +70,7 @@ export class IndustryService {
       }
 
       const { title, name, description } = response.items[0]['content'][0];
-      return new IndustriesHeadingClass(
-        response.items[0]._id,
-        name,
-        title,
-        description
-      );
+      return new HeadingClass(response.items[0]._id, name, title, description);
     } catch (error) {
       console.error('Error fetching industries headings:', error);
       throw error;

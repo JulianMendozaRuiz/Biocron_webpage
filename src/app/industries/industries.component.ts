@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import IndustriesHeadingClass from '../models/industries/industries_heading';
 import { IndustryService } from '../_app-services/industry/industry.service';
 import IndustriesTeamClass from '../models/industries/industries_team';
 import WixImageClass from '../models/content/wix-image';
+import HeadingClass from '../models/shared/heading';
 
 @Component({
   selector: 'comp-industries',
@@ -10,7 +10,7 @@ import WixImageClass from '../models/content/wix-image';
   styleUrl: './industries.component.scss',
 })
 export class IndustriesComponent implements OnInit {
-  industriesHeading: IndustriesHeadingClass | null = null;
+  industriesHeading: HeadingClass | null = null;
   industriesTeamContent: IndustriesTeamClass | null = null;
   industriesTeamBackground: WixImageClass | null = null;
 

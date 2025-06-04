@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import WixImageClass from '../models/content/wix-image';
-import AboutUsHeadingClass from '../models/about_us/about_us_heading';
 import { AboutUsService } from '../_app-services/about-us/about-us.service';
 import AboutUsCoreClass from '../models/about_us/about_us_core';
 import AboutUsCompanyValuesClass from '../models/about_us/about_us_company_values';
 import AboutUsTeamClass from '../models/about_us/about_us_team';
 import AboutUsWhyUsClass from '../models/about_us/about_us_why_us';
+import HeadingClass from '../models/shared/heading';
 
 @Component({
   selector: 'comp-about-us',
@@ -13,7 +13,7 @@ import AboutUsWhyUsClass from '../models/about_us/about_us_why_us';
   styleUrl: './about-us.component.scss',
 })
 export class AboutUsComponent implements OnInit {
-  headingContent: AboutUsHeadingClass | null = null;
+  headingContent: HeadingClass | null = null;
   headingBackgroundImage: WixImageClass | null = null;
   missionContent: AboutUsCoreClass | null = null;
   missionBackgroundImage: WixImageClass | null = null;

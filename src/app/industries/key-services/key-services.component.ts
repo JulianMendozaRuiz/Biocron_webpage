@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import IndustriesHeadingClass from '../../models/industries/industries_heading';
+import HeadingClass from '../../models/shared/heading';
 
 @Component({
   selector: 'comp-key-services',
@@ -7,5 +7,5 @@ import IndustriesHeadingClass from '../../models/industries/industries_heading';
   styleUrl: './key-services.component.scss',
 })
 export class KeyServicesComponent {
-  @Input() heading: IndustriesHeadingClass | null = null;
+  @Input() heading: HeadingClass | null = null;
 }

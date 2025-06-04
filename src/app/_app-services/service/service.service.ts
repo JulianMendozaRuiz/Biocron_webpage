@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import ServiceClass from '../../models/service';
 import { media } from '@wix/sdk';
 import ModulesEnum from '../../models/content/modules_enum';
-import ServiceHeadingClass from '../../models/content/_service/service_heading';
 import { WixService } from '../wix/wix.service';
+import HeadingClass from '../../models/shared/heading';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class ServiceService {
 
   services: ServiceClass[] | null = null;
 
-  async getServiceHeading(): Promise<ServiceHeadingClass> {
+  async getServiceHeading(): Promise<HeadingClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();
@@ -33,12 +33,7 @@ export class ServiceService {
 
       const { name, title, description } = response.items[0]['content'][0];
 
-      return new ServiceHeadingClass(
-        response.items[0]._id,
-        name,
-        title,
-        description
-      );
+      return new HeadingClass(response.items[0]._id, name, title, description);
     } catch (error) {
       console.error('Error fetching service content:', error);
       throw error;

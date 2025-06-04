@@ -1,6 +1,6 @@
-export default class IndustriesHeadingClass {
+export default class HeadingClass {
   constructor(
-    public id: string,
+    public _id: string,
     public name: string,
     public title: string,
     public description: string

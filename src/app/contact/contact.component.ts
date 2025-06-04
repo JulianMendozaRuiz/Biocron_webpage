@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import content from '../../assets/content/contact_content.json';
+import HeadingClass from '../models/shared/heading';
 
 @Component({
   selector: 'comp-contact',
@@ -7,11 +8,11 @@ import content from '../../assets/content/contact_content.json';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  headingContent: any;
+  headingContent: HeadingClass | null = null;
   formContent: any;
 
   constructor() {
-    this.headingContent = content.heading;
+    // this.headingContent = content.heading;
     this.formContent = content.form;
   }
 }

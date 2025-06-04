@@ -1,6 +1,7 @@
 <div class="contact-container">
   <div class="contact-form">
     <comp-view-heading
+      *ngIf="headingContent"
       [viewName]="headingContent.name"
       [viewTitle]="headingContent.title"
       [viewDescription]="headingContent.description"

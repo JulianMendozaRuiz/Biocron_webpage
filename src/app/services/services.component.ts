@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../_app-services/service/service.service';
-import ServiceHeadingClass from '../models/content/_service/service_heading';
+import HeadingClass from '../models/shared/heading';
 
 @Component({
   selector: 'comp-services',
@@ -8,7 +8,7 @@ import ServiceHeadingClass from '../models/content/_service/service_heading';
   styleUrl: './services.component.scss',
 })
 export class ServicesComponent implements OnInit {
-  headingContent: ServiceHeadingClass | null = null;
+  headingContent: HeadingClass | null = null;
 
   constructor(protected servicesServices: ServiceService) {}
 

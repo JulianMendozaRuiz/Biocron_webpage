@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import ValueClass from '../../models/value';
 import { WixService } from '../wix/wix.service';
-import AboutUsHeadingClass from '../../models/about_us/about_us_heading';
 import ModulesEnum from '../../models/content/modules_enum';
 import typeEnum from '../../models/content/home/type_enum';
 import { WixMediaService } from '../wix/wix-media.service';
@@ -10,6 +9,7 @@ import WixImageClass from '../../models/content/wix-image';
 import AboutUsCoreClass from '../../models/about_us/about_us_core';
 import AboutUsCompanyValuesClass from '../../models/about_us/about_us_company_values';
 import AboutUsTeamClass from '../../models/about_us/about_us_team';
+import HeadingClass from '../../models/shared/heading';
 
 @Injectable({
   providedIn: 'root',
@@ -54,7 +54,7 @@ export class AboutUsService {
     }
   }
 
-  async getAboutUsHeadingContent(): Promise<AboutUsHeadingClass> {
+  async getAboutUsHeadingContent(): Promise<HeadingClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();
@@ -74,12 +74,7 @@ export class AboutUsService {
 
       const { name, title, description } = response.items[0]['content'][0];
 
-      return new AboutUsHeadingClass(
-        response.items[0]._id,
-        name,
-        title,
-        description
-      );
+      return new HeadingClass(response.items[0]._id, name, title, description);
     } catch (error) {
       console.error('Error fetching about us content:', error);
       throw error;
