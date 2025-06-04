@@ -7,13 +7,21 @@
   "form": {
     "title": "Formulario de contacto",
     "description": "Complete el formulario y uno de nuestros expertos se pondrá en contacto con usted lo antes posible",
-    "contact_name_title": "Nombre de contacto",
-    "contact_name_placeholder": "Nombre",
-    "email_title": "Correo electrónico",
-    "email_placeholder": "examples@email.com",
-    "phone_number_title": "Número telefónico",
-    "phone_number_placeholder": "(57) 999-999-9999",
-    "message_title": "Mensaje",
-    "message_placeholder": "Me interesan los servicios de Biocron y por eso..."
+    "contact_name": {
+      "label": "Nombre de contacto",
+      "placeholder": "Nombre"
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "examples@email.com"
+    },
+    "phone": {
+      "label": "Número telefónico",
+      "placeholder": "(57) 999-999-9999"
+    },
+    "message": {
+      "label": "Mensaje",
+      "placeholder": "Me interesan los servicios de Biocron y por eso..."
+    }
   }
 }

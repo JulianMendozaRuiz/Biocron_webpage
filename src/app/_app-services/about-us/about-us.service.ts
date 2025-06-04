@@ -61,7 +61,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'especial_heading')
         .eq('section', 'content')
@@ -88,7 +88,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'especial_heading')
         .eq('section', 'background')
@@ -115,7 +115,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'mission')
         .eq('section', 'content')
@@ -142,7 +142,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'mission')
         .eq('section', 'background')
@@ -169,7 +169,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'vision')
         .eq('section', 'content')
@@ -196,7 +196,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'vision')
         .eq('section', 'background')
@@ -223,7 +223,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'values')
         .eq('section', 'content')
@@ -261,7 +261,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'values')
         .eq('section', 'side_image')
@@ -288,7 +288,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'team')
         .eq('section', 'content')
@@ -315,7 +315,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'team')
         .eq('section', 'background')
@@ -342,7 +342,7 @@ export class AboutUsService {
       }
 
       const response = await this.wixService
-        .wixClient!.items.query('about_us_static_content')
+        .wixClient!.items.query('Site-static-content')
         .eq('module', ModulesEnum.ABOUT_US)
         .eq('sub_module', 'why_us')
         .eq('section', 'content')

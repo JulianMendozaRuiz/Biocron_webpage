@@ -17,7 +17,7 @@ export class ContactUsComponent implements OnInit {
     try {
       if (!this.contactService.contactUsContent) {
         this.contactService.contactUsContent =
-          await this.contactService.getContactUsContent();
+          await this.contactService.getContactUsCardContent();
       }
     } catch (error) {
       console.error('Error during initialization:', error);

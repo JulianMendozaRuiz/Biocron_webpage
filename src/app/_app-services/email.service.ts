@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import ContactUsSimplifiedClass from '../models/contact_us/contact_us_simplified';
-import ContactUsCompleteClass from '../models/contact_us/contact_us_complete';
+import ContactUsCompleteClass from '../models/contact_us/contact_us_complete_form';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { DatePipe } from '@angular/common';
 
