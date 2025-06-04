@@ -28,9 +28,6 @@ export class ArticlesComponent implements OnInit {
         this.articlesPerPage,
         this.currentPage
       );
-
-      console.log('Featured Article:', this.featuredArticle);
-      console.log('Articles:', this.articles);
     } catch (error) {
       console.error('Error fetching articles:', error);
     }

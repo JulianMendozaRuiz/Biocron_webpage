@@ -72,7 +72,7 @@ export class IndustryService {
       const { title, name, description } = response.items[0]['content'][0];
       return new HeadingClass(response.items[0]._id, name, title, description);
     } catch (error) {
-      console.error('Error fetching industries headings:', error);
+      console.error('Error fetching industries heading:', error);
       throw error;
     }
   }

@@ -25,7 +25,10 @@ export class IndustriesComponent implements OnInit {
         this.loadIndustriesContent(),
       ]);
     } catch (error) {
-      console.error('Error fetching industries heading:', error);
+      console.error(
+        'Error during initialization of industries component:',
+        error
+      );
     }
   }
 

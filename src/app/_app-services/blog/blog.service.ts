@@ -2,12 +2,70 @@ import { Injectable } from '@angular/core';
 import { WixService } from '../wix/wix.service';
 import ArticleClass from '../../models/blog/article';
 import ArticleCardClass from '../../models/blog/articleCard';
+import HeadingClass from '../../models/shared/heading';
+import ModulesEnum from '../../models/content/modules_enum';
+import typeEnum from '../../models/content/home/type_enum';
+import articlesContentClass from '../../models/blog/articles_content';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogService {
   constructor(private wixService: WixService) {}
+
+  async getBlogHeadingContent(): Promise<HeadingClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.BLOG)
+        .eq('sub_module', 'heading')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('Blog heading content not found');
+      }
+
+      const { name, title, description } = response.items[0]['content'][0];
+
+      return new HeadingClass(response.items[0]._id, name, title, description);
+    } catch (error) {
+      console.error('Error fetching blog heading content:', error);
+      throw error;
+    }
+  }
+
+  async getArticlesContent(): Promise<articlesContentClass> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.BLOG)
+        .eq('sub_module', 'articles')
+        .eq('section', 'content')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('Articles content not found');
+      }
+
+      const { load_more_button } = response.items[0]['content'][0];
+
+      return new articlesContentClass(response.items[0]._id, load_more_button);
+    } catch (error) {
+      console.error('Error fetching articles content:', error);
+      throw error;
+    }
+  }
 
   async getArticle(pId: string): Promise<ArticleClass | null> {
     try {
