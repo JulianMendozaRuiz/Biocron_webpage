@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import AboutUsWhyUsClass from '../../models/about_us/about_us_why_us';
 
 @Component({
   selector: 'comp-why-us',
@@ -6,12 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrl: './why-us.component.scss',
 })
 export class WhyUsComponent implements OnInit {
-  @Input() whyUsContent: any;
-  titleSection: any;
-  reasons: any;
+  @Input() whyUsContent!: AboutUsWhyUsClass;
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    this.titleSection = this.whyUsContent.title_section;
-    this.reasons = this.whyUsContent.reasons;
+  ngOnInit(): void {}
+
+  async goToContactUs() {
+    await this.router.navigate(['contacto']);
   }
 }

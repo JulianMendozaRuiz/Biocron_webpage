@@ -1,15 +1,34 @@
-import { Component } from '@angular/core';
-import content from '../../../assets/content/contact_us_content.json';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ContactUsService } from '../../_app-services/contact_us/contact-us.service';
 
 @Component({
   selector: 'comp-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
 })
-export class ContactUsComponent {
-  content: any;
+export class ContactUsComponent implements OnInit {
+  constructor(
+    protected contactService: ContactUsService,
+    private router: Router
+  ) {}
 
-  constructor() {
-    this.content = content;
+  async ngOnInit(): Promise<void> {
+    try {
+      if (!this.contactService.contactUsContent) {
+        this.contactService.contactUsContent =
+          await this.contactService.getContactUsCardContent();
+      }
+    } catch (error) {
+      console.error('Error during initialization:', error);
+    }
+  }
+
+  async goToContactUs() {
+    try {
+      await this.router.navigate(['contacto']);
+    } catch (error) {
+      console.error('Navigation error:', error);
+    }
   }
 }

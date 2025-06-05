@@ -1,22 +1,39 @@
-<div class="container">
+<div class="container" *ngIf="contactService.contactUsContent">
   <div class="contact-section">
-    <div class="contact-section-title">{{ content.title }}</div>
-    <div class="contact-section-description">{{ content.description }}</div>
-    <p-button [label]="content.contact_button" />
+    <div class="contact-section-title">
+      {{ contactService.contactUsContent.title }}
+    </div>
+    <div class="contact-section-description">
+      {{ contactService.contactUsContent.description }}
+    </div>
+    <p-button
+      [label]="contactService.contactUsContent.contact_button_text"
+      (onClick)="goToContactUs()"
+    />
   </div>
   <div class="info">
     <div class="info-section">
-      <div class="info-section-title">{{ content.phone_title }}</div>
-      <div class="info-description info-phone">{{ content.phone_number }}</div>
+      <div class="info-section-title">
+        {{ contactService.contactUsContent.phone_number_title }}
+      </div>
+      <div class="info-description info-phone">
+        {{ contactService.contactUsContent.phone_number }}
+      </div>
     </div>
     <div class="info-section">
-      <div class="info-section-title">{{ content.email_title }}</div>
-      <div class="info-description info-email">{{ content.email }}</div>
+      <div class="info-section-title">
+        {{ contactService.contactUsContent.emait_title }}
+      </div>
+      <div class="info-description info-email">
+        {{ contactService.contactUsContent.email_address }}
+      </div>
     </div>
     <div class="info-section">
-      <div class="info-section-title">{{ content.open_hours_title }}</div>
+      <div class="info-section-title">
+        {{ contactService.contactUsContent.opening_hours_title }}
+      </div>
       <div class="info-description info-open-hours">
-        {{ content.open_hours }}
+        {{ contactService.contactUsContent.opening_hours }}
       </div>
     </div>
   </div>

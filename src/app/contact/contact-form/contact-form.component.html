@@ -1,5 +1,19 @@
-<div class="form">
-  <div class="form-image-box"></div>
+<div class="form" *ngIf="content">
+  <div class="form-image-box">
+    <div class="form-side-image">
+      <img
+        *ngIf="sideImage"
+        [src]="sideImage.media.url"
+        [alt]="sideImage.title"
+        loading="lazy"
+      />
+    </div>
+    <div class="form-side-image-gradient"></div>
+    <div class="form-side-image-quote">
+      <div class="quote">{{ content.quote }}</div>
+      <div class="quote-author">- {{ content.quote_author }}</div>
+    </div>
+  </div>
   <div class="form-wrapper">
     <div class="form-heading">
       <div class="form-heading-title">{{ content.title }}</div>
@@ -8,52 +22,59 @@
     <form class="form-inputs" [formGroup]="contactForm">
       <div class="input-name">
         <label for="contact_name" class="input-title">{{
-          content.contact_name_title
+          content.contact_name.label
         }}</label>
         <input
           id="contact_name"
           type="text"
-          [placeholder]="content.contact_name_placeholder"
+          formControlName="name"
+          [placeholder]="content.contact_name.placeholder"
           pInputText
         />
       </div>
       <div class="input-email">
         <label for="contact_email" class="input-title">{{
-          content.email_title
+          content.email.label
         }}</label>
         <input
           id="contact_email"
           type="email"
           formControlName="email"
-          [placeholder]="content.email_placeholder"
+          [placeholder]="content.email.placeholder"
           pInputText
         />
       </div>
       <div class="input-phone">
         <label for="contact_phone" class="input-title">{{
-          content.phone_number_title
+          content.phone.label
         }}</label>
         <p-inputMask
           id="contact_phone"
           class="p-inputMask"
           type="text"
           formControlName="phone"
-          [mask]="content.phone_number_placeholder"
-          [placeholder]="content.phone_number_placeholder"
+          [mask]="content.phone.placeholder"
+          [placeholder]="content.phone.placeholder"
         />
       </div>
       <div class="input-message">
         <label for="message" class="input-title">{{
-          content.message_title
+          content.message.label
         }}</label>
         <textarea
           id="message"
           rows="6"
-          [placeholder]="content.message_placeholder"
+          formControlName="message"
+          [placeholder]="content.message.placeholder"
           pTextArea
         ></textarea>
       </div>
-      <p-button class="input-button" label="Enviar" />
+      <p-button
+        class="input-button"
+        [disabled]="!contactForm.valid"
+        [label]="content.button_text"
+        (click)="onSubmit()"
+      />
     </form>
   </div>
 </div>

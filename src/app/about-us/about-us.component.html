@@ -1,19 +1,34 @@
 <div>
   <comp-especial-heading
+    *ngIf="headingContent && headingBackgroundImage"
     [viewName]="headingContent.name"
     [viewTitle]="headingContent.title"
     [viewDescription]="headingContent.description"
+    [backgroundImage]="headingBackgroundImage"
   ></comp-especial-heading>
 
   <comp-mision-vision
-    [mision]="aboutUsContent.mision"
-    [vision]="aboutUsContent.vision"
+    *ngIf="
+      missionContent &&
+      visionContent &&
+      missionBackgroundImage &&
+      visionBackgroundImage
+    "
+    [mision]="missionContent"
+    [missionBackgroundImage]="missionBackgroundImage"
+    [vision]="visionContent"
+    [visionBackgroundImage]="visionBackgroundImage"
   ></comp-mision-vision>
   <comp-company-values
-    [valuesContent]="aboutUsContent.company_values.values"
-    [image]="aboutUsContent.company_values.content_image"
+    *ngIf="companyValuesContent && companyValuesSideImage"
+    [image]="companyValuesSideImage"
   ></comp-company-values>
-  <comp-team [teamContent]="aboutUsContent.team"> </comp-team>
+  <comp-team
+    *ngIf="teamContent && teamBackgroundImage"
+    [teamContent]="teamContent"
+    [backgroundImage]="teamBackgroundImage"
+  >
+  </comp-team>
 
-  <comp-why-us [whyUsContent]="aboutUsContent.why_us"></comp-why-us>
+  <comp-why-us *ngIf="whyUsContent" [whyUsContent]="whyUsContent"></comp-why-us>
 </div>

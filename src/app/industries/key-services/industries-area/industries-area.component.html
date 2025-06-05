@@ -4,31 +4,30 @@
       *ngFor="let industry of industryService.industries"
       class="tab active-tab"
       [ngClass]="
-        industry.name === currentIndustry?.name ? 'active-tab' : 'innactive-tab'
+        industry.name !== currentIndustry?.name ? 'innactive-tab' : 'active-tab'
       "
       (click)="setCurrentIndustry(industry)"
     >
       {{ industry.name }}
     </div>
   </div>
-  <div class="industries-area-content">
+  <div class="industries-area-content" *ngIf="currentIndustry">
     <div class="content-description">
       <div class="industry-photo">
-        <img
-          [src]="currentIndustry?.img_location"
-          style="height: 100%; width: 100%"
-          alt=""
-        />
+        <div class="mask">
+          <img [src]="currentIndustry.img.media.url" alt="" />
+        </div>
+        <img class="frame" alt="" />
       </div>
       <div class="industry-description">
-        {{ currentIndustry?.description }}
+        {{ currentIndustry.description }}
       </div>
     </div>
     <div class="content-bullets">
       <div class="industry-services">
         <div class="services-title">Servicios</div>
         <ul>
-          <div *ngFor="let item of currentIndustry?.services" class="list-item">
+          <div *ngFor="let item of currentIndustry.services" class="list-item">
             <div class="marker"></div>
             <li>
               {{ item }}
@@ -39,7 +38,7 @@
       <div class="industry-benefits">
         <div class="benefits-title">Beneficios</div>
         <ul>
-          <div *ngFor="let item of currentIndustry?.benefits" class="list-item">
+          <div *ngFor="let item of currentIndustry.benefits" class="list-item">
             <div class="marker"></div>
             <li>
               {{ item }}

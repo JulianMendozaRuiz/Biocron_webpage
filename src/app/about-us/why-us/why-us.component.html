@@ -1,14 +1,18 @@
 <div class="why-us-container">
   <div class="title-section">
-    <div class="title">{{ titleSection.title }}</div>
-    <div class="description">{{ titleSection.description }}</div>
+    <div class="title">{{ whyUsContent.title }}</div>
+    <div class="description">{{ whyUsContent.description }}</div>
   </div>
   <div class="reasons">
     <comp-reason-card
-      *ngFor="let reason of reasons"
+      *ngFor="let reason of whyUsContent.reasons"
       [title]="reason.title"
       [description]="reason.description"
     ></comp-reason-card>
   </div>
-  <p-button class="input-button" label="Contáctenos"></p-button>
+  <p-button
+    class="input-button"
+    label="Contáctenos"
+    (onClick)="goToContactUs()"
+  ></p-button>
 </div>

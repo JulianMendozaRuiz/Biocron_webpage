@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
-import ContactFormClass from '../../models/contactForm';
+import ContactFormClass from '../../models/contact_us/contact_us_form';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import ContactUsSimplifiedClass from '../../models/contact_us/contact_us_simplified';
+import { EmailService } from '../../_app-services/email.service';
 
 @Component({
   selector: 'comp-home-contact-us',
@@ -14,6 +16,8 @@ export class HomeContactUsComponent {
 
   model = new ContactFormClass('', '', '', '');
 
+  constructor(private emailService: EmailService) {}
+
   public contactForm = new FormGroup({
     email: new FormControl<string | null>('', [
       Validators.required,
@@ -24,6 +28,17 @@ export class HomeContactUsComponent {
   });
 
   onSubmit(): void {
-    console.log('Form submitted');
+    try {
+      this.emailService.sendContactUsEmail(
+        this.contactForm.value as ContactUsSimplifiedClass
+      );
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      this.contactForm.reset();
+      this.model = new ContactFormClass('', '', '', '');
+      this.contactForm.markAsPristine();
+      this.contactForm.markAsUntouched();
+    }
   }
 }

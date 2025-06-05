@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import WixImageClass from '../../models/content/wix-image';
 
 @Component({
   selector: 'comp-especial-heading',
@@ -6,7 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './especial-heading.component.scss',
 })
 export class EspecialHeadingComponent {
-  @Input() viewName: any;
-  @Input() viewTitle: any;
-  @Input() viewDescription: any;
+  @Input() viewName!: string;
+  @Input() viewTitle!: string;
+  @Input() viewDescription!: string;
+  @Input() backgroundImage!: WixImageClass;
 }

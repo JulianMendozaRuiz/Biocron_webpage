@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServiceService } from '../../_app-services/service.service';
+import { ServiceService } from '../../_app-services/service/service.service';
 
 @Component({
   selector: 'comp-home-key-services',
@@ -7,11 +7,15 @@ import { ServiceService } from '../../_app-services/service.service';
   styleUrl: './home-key-services.component.scss',
 })
 export class HomeKeyServicesComponent implements OnInit {
+  @Input() viewName: string = '';
+  @Input() viewTitle: string = '';
   @Input() keyServicesContent: any;
 
   constructor(protected servicesService: ServiceService) {}
 
-  ngOnInit(): void {
-    this.servicesService.setServicesFromContent(this.keyServicesContent);
+  async ngOnInit(): Promise<void> {
+    if (!this.servicesService.services) {
+      await this.servicesService.getServices();
+    }
   }
 }

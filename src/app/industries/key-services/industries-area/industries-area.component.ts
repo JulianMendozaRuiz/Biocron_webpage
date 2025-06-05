@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IndustryService } from '../../../_app-services/industry.service';
-import IndustryClass from '../../../models/industry';
+import { Component, OnInit } from '@angular/core';
+import { IndustryService } from '../../../_app-services/industry/industry.service';
+import IndustryClass from '../../../models/industries/industry';
 
 @Component({
   selector: 'comp-industries-area',
@@ -8,8 +8,6 @@ import IndustryClass from '../../../models/industry';
   styleUrl: './industries-area.component.scss',
 })
 export class IndustriesAreaComponent implements OnInit {
-  @Input() industriesContent: any;
-
   currentIndustry: IndustryClass | null = null;
 
   constructor(protected industryService: IndustryService) {
@@ -21,10 +19,15 @@ export class IndustriesAreaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.industryService.setIndustriesFromContent(this.industriesContent);
+    this.industryService.currentIndustry.subscribe(
+      (industry: IndustryClass | null) => {
+        this.currentIndustry = industry;
+      }
+    );
   }
 
   setCurrentIndustry(pIndustry: IndustryClass): void {
+    this.currentIndustry = null;
     this.industryService.setCurrentIndustry(pIndustry);
   }
 }

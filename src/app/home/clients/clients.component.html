@@ -1,7 +1,7 @@
 <div class="clients-container">
   <div class="clients-info">
     <div class="content-image">
-      <img [src]="sideImage" alt="clients" />
+      <img [src]="sideImage?.media?.url" alt="clients" />
     </div>
     <div class="content-section">
       <div class="content-header">
@@ -28,7 +28,7 @@
 
     <p-carousel
       class="clients-carousel"
-      [value]="clientLogos"
+      [value]="clientLogos?.Images!"
       [numVisible]="10"
       [numScroll]="2"
       [circular]="true"

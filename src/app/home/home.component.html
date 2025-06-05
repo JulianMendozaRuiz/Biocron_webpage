@@ -1,27 +1,38 @@
 <div class="home-container">
   <comp-hero
-    [images]="heroContent.images"
+    *ngIf="heroContent && heroImages"
+    [images]="heroImages"
     [title]="heroContent.title"
     [description]="heroContent.description"
   ></comp-hero>
   <comp-home-about-us
-    [backgroundImage]="aboutUsContent.background_image"
-    [backgroundParticles]="aboutUsContent.background_particles"
+    *ngIf="
+      aboutUsContent && aboutUsBackgroundImage && aboutUsBackgroundParticles
+    "
+    [backgroundImage]="aboutUsBackgroundImage.media.url"
+    [backgroundParticles]="aboutUsBackgroundParticles.media.url"
     [tag]="aboutUsContent.tag"
     [description]="aboutUsContent.description"
   ></comp-home-about-us>
-  <comp-home-key-services [keyServicesContent]="servicesContent">
+  <comp-home-key-services
+    *ngIf="servicesHead && servicesContent"
+    [viewName]="servicesHead.name"
+    [viewTitle]="servicesHead.title"
+    [keyServicesContent]="servicesContent"
+  >
   </comp-home-key-services>
   <comp-clients
-    [sideImage]="clientsContent.side_image"
+    *ngIf="clientsContent && clientsSideImage && clientsLogos"
+    [sideImage]="clientsSideImage"
     [tag]="clientsContent.tag"
     [title]="clientsContent.title"
     [description]="clientsContent.description"
     [buttonText]="clientsContent.button_text"
-    [clientLogos]="clientsContent.client_logos"
+    [clientLogos]="clientsLogos"
   ></comp-clients>
 
   <comp-home-contact-us
+    *ngIf="contactUsContent"
     [tag]="contactUsContent.tag"
     [title]="contactUsContent.title"
     [formContent]="contactUsContent.form_content"

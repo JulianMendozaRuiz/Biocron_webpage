@@ -1,10 +1,12 @@
 <div>
   <comp-view-heading
+    *ngIf="headingContent"
     [viewName]="headingContent.name"
     [viewTitle]="headingContent.title"
     [viewDescription]="headingContent.description"
   ></comp-view-heading>
-  <comp-key-services> </comp-key-services>
+  <comp-key-services *ngIf="this.servicesServices.services">
+  </comp-key-services>
 
   <comp-contact-us></comp-contact-us>
 </div>

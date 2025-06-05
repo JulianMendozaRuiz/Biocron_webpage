@@ -1,1 +1,12 @@
-<p>blog works!</p>
+<div>
+  <comp-view-heading
+    *ngIf="headingContent"
+    [viewName]="headingContent.name"
+    [viewTitle]="headingContent.title"
+    [viewDescription]="headingContent.description"
+  ></comp-view-heading>
+  <comp-articles
+    *ngIf="articlesContent"
+    [loadMoreText]="articlesContent.loadMoreButtonText"
+  ></comp-articles>
+</div>

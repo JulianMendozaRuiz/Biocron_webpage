@@ -1,10 +1,35 @@
-export default class ServiceClass extends Object {
+export default class ServiceClass {
+  id: string;
+  title: string;
+  description: string;
+  deep_description: string;
+  image: {
+    id: string;
+    url: string;
+    height: number;
+    width: number;
+    altText?: string;
+    filename?: string;
+  };
+
   constructor(
-    public title: string,
-    public description: string,
-    public deep_description: string,
-    public image: string
+    id: string,
+    title: string,
+    description: string,
+    deep_description: string,
+    image: {
+      id: string;
+      url: string;
+      height: number;
+      width: number;
+      altText?: string;
+      filename?: string;
+    }
   ) {
-    super();
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.deep_description = deep_description;
+    this.image = image;
   }
 }
