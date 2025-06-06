@@ -4,8 +4,10 @@ import ArticleClass from '../../models/blog/article';
 import ArticleCardClass from '../../models/blog/articleCard';
 import HeadingClass from '../../models/shared/heading';
 import ModulesEnum from '../../models/content/modules_enum';
-import typeEnum from '../../models/content/home/type_enum';
+import typeEnum from '../../models/content/type_enum';
 import articlesContentClass from '../../models/blog/articles_content';
+import ArticleLabels from '../../models/blog/article_labels';
+import ArticleSimpleInterface from '../../models/blog/article_simple.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -111,6 +113,40 @@ export class BlogService {
     }
   }
 
+  async getArticleLabels(): Promise<ArticleLabels> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('Site-static-content')
+        .eq('module', ModulesEnum.BLOG)
+        .eq('sub_module', 'article')
+        .eq('section', 'labels')
+        .eq('type', typeEnum.JSON)
+        .find();
+
+      if (response.items.length === 0) {
+        throw new Error('Article labels not found');
+      }
+
+      const { author, read_more, link_label, other_articles } =
+        response.items[0]['content'][0];
+
+      return new ArticleLabels(
+        response.items[0]._id,
+        author,
+        read_more,
+        link_label,
+        other_articles
+      );
+    } catch (error) {
+      console.error('Error fetching article labels:', error);
+      throw error;
+    }
+  }
+
   async getOtherArticles(
     pId: string,
     pQuantity: number
@@ -127,17 +163,19 @@ export class BlogService {
         .fields('tag', 'title', 'publishDate', 'mainImage')
         .find();
 
-      return response.items.map((item: any) => {
-        const {
-          _id: id,
-          tag,
-          title,
-          mainImage,
-          publishDate: datePublished,
-        } = item;
+      return (response.items as ArticleSimpleInterface[]).map(
+        (item: ArticleSimpleInterface) => {
+          const {
+            _id: id,
+            tag,
+            title,
+            mainImage,
+            publishDate: datePublished,
+          } = item;
 
-        return new ArticleCardClass(id, tag, title, mainImage, datePublished);
-      });
+          return new ArticleCardClass(id, tag, title, mainImage, datePublished);
+        }
+      );
     } catch (error) {
       console.error('Error fetching non-featured articles:', error);
       throw error;
@@ -201,17 +239,19 @@ export class BlogService {
         .fields('tag', 'title', 'publishDate', 'mainImage')
         .find();
 
-      return response.items.map((item: any) => {
-        const {
-          _id: id,
-          tag,
-          title,
-          mainImage,
-          publishDate: datePublished,
-        } = item;
+      return (response.items as ArticleSimpleInterface[]).map(
+        (item: ArticleSimpleInterface) => {
+          const {
+            _id: id,
+            tag,
+            title,
+            mainImage,
+            publishDate: datePublished,
+          } = item;
 
-        return new ArticleCardClass(id, tag, title, mainImage, datePublished);
-      });
+          return new ArticleCardClass(id, tag, title, mainImage, datePublished);
+        }
+      );
     } catch (error) {
       console.error('Error fetching non-featured articles:', error);
       throw error;

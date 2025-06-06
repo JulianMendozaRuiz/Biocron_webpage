@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import IndustryClass from '../../models/industries/industry';
+import IndustryClass from '../../models/industries/industry.class';
 import { Subject } from 'rxjs';
 import { WixService } from '../wix/wix.service';
 import { WixMediaService } from '../wix/wix-media.service';
 import ModulesEnum from '../../models/content/modules_enum';
-import typeEnum from '../../models/content/home/type_enum';
+import typeEnum from '../../models/content/type_enum';
 import IndustriesTeamClass from '../../models/industries/industries_team';
 import WixImageClass from '../../models/content/wix-image';
 import HeadingClass from '../../models/shared/heading';
+import IndustryInterface from '../../models/industries/industry.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class IndustryService {
   currentIndustry: Subject<IndustryClass | null> =
     new Subject<IndustryClass | null>();
 
-  public setIndustriesFromContent(pIndustriesContent: any): void {
+  public setIndustriesFromContent(pIndustriesContent: IndustryClass[]): void {
     if (
       pIndustriesContent === null ||
       typeof pIndustriesContent !== 'object' ||
@@ -31,15 +32,17 @@ export class IndustryService {
       throw new Error('Invalid industries content');
 
     try {
-      this.industries = pIndustriesContent.map((industryData: any) => {
-        return new IndustryClass(
-          industryData.name,
-          industryData.img,
-          industryData.description,
-          industryData.services,
-          industryData.benefits
-        );
-      });
+      this.industries = pIndustriesContent.map(
+        (industryData: IndustryClass) => {
+          return new IndustryClass(
+            industryData.name,
+            industryData.img,
+            industryData.description,
+            industryData.services,
+            industryData.benefits
+          );
+        }
+      );
 
       this.currentIndustry.next(this.industries![0]); // Set the first industry as default
     } catch {
@@ -145,7 +148,7 @@ export class IndustryService {
         throw new Error('No industries content found');
       }
 
-      const industries = response.items.map((item: any) => {
+      const industries = (response.items as IndustryInterface[]).map((item) => {
         return new IndustryClass(
           item.name,
           this.wixMediaService.createImageFromUrl(item.image),

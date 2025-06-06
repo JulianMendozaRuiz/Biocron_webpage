@@ -8,6 +8,7 @@ import WixImageClass from '../../models/content/wix-image';
 export class WixMediaService {
   constructor() {}
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   createMediaGallery(pGallery: any[]): WixImageClass[] {
     try {
       const gallery: WixImageClass[] = pGallery.map((image) => {
@@ -31,6 +32,7 @@ export class WixMediaService {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   createImage(pImage: any): WixImageClass {
     try {
       const mediaObj = media.getImageUrl(pImage.src);

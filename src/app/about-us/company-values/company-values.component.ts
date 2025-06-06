@@ -10,6 +10,7 @@ import WixImageClass from '../../models/content/wix-image';
 })
 export class CompanyValuesComponent implements OnInit {
   @Input() image: WixImageClass | null = null;
+  @Input() title: string | null = null;
 
   currentValue: ValueClass | null = null;
 

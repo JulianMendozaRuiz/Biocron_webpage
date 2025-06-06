@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import HomeHeroClass from '../../models/content/home/home_hero';
+import HomeHeroClass from '../../models/home/home_hero';
 import ModulesEnum from '../../models/content/modules_enum';
 import GalleryClass from '../../models/content/gallery';
-import typeEnum from '../../models/content/home/type_enum';
-import HomeAboutUsClass from '../../models/content/home/home_about_us';
-import HomeHeadingClass from '../../models/content/home/home_heading';
+import typeEnum from '../../models/content/type_enum';
+import HomeAboutUsClass from '../../models/home/home_about_us';
+import HomeHeadingClass from '../../models/home/home_heading';
 import { WixService } from '../wix/wix.service';
 import { WixMediaService } from '../wix/wix-media.service';
-import HomeClientsClass from '../../models/content/home/home_clients';
+import HomeClientsClass from '../../models/home/home_clients';
 import WixImageClass from '../../models/content/wix-image';
-import HomeContactUsClass from '../../models/content/home/home_contact_us';
+import HomeContactUsClass from '../../models/home/home_contact_us';
 
 @Injectable({
   providedIn: 'root',
@@ -253,7 +253,7 @@ export class HomeService {
     }
   }
 
-  async getHomeContactUsContent(): Promise<any> {
+  async getHomeContactUsContent(): Promise<HomeContactUsClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { quickStartViewerPlugins, RicosViewer } from '@wix/ricos';
 import { ElementType } from 'react';

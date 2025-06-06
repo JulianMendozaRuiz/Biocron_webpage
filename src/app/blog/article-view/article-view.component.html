@@ -1,4 +1,4 @@
-<div class="article-view-container" *ngIf="article">
+<div class="article-view-container" *ngIf="article && articleContentLabels">
   <div class="article">
     <div class="article-head">
       <div class="article-tag">
@@ -34,7 +34,7 @@
       <div class="article-link">
         <div>{{ articleContentLabels.read_more }}</div>
         <a [href]="article!.originalPostLink" target="_blank">
-          {{ articleContentLabels.link }}
+          {{ articleContentLabels.link_label }}
         </a>
       </div>
     </div>
