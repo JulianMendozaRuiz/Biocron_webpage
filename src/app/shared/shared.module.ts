@@ -12,6 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { RicosViewerComponent } from './ricos-viewer/ricos-viewer.component';
 import { ReactComponentDirective } from '../directives/react-component.directive';
+import { ReactWrapperComponent } from './react-component-wrapper/react-component-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactComponentDirective } from '../directives/react-component.directive
     ViewHeadingComponent,
     BoldPipe,
     RicosViewerComponent,
+    ReactWrapperComponent,
   ],
   imports: [
     CommonModule,

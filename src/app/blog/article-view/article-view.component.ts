@@ -45,7 +45,6 @@ export class ArticleViewComponent implements OnInit {
   async loadArticleLabels() {
     try {
       this.articleContentLabels = await this.blogService.getArticleLabels();
-      console.log('articleContentLabels', this.articleContentLabels);
     } catch (error) {
       console.error('Error loading article labels:', error);
       this.articleContentLabels = null; // Set to null if there's an error
