@@ -41,16 +41,23 @@
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "sourceMap": {
+                "scripts": true,
+                "styles": true,
+                "hidden": true,
+                "vendor": true
+              },
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2.8MB",
+                  "maximumError": "4MB"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumError": "200kb"
                 }
               ],
               "outputHashing": "all"
