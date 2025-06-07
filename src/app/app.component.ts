@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   title = 'Biocron';
 
   constructor(private wixService: WixService) {
+    // TODO: Remove console logs before production
     console.log('Biocron page initialized');
+    console.log('Environment variables:', environment);
     console.log('Environment:', environment.ENV_NAME);
   }
 
