@@ -1,9 +1,9 @@
 // my-react-component.tsx
 import React from "react";
-import { quickStartViewerPlugins, RicosViewer } from "@wix/ricos";
+import { quickStartViewerPlugins, RichContent, RicosViewer } from "@wix/ricos";
 
 
-const MyReactComponent = ({ content } : any) => {
+const MyReactComponent = ({ content } : {content: RichContent}) => {
   const plugins = quickStartViewerPlugins();
 
   return <RicosViewer content={content} plugins={plugins} />;
