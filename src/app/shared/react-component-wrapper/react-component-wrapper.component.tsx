@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // react-wrapper.component.ts
 import {
   AfterViewInit,
@@ -5,6 +6,7 @@ import {
   ElementRef,
   Input,
   OnDestroy,
+  ViewEncapsulation,
 } from '@angular/core';
 import * as ReactDOM from 'react-dom/client';
 import React from 'react';
@@ -13,6 +15,8 @@ import MyReactComponent from './my-react-component';
 @Component({
   selector: 'app-react-wrapper',
   template: '<div [id]="rootId"></div>',
+  styleUrl: './react-wrapper.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class ReactWrapperComponent implements AfterViewInit, OnDestroy {
   @Input() content: any;

@@ -37,7 +37,10 @@
               },
               "src/assets"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@wix/ricos/css/all-plugins-viewer.css"
+            ],
             "scripts": []
           },
           "configurations": {
