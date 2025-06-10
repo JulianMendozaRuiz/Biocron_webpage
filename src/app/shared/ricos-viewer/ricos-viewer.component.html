@@ -1,8 +1,1 @@
-<div
-  class="ricos-viewer-container"
-  [reactComponent]="this.RicosViewer"
-  [reactComponentRoot]="this.elementRef"
-  [props]="this.viewerProps"
->
-  <div #articleContent></div>
-</div>
+<app-react-wrapper [content]="this.article?.content || {}"></app-react-wrapper>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServiceService } from '../../_app-services/service/service.service';
+import { ServiceService } from '../../_app-services/_service/service.service';
 
 @Component({
   selector: 'comp-key-services',

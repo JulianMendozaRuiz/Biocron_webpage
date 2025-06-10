@@ -9,7 +9,7 @@ export default class GalleryClass {
     this.images = images;
   }
 
-  get Images(): any[] {
+  get Images() {
     return this.images.map((image) => ({
       src: image.media.url,
       alt: image.alt,

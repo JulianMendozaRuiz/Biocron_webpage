@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import content from '../../../assets/content/blog_content.json';
 import { BlogService } from '../../_app-services/blog/blog.service';
 import ArticleClass from '../../models/blog/article';
 import ArticleCardClass from '../../models/blog/articleCard';
+import ArticleLabels from '../../models/blog/article_labels';
 
 @Component({
   selector: 'comp-article-view',
@@ -15,23 +15,22 @@ export class ArticleViewComponent implements OnInit {
   otherArticles: ArticleCardClass[] = [];
   otherArticlesQuantity: number = 3;
   articleId: string | null = null;
-  articleContentLabels: any;
+  articleContentLabels: ArticleLabels | null = null;
 
   constructor(
     private blogService: BlogService,
     private readonly route: ActivatedRoute,
     protected readonly elementRef: ElementRef
-  ) {
-    this.articleContentLabels = content.article;
-  }
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.route.paramMap.subscribe(async (params) => {
-      console.log('params', params);
-
       this.articleId = params.get('id');
       this.article = null;
-      await this.loadArticle(this.articleId!);
+      Promise.all([
+        this.loadArticle(this.articleId!),
+        this.loadArticleLabels(),
+      ]);
     });
   }
 
@@ -41,6 +40,14 @@ export class ArticleViewComponent implements OnInit {
       this.articleId!,
       this.otherArticlesQuantity
     );
-    console.log('article', this.article);
+  }
+
+  async loadArticleLabels() {
+    try {
+      this.articleContentLabels = await this.blogService.getArticleLabels();
+    } catch (error) {
+      console.error('Error loading article labels:', error);
+      this.articleContentLabels = null; // Set to null if there's an error
+    }
   }
 }

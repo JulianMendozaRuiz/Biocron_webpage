@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../_app-services/service/service.service';
+import { ServiceService } from '../_app-services/_service/service.service';
 import HeadingClass from '../models/shared/heading';
 
 @Component({

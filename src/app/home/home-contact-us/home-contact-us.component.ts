@@ -3,6 +3,7 @@ import ContactFormClass from '../../models/contact_us/contact_us_form';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import ContactUsSimplifiedClass from '../../models/contact_us/contact_us_simplified';
 import { EmailService } from '../../_app-services/email.service';
+import InputClass from '../../models/input';
 
 @Component({
   selector: 'comp-home-contact-us',
@@ -12,7 +13,12 @@ import { EmailService } from '../../_app-services/email.service';
 export class HomeContactUsComponent {
   @Input() tag: string = '';
   @Input() title: string = '';
-  @Input() formContent: any;
+  @Input() formContent: {
+    name: InputClass;
+    email: InputClass;
+    message: InputClass;
+    button_text: string;
+  } | null = null;
 
   model = new ContactFormClass('', '', '', '');
 

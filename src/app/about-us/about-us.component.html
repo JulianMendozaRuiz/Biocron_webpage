@@ -21,6 +21,7 @@
   ></comp-mision-vision>
   <comp-company-values
     *ngIf="companyValuesContent && companyValuesSideImage"
+    [title]="companyValuesContent.title"
     [image]="companyValuesSideImage"
   ></comp-company-values>
   <comp-team

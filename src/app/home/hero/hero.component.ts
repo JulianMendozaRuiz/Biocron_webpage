@@ -8,6 +8,6 @@ import GalleryClass from '../../models/content/gallery';
 })
 export class HeroComponent {
   @Input() images!: GalleryClass;
-  @Input() title: any;
-  @Input() description: any;
+  @Input() title: string = '';
+  @Input() description: string = '';
 }

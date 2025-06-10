@@ -42,62 +42,42 @@ export class AboutUsComponent implements OnInit {
   }
 
   async loadHeadingContent() {
-    try {
-      [this.headingContent, this.headingBackgroundImage] = await Promise.all([
-        this.aboutUsService.getAboutUsHeadingContent(),
-        this.aboutUsService.getAboutUsHeadingBackgroundImage(),
-      ]);
-    } catch (error) {
-      throw error;
-    }
+    [this.headingContent, this.headingBackgroundImage] = await Promise.all([
+      this.aboutUsService.getAboutUsHeadingContent(),
+      this.aboutUsService.getAboutUsHeadingBackgroundImage(),
+    ]);
   }
 
   async loadCoreContent() {
-    try {
-      [
-        this.missionContent,
-        this.visionContent,
-        this.missionBackgroundImage,
-        this.visionBackgroundImage,
-      ] = await Promise.all([
-        this.aboutUsService.getAboutUsMissionContent(),
-        this.aboutUsService.getAboutUsVisionContent(),
-        this.aboutUsService.getAboutUsMissionBackgroundImage(),
-        this.aboutUsService.getAboutUsVisionBackgroundImage(),
-      ]);
-    } catch (error) {
-      throw error;
-    }
+    [
+      this.missionContent,
+      this.visionContent,
+      this.missionBackgroundImage,
+      this.visionBackgroundImage,
+    ] = await Promise.all([
+      this.aboutUsService.getAboutUsMissionContent(),
+      this.aboutUsService.getAboutUsVisionContent(),
+      this.aboutUsService.getAboutUsMissionBackgroundImage(),
+      this.aboutUsService.getAboutUsVisionBackgroundImage(),
+    ]);
   }
 
   async loadCompanyValuesContent() {
-    try {
-      [this.companyValuesContent, this.companyValuesSideImage] =
-        await Promise.all([
-          this.aboutUsService.getAboutUsCompanyValuesContent(),
-          this.aboutUsService.getAboutUsCompanyValuesSideImage(),
-        ]);
-    } catch (error) {
-      throw error;
-    }
+    [this.companyValuesContent, this.companyValuesSideImage] =
+      await Promise.all([
+        this.aboutUsService.getAboutUsCompanyValuesContent(),
+        this.aboutUsService.getAboutUsCompanyValuesSideImage(),
+      ]);
   }
 
   async loadTeamContent() {
-    try {
-      [this.teamContent, this.teamBackgroundImage] = await Promise.all([
-        this.aboutUsService.getAboutUsTeamContent(),
-        this.aboutUsService.getAboutUsTeamBackgroundImage(),
-      ]);
-    } catch (error) {
-      throw error;
-    }
+    [this.teamContent, this.teamBackgroundImage] = await Promise.all([
+      this.aboutUsService.getAboutUsTeamContent(),
+      this.aboutUsService.getAboutUsTeamBackgroundImage(),
+    ]);
   }
 
   async loadWhyUsContent() {
-    try {
-      this.whyUsContent = await this.aboutUsService.getAboutUsWhyUsContent();
-    } catch (error) {
-      throw error;
-    }
+    this.whyUsContent = await this.aboutUsService.getAboutUsWhyUsContent();
   }
 }

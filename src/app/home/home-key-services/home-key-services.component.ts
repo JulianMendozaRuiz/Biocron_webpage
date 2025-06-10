@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServiceService } from '../../_app-services/service/service.service';
+import { ServiceService } from '../../_app-services/_service/service.service';
 
 @Component({
   selector: 'comp-home-key-services',
@@ -9,7 +9,6 @@ import { ServiceService } from '../../_app-services/service/service.service';
 export class HomeKeyServicesComponent implements OnInit {
   @Input() viewName: string = '';
   @Input() viewTitle: string = '';
-  @Input() keyServicesContent: any;
 
   constructor(protected servicesService: ServiceService) {}
 

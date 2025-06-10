@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IndustryService } from '../../../_app-services/industry/industry.service';
-import IndustryClass from '../../../models/industries/industry';
+import IndustryClass from '../../../models/industries/industry.class';
 
 @Component({
   selector: 'comp-industries-area',

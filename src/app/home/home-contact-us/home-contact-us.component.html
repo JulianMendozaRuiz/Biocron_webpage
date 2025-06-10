@@ -10,7 +10,7 @@
 
       <div class="title">{{ title }}</div>
     </div>
-    <form class="form-inputs" [formGroup]="contactForm">
+    <form class="form-inputs" [formGroup]="contactForm" *ngIf="formContent">
       <div class="top-section">
         <div id="email-input" class="text-input">
           <label for="email">{{ formContent.email.label }}</label>

@@ -3,13 +3,14 @@ import { Subject } from 'rxjs';
 import ValueClass from '../../models/value';
 import { WixService } from '../wix/wix.service';
 import ModulesEnum from '../../models/content/modules_enum';
-import typeEnum from '../../models/content/home/type_enum';
+import typeEnum from '../../models/content/type_enum';
 import { WixMediaService } from '../wix/wix-media.service';
 import WixImageClass from '../../models/content/wix-image';
 import AboutUsCoreClass from '../../models/about_us/about_us_core';
 import AboutUsCompanyValuesClass from '../../models/about_us/about_us_company_values';
 import AboutUsTeamClass from '../../models/about_us/about_us_team';
 import HeadingClass from '../../models/shared/heading';
+import AboutUsWhyUsClass from '../../models/about_us/about_us_why_us';
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +33,7 @@ export class AboutUsService {
       throw new Error('Invalid values content');
 
     try {
-      this.values = pValuesContent.map((valueData: any) => {
+      this.values = pValuesContent.map((valueData: ValueClass) => {
         return new ValueClass(
           valueData.title,
           valueData.description,
@@ -42,7 +43,7 @@ export class AboutUsService {
 
       this.currentValue.next(this.values![0]);
     } catch (error) {
-      throw new Error('Invalid values content');
+      throw new Error('Invalid values content ' + error);
     }
   }
 
@@ -50,7 +51,7 @@ export class AboutUsService {
     try {
       this.currentValue.next(value);
     } catch (error) {
-      throw new Error('Error setting current value');
+      throw new Error('Error setting current value: ' + error);
     }
   }
 
@@ -239,7 +240,7 @@ export class AboutUsService {
       const content = new AboutUsCompanyValuesClass(
         response.items[0]._id,
         title,
-        values.map((value: any) => {
+        values.map((value: { title: string; description: string }) => {
           return new ValueClass(value.title, value.description, '');
         })
       );
@@ -335,7 +336,7 @@ export class AboutUsService {
     }
   }
 
-  async getAboutUsWhyUsContent(): Promise<any> {
+  async getAboutUsWhyUsContent(): Promise<AboutUsWhyUsClass> {
     try {
       if (!this.wixService.wixClient) {
         await this.wixService.createClient();
@@ -353,7 +354,14 @@ export class AboutUsService {
         throw new Error('No content found');
       }
 
-      return response.items[0]['content'][0];
+      const { title, description, reasons } = response.items[0]['content'][0];
+
+      return new AboutUsWhyUsClass(
+        response.items[0]._id,
+        title,
+        description,
+        reasons
+      );
     } catch (error) {
       console.error('Error fetching about us why us content:', error);
       throw error;

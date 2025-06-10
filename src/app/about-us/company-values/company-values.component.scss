@@ -106,6 +106,10 @@
           cursor: pointer;
         }
 
+        .innactive-value:hover {
+          text-decoration: underline;
+        }
+
         .innactive {
           display: none;
         }

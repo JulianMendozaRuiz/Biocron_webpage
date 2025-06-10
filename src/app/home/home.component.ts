@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import GalleryClass from '../models/content/gallery';
 import WixImageClass from '../models/content/wix-image';
 import { HomeService } from '../_app-services/home/home.service';
-import HomeAboutUsClass from '../models/content/home/home_about_us';
-import HomeHeroClass from '../models/content/home/home_hero';
-import { ServiceService } from '../_app-services/service/service.service';
-import ServiceClass from '../models/service';
-import HomeHeadingClass from '../models/content/home/home_heading';
-import HomeClientsClass from '../models/content/home/home_clients';
-import HomeContactUsClass from '../models/content/home/home_contact_us';
+import HomeAboutUsClass from '../models/home/home_about_us';
+import HomeHeroClass from '../models/home/home_hero';
+import HomeHeadingClass from '../models/home/home_heading';
+import HomeClientsClass from '../models/home/home_clients';
+import HomeContactUsClass from '../models/home/home_contact_us';
 
 @Component({
   selector: 'comp-home',
@@ -22,16 +20,12 @@ export class HomeComponent implements OnInit {
   aboutUsBackgroundImage: WixImageClass | null = null;
   aboutUsBackgroundParticles: WixImageClass | null = null;
   servicesHead: HomeHeadingClass | null = null;
-  servicesContent: ServiceClass[] | null = null;
   clientsSideImage: WixImageClass | null = null;
   clientsContent: HomeClientsClass | null = null;
   clientsLogos: GalleryClass | null = null;
   contactUsContent: HomeContactUsClass | null = null;
 
-  constructor(
-    private homeService: HomeService,
-    private serviceService: ServiceService
-  ) {}
+  constructor(private homeService: HomeService) {}
 
   async ngOnInit(): Promise<void> {
     try {
@@ -48,50 +42,29 @@ export class HomeComponent implements OnInit {
   }
 
   async loadHeroFiles() {
-    try {
-      this.heroContent = await this.homeService.getHomeHeroContent();
-      this.heroImages = await this.homeService.getHomeHeroMediaGallery();
-    } catch (error) {
-      throw error;
-    }
+    this.heroContent = await this.homeService.getHomeHeroContent();
+    this.heroImages = await this.homeService.getHomeHeroMediaGallery();
   }
 
   async loadAboutUsFiles() {
-    try {
-      this.aboutUsContent = await this.homeService.getHomeAboutUsContent();
-      const aboutUsImages = await this.homeService.getHomeAboutUsImages();
+    this.aboutUsContent = await this.homeService.getHomeAboutUsContent();
+    const aboutUsImages = await this.homeService.getHomeAboutUsImages();
 
-      this.aboutUsBackgroundParticles = aboutUsImages.images[0];
-      this.aboutUsBackgroundImage = aboutUsImages.images[1];
-    } catch (error) {
-      throw error;
-    }
+    this.aboutUsBackgroundParticles = aboutUsImages.images[0];
+    this.aboutUsBackgroundImage = aboutUsImages.images[1];
   }
 
   async loadServicesFiles() {
-    try {
-      this.servicesHead = await this.homeService.getHomeServicesHead();
-      this.servicesContent = await this.serviceService.getServices();
-    } catch (error) {
-      throw error;
-    }
+    this.servicesHead = await this.homeService.getHomeServicesHead();
   }
 
   async loadClientsFiles() {
-    try {
-      this.clientsContent = await this.homeService.getHomeClientsContent();
-      this.clientsLogos = await this.homeService.getHomeClientsLogos();
-      this.clientsSideImage = await this.homeService.getHomeClientsSideImage();
-    } catch (error) {
-      throw error;
-    }
+    this.clientsContent = await this.homeService.getHomeClientsContent();
+    this.clientsLogos = await this.homeService.getHomeClientsLogos();
+    this.clientsSideImage = await this.homeService.getHomeClientsSideImage();
   }
 
   async loadContactUsFiles() {
-    try {
-      this.contactUsContent = await this.homeService.getHomeContactUsContent();
-    } catch (error) {
-      throw error;
-    }
+    this.contactUsContent = await this.homeService.getHomeContactUsContent();
   }
 }

@@ -15,10 +15,9 @@
     [description]="aboutUsContent.description"
   ></comp-home-about-us>
   <comp-home-key-services
-    *ngIf="servicesHead && servicesContent"
+    *ngIf="servicesHead"
     [viewName]="servicesHead.name"
     [viewTitle]="servicesHead.title"
-    [keyServicesContent]="servicesContent"
   >
   </comp-home-key-services>
   <comp-clients

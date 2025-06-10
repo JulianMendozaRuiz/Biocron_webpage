@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './simplified-key-service-card.component.scss',
 })
 export class SimplifiedKeyServiceCardComponent {
-  @Input() name: String | null = null;
-  @Input() title: String | null = null;
-  @Input() description: String | null = null;
-  @Input() background_image: String | null = null;
+  @Input() name: string | null = null;
+  @Input() title: string | null = null;
+  @Input() description: string | null = null;
+  @Input() background_image: string | null = null;
 }
