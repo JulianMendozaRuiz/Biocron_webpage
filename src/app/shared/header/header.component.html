@@ -3,12 +3,13 @@
     <a href="/inicio">
       <img src="assets/svg/biocron_logo_primary_dark.svg" />
     </a>
-    <div class="header-links">
-      <a routerLink="/nosotros">Nosotros</a>
-      <a routerLink="/servicios">Servicios</a>
-      <a routerLink="/industrias">Industrias</a>
-      <a routerLink="/contacto">Contacto</a>
-      <a routerLink="/blog">Blog</a>
+    <div class="header-links text-red-700">
+      <p class="text-red">aaaa</p>
+      <a routerLink="/nosotros">{{ headerTags?.aboutUsTag }}</a>
+      <a routerLink="/servicios">{{ headerTags?.servicesTag }}</a>
+      <a routerLink="/industrias">{{ headerTags?.industriesTag }}</a>
+      <a routerLink="/contacto">{{ headerTags?.contactUsTag }}</a>
+      <a routerLink="/blog">{{ headerTags?.blogTag }}</a>
     </div>
   </div>
 </div>

@@ -27,14 +27,16 @@
     <div class="card-background"></div>
     <div class="card-content">
       <div class="card-text">
-        <div class="title">{{ title }}</div>
-        <div class="description">{{ description }}</div>
+        <div class="title primary-font">{{ title }}</div>
+        <div class="description secondary-font">{{ description }}</div>
       </div>
-      <p-button
+      <button
+        class="services-button primary-font"
+        pButton
         [routerLink]="['/servicios']"
-        class="services-button"
-        label="Conoce nuestros servicios"
-      ></p-button>
+      >
+        <span pButtonLabel>{{ buttonText }}</span>
+      </button>
     </div>
   </div>
 </div>

@@ -10,4 +10,5 @@ export class HeroComponent {
   @Input() images!: GalleryClass;
   @Input() title: string = '';
   @Input() description: string = '';
+  @Input() buttonText: string = '';
 }
