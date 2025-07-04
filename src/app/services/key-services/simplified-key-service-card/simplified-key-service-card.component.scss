@@ -1,10 +1,10 @@
 @import '../key-services.component.scss';
 
 .card {
-  border-radius: 0.5rem;
+  border-radius: 8px;
 
-  height: 22.5rem;
-  width: 22.5rem;
+  height: 360px;
+  width: 360px;
 
   transition: all 0.4s ease-out;
   transition-behavior: allow-discrete;
@@ -18,7 +18,7 @@
     grid-row: 1;
     grid-column: 1;
 
-    border-radius: 0.5rem;
+    border-radius: 8px;
 
     display: grid;
 
@@ -28,7 +28,7 @@
 
       height: 100%;
       width: 100%;
-      border-radius: 0.5rem;
+      border-radius: 8px;
       background-position: center;
 
       background-size: cover;
@@ -45,7 +45,7 @@
 
       width: 100%;
       height: 100%;
-      border-radius: 0.5rem;
+      border-radius: 8px;
     }
 
     .background-gradient-dark {
@@ -74,8 +74,8 @@
 
     justify-content: end;
 
-    padding-inline: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-inline: 24px;
+    padding-bottom: 24px;
 
     color: $contrastWhite;
 
@@ -85,7 +85,7 @@
     }
 
     .card-title {
-      font-size: 1.5rem;
+      font-size: 24px;
       line-height: 2rem;
     }
 
@@ -107,8 +107,8 @@
 }
 
 .card:hover {
-  height: 23.75rem;
-  width: 23.75rem;
+  height: 380px;
+  width: 380px;
 
   .background {
     .background-gradient-dark {

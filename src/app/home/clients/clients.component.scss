@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-inline: 9.75rem;
-  padding-block: 5rem;
+  padding-inline: 156px;
+  padding-block: 80px;
 
-  gap: 2.5rem;
+  gap: 40px;
 
   align-content: center;
 
@@ -15,21 +15,19 @@
 
   .clients-info {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
+    gap: 40px;
 
     align-items: center;
 
     .content-image {
-      height: 22.5rem;
+      height: 360px;
 
-      border-radius: 0.5rem;
+      border-radius: 8px;
 
       img {
         height: 100%;
         object-fit: cover;
-        border-radius: 0.5rem;
+        border-radius: 8px;
       }
     }
 
@@ -37,7 +35,7 @@
       display: flex;
       flex-direction: column;
 
-      gap: 1.5rem;
+      gap: 24px;
 
       align-items: flex-start;
 
@@ -48,11 +46,11 @@
         flex-direction: column;
         align-items: flex-start;
 
-        gap: 0.75rem;
+        gap: 12px;
 
         .tag {
           font-size: 1rem;
-          padding: 0.75rem 1rem;
+          padding: 12px 16px;
         }
 
         .title {
@@ -63,7 +61,7 @@
       }
 
       .description {
-        line-height: 1.5rem;
+        line-height: 24px;
         text-wrap: pretty;
       }
     }
@@ -104,7 +102,7 @@
 // Custom styling of carousel item to allow for unequal width elements with equal "gap" between them
 :host ::ng-deep .p-carousel .p-carousel-content .p-carousel-item {
   flex: 0 !important;
-  margin-left: 2.25rem !important;
+  margin-left: 36px !important;
 
   background-color: $iconGray;
 }

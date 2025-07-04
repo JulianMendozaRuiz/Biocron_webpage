@@ -1,13 +1,52 @@
 @import '../../../styles.scss';
 
-.header-container {
+.header-absolute {
   position: absolute;
+  top: auto;
+}
 
+.header-sticky {
+  position: sticky;
+  top: 0;
+}
+
+.header-container {
   z-index: 1;
 
   width: 100%;
-  height: 5rem;
+  height: auto;
+}
 
+.visible {
+  display: flex;
+
+  // TODO: Insert animation after responsive design is complete
+  // animation: appear 0.4s;
+}
+
+.not-visible {
+  display: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+.current-route {
+  color: $primaryDarkColor;
+  font-weight: bold;
+  pointer-events: none;
+  cursor: default;
+}
+
+.header-container-light {
   background: linear-gradient($unpureWhite 0%, $unpureWhite80 100%);
 
   border-image: linear-gradient(
@@ -23,21 +62,70 @@
   border-style: solid;
 }
 
+.header-container-dark {
+  background: transparent;
+
+  border-width: 0;
+
+  color: $smoothWhite;
+}
+
 .header-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1.25rem 9.75rem;
+  transition: all 0.4s ease-in-out;
+  transition-behavior: allow-discrete;
+
+
+  @media screen and (max-width: 992px) {
+    padding: 1.25rem 24px;
+  }
+
+  .biocron-home-link {
+    .biocron-logo {
+      height: 2.25rem;
+      min-height: 32px;
+    }
+  }
 
   .header-links {
-    display: flex;
     gap: 0.5rem;
 
     a {
-      color: $primaryDarkColor;
       text-decoration: none;
       padding-inline: 0.75rem;
       padding-block: 0.375rem;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .header-links-dark {
+    a {
+      color: $primaryDarkColor;
+    }
+  }
+
+  .header-links-light {
+    a {
+      color: $contrastWhite;
+    }
+  }
+}
+
+.header-body-light {
+  .header-links {
+    a {
+      color: $primaryDarkColor;
+    }
+  }
+}
+
+.header-body-dark {
+  .header-links {
+    a {
+      color: $contrastWhite;
     }
   }
 }
