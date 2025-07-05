@@ -13,15 +13,13 @@
       [showIndicators]="false"
     >
       <ng-template let-image pTemplate="item">
-        <div class="carousel-image-container">
-          <img
-            [src]="image.media.url"
-            [alt]="image.alt"
-            class="carousel-image"
-          />
-        </div>
+        <div
+          class="carousel-image-container"
+          [ngStyle]="{ 'background-image': 'url(' + image.media.url + ')' }"
+        ></div>
       </ng-template>
     </p-carousel>
+    <div class="gradient-overlay"></div>
   </div>
   <div class="hero-card">
     <div class="card-background"></div>

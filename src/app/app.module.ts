@@ -26,12 +26,22 @@ registerLocaleData(localeEs, 'es');
     SharedModule,
   ],
   providers: [
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+
+        options: {
+          cssLayer: {
+            name: 'primeng',
+            order: 'app-styles, primeng, another-css-library',
+          },
+        },
+      },
+    }),
+
     { provide: LOCALE_ID, useValue: 'es' },
     DatePipe,
     provideAnimationsAsync(),
-    providePrimeNG({
-      theme: Aura,
-    }),
   ],
   bootstrap: [AppComponent],
   exports: [SharedModule],

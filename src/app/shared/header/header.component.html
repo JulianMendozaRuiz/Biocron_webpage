@@ -14,10 +14,16 @@
     <div class="flex-column flex">
       <div class="justify-content-between align-items-center flex flex-row">
         <div class="flex lg:hidden">
+          <!-- Transaprent button only for symmetry purposes -->
           <p-button
-            [style]="{ opacity: 0 }"
+            [style]="{
+              opacity: 0,
+              mouseEvents: 'none',
+              pointerEvents: 'none',
+              pointer: 'default',
+            }"
             icon="pi pi-bars"
-            aria-label="Save"
+            aria-label="Menu"
           />
         </div>
         <a class="biocron-home-link" href="/inicio">
@@ -67,16 +73,24 @@
             >{{ headerTags?.blogTag }}</a
           >
         </div>
-        <p-button
-          class="block lg:hidden"
-          (onClick)="toggleNavigationPanel()"
+        <button
+          pButton
+          class="menu-button block lg:hidden"
+          (click)="toggleNavigationPanel()"
           icon="pi pi-bars"
+          [rounded]="true"
           aria-label="Menu"
-        />
+          [ngClass]="{
+            'menu-button-dark':
+              isCurrentRoute('/inicio') && windowIsTop && !drawerVisible,
+            'menu-button-light':
+              !isCurrentRoute('/inicio') || !windowIsTop || drawerVisible,
+          }"
+        ></button>
       </div>
 
       <div
-        class="header-links flex-column justify-content-center align-items-center"
+        class="header-links header-links-dark flex-column justify-content-center align-items-center"
         [ngClass]="{
           visible: drawerVisible,
           'not-visible': !drawerVisible,
