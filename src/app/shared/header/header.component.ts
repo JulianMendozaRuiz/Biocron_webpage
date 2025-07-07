@@ -1,7 +1,7 @@
 import {
   Component,
   ElementRef,
-  HostListener,
+  // HostListener,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -27,13 +27,14 @@ export class HeaderComponent implements OnInit {
     private routingService: RoutingService,
   ) {}
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event): void {
-    const scrollTop = (event.target as Document).documentElement.scrollTop;
-    const belowThreshold = scrollTop >= this.header.nativeElement.offsetHeight;
+  // TODO: Decide if stcky header is needed
+  // @HostListener('window:scroll', ['$event'])
+  // onWindowScroll(event: Event): void {
+  //   const scrollTop = (event.target as Document).documentElement.scrollTop;
+  //   const belowThreshold = scrollTop >= this.header.nativeElement.offsetHeight;
 
-    this.windowIsTop = !belowThreshold;
-  }
+  //   this.windowIsTop = !belowThreshold;
+  // }
 
   async ngOnInit(): Promise<void> {
     this.headerTags = await this.headerService.getHeaderTags();

@@ -14,6 +14,11 @@
   width: 46.5rem;
   gap: 1.5rem;
 
+  @media screen and (max-width: 968px) {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
   display: flex;
   flex-direction: column;
 

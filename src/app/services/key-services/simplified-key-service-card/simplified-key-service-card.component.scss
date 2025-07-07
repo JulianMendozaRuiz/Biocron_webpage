@@ -6,10 +6,22 @@
   height: 360px;
   width: 360px;
 
+  @media screen and (max-width: 576px) {
+    height: 320px;
+    width: 320px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 280px;
+    width: 280px;
+    
+  }
+
   transition: all 0.4s ease-out;
   transition-behavior: allow-discrete;
 
   display: grid;
+  
 
   .background {
     width: 100%;
@@ -106,19 +118,21 @@
   }
 }
 
-.card:hover {
-  height: 380px;
-  width: 380px;
+@media screen and (min-width: 576px) {
+  .card:hover {
+    height: 380px;
+    width: 380px;
 
-  .background {
-    .background-gradient-dark {
-      height: 100%;
+    .background {
+      .background-gradient-dark {
+        height: 100%;
+      }
     }
-  }
 
-  .card-info {
-    .card-description {
-      grid-template-rows: 1fr;
+    .card-info {
+      .card-description {
+        grid-template-rows: 1fr;
+      }
     }
   }
 }

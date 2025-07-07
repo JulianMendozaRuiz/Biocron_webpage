@@ -9,10 +9,20 @@
   margin-block: 80px;
   margin-inline: 156px;
 
+  @media screen and (max-width: 968px) {
+    margin-inline: 16px;
+  }
+
   align-items: center;
   justify-content: center;
 
   .key-services-cards{
+    width: 100%;
+
+    @media screen and (max-width: 968px) {
+      max-width: 400px;
+    }
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

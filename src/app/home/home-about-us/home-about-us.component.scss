@@ -6,6 +6,11 @@
 
   display: grid;
 
+  @media screen and (max-width: 768px) {
+    height: 480px;
+  }
+
+
   .background-image {
     width: 100%;
     height: 100%;
@@ -60,7 +65,13 @@
     width: 100%;
     height: 100%;
 
+    align-items: center;
+
     padding-inline: 14rem;
+
+    @media screen and (max-width: 768px) {
+      padding-inline: 16px;
+    }
 
     grid-row: 1;
     grid-column: 1;
@@ -83,9 +94,14 @@
     }
 
     .description {
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $unpureWhite;
       line-height: 32px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
 
       text-align: center;
 
