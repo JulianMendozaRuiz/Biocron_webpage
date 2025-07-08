@@ -18,7 +18,7 @@ import AboutUsWhyUsClass from '../../models/about_us/about_us_why_us';
 export class AboutUsService {
   constructor(
     private wixService: WixService,
-    private wixMediaservice: WixMediaService
+    private wixMediaservice: WixMediaService,
   ) {}
 
   values: ValueClass[] | null = null;
@@ -37,7 +37,7 @@ export class AboutUsService {
         return new ValueClass(
           valueData.title,
           valueData.description,
-          valueData.img
+          valueData.img,
         );
       });
 
@@ -242,7 +242,7 @@ export class AboutUsService {
         title,
         values.map((value: { title: string; description: string }) => {
           return new ValueClass(value.title, value.description, '');
-        })
+        }),
       );
 
       this.setCurrentValue(content.values[0]);
@@ -354,13 +354,13 @@ export class AboutUsService {
         throw new Error('No content found');
       }
 
-      const { title, description, reasons } = response.items[0]['content'][0];
+      const { title_section, reasons } = response.items[0]['content'][0];
 
       return new AboutUsWhyUsClass(
         response.items[0]._id,
-        title,
-        description,
-        reasons
+        title_section.title,
+        title_section.description,
+        reasons,
       );
     } catch (error) {
       console.error('Error fetching about us why us content:', error);

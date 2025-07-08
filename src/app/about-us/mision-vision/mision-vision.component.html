@@ -1,24 +1,32 @@
-<div class="mision-vision-container">
-  <div class="mision">
-    <div class="mision-image">
-      <img src="{{ missionBackgroundImage!.media.url }}" alt="mision" />
-    </div>
+<div class="mision-vision-container flex-column flex md:flex-row">
+  <div
+    class="mision"
+    [ngStyle]="{
+      'background-image': 'url(' + missionBackgroundImage!.media.url + ')',
+    }"
+  >
     <div class="mision-gradient"></div>
 
     <div class="mision-content">
-      <div class="mision-title">{{ mision!.title }}</div>
-      <div class="mision-description">{{ mision!.description }}</div>
+      <div class="mision-title primary-font">{{ mision!.title }}</div>
+      <div class="mision-description secondary-font">
+        {{ mision!.description }}
+      </div>
     </div>
   </div>
-  <div class="vision">
-    <div class="vision-image">
-      <img src="{{ visionBackgroundImage!.media.url }}" alt="vision" />
-    </div>
+  <div
+    class="vision"
+    [ngStyle]="{
+      'background-image': 'url(' + visionBackgroundImage!.media.url + ')',
+    }"
+  >
     <div class="vision-gradient"></div>
 
     <div class="vision-content">
-      <div class="vision-title">{{ vision!.title }}</div>
-      <div class="vision-description">{{ vision!.description }}</div>
+      <div class="vision-title primary-font">{{ vision!.title }}</div>
+      <div class="vision-description secondary-font">
+        {{ vision!.description }}
+      </div>
     </div>
   </div>
 </div>
