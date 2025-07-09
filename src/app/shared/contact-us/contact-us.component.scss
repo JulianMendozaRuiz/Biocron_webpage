@@ -1,31 +1,57 @@
 @import '../../../styles.scss';
 
 .container {
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-
   margin-block: 4rem;
 
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
 
-  .contact-section {
-    display: flex;
-    flex-direction: column;
+  @media screen and (min-width: 390px) and (max-width: 576px) {
+    margin-inline: 1rem;
+  }
+
+  @media screen and (max-width: 390px) {
+    margin-inline: 1rem;
     gap: 1.5rem;
-    align-items: start;
-    justify-content: center;
-    text-align: start;
+  }
+
+  .contact-section {
+    gap: 1.5rem;
 
     width: 34.5rem;
     padding: 2.5rem;
 
+    @media screen and (min-width: 576px) and (max-width: 1200px) {
+      width: fit-content;
+    }
+
+    @media screen and (min-width: 390px) and (max-width: 576px) {
+      width: 100%;
+      padding: 40px 24px;
+    }
+
+    @media screen and (max-width: 390px) {
+      width: 100%;
+      padding: 20px 16px;
+    }
+
     .contact-section-title {
       font-size: 2.5rem;
       font-weight: bold;
+
+      line-height: 48px;
+    }
+
+    .contact-button {
+      font-size: 20px;
+      line-height: 24px;
+
+      font-weight: 600;
+
+      @media screen and (max-width: 389px) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -43,9 +69,15 @@
       .info-description {
         color: $primaryDarkColor;
         line-height: 2rem;
+
+        font-weight: 400;
       }
       .info-phone {
         font-size: 2rem;
+
+        @media screen and (max-width: 450px) {
+          font-size: 1.5rem;
+        }
       }
 
       .info-email {
@@ -55,6 +87,10 @@
       .info-email,
       .info-open-hours {
         font-size: 1.5rem;
+
+        @media screen and (max-width: 450px) {
+          font-size: 1.2rem;
+        }
       }
     }
   }
