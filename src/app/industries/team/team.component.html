@@ -1,13 +1,21 @@
-<div class="team-container" *ngIf="content && background">
-  <div
-    class="team-background-image"
-    [ngStyle]="{
-      'background-image': 'url(' + background.media.url + ')',
-    }"
-  ></div>
-  <div class="team-background-gradient"></div>
-  <div class="team-content">
-    <div class="team-content-title">{{ content.title }}</div>
-    <div class="team-content-description">{{ content.description }}</div>
+<div class="team-container">
+  <div class="team-card">
+    <div
+      class="team-background"
+      [ngStyle]="{
+        'background-image': 'url(' + background!.media.url + ')',
+      }"
+    ></div>
+    <div class="team-gradient"></div>
+    <div class="team-content">
+      <div class="content-container">
+        <div class="title primary-font text-center md:text-left">
+          {{ content!.title }}
+        </div>
+        <div class="description secondary-font text-center md:text-left">
+          {{ content!.description }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

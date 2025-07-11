@@ -1,14 +1,13 @@
 @import '../../industries.component.scss';
 
 .industries-area-container {
-  display: flex;
-  flex-direction: column;
+  width: auto;
 
-  max-width: 70.5rem;
+  max-width: 100vw;
+
+  margin-inline: 156px;
 
   margin-top: 2.5rem;
-
-  margin-inline: 9.75rem;
 
   padding-block: 2.5rem;
 
@@ -17,24 +16,38 @@
 
   gap: 4rem;
 
-  .industries-area-tabs {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
+  .industries-area-tabs::-webkit-scrollbar {
+    display: none;
+  }
 
-    justify-self: center;
-    align-self: center;
+  .industries-area-tabs {
+    width: min-content;
+    max-width: 100%;
+
+    gap: 24px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     .tab {
-      font-size: 1.5rem;
-      border: solid;
-      border-radius: 2.5rem;
+      min-width: fit-content;
 
       padding-inline: 1.5rem;
       padding-block: 0.5rem;
+      font-weight: 400;
+      font-size: 1.5rem;
+      border-radius: 40px;
+
+      text-wrap: nowrap;
+
+      @media screen and (max-width: 389px) {
+        font-size: 1.25rem;
+        padding-inline: 1rem;
+      }
     }
 
     .active-tab {
+      border: solid;
       background-color: $primaryLightColor;
       color: $primaryDarkColor;
 
@@ -52,22 +65,16 @@
 
   .industries-area-content {
     margin-inline: 6rem;
-
-    display: flex;
-    flex-direction: column;
-
     gap: 2.5rem;
 
+    @media screen and (max-width: 768px) {
+      margin-inline: 1rem;
+    }
+
     .content-description {
-      display: flex;
-      flex-direction: row;
-
-      margin-inline: 6rem;
-
-      gap: 4rem;
-
       .industry-photo {
-        height: auto;
+        height: 262px;
+        width: 225px;
 
         display: grid;
 
@@ -78,15 +85,14 @@
           grid-column: 1;
           grid-row: 1;
 
-          mask-image: url('/assets/svg/biocron_industry_mask.svg');
+          mask-image: url('/assets/svg/biocro n_industry_mask.svg');
           mask-position: center;
           mask-repeat: no-repeat;
           -webkit-mask-image: url('/assets/svg/biocron_industry_mask.svg');
 
           img {
             width: 100%;
-            height: 16.375rem;
-            max-width: 15.1rem;
+            height: 100%;
             object-fit: cover;
           }
         }
@@ -106,9 +112,16 @@
 
       .industry-description {
         align-self: center;
-        width: 28.5rem;
+
+        font-weight: 300;
 
         line-height: 1.5rem;
+
+        width: 28.5rem;
+
+        @media screen and (max-width: 992px) {
+          width: 100%;
+        }
       }
     }
 
@@ -122,16 +135,27 @@
       grid-template-rows: 1fr;
       grid-column-gap: 2.5rem;
 
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
       li {
         line-height: 1.5rem;
       }
 
       .industry-services {
-        display: flex;
-        flex-direction: column;
+        width: auto;
+        max-width: 440px;
+
+        @media screen and (max-width: 768px) {
+          max-width: fit-content;
+        }
 
         .services-title {
           font-size: 1.25rem;
+          font-weight: 400;
           color: $primaryDarkColor;
           line-height: 1.75rem;
         }
@@ -158,6 +182,12 @@
             }
           }
 
+          li {
+            font-weight: 400;
+            color: $smoothGray;
+            line-height: 24px;
+          }
+
           li:not(:last-child) {
             margin-bottom: 1rem;
           }
@@ -165,8 +195,12 @@
       }
 
       .industry-benefits {
-        display: flex;
-        flex-direction: column;
+        width: auto;
+        max-width: 440px;
+
+        @media screen and (max-width: 768px) {
+          max-width: fit-content;
+        }
 
         .benefits-title {
           font-size: 1.25rem;
@@ -187,6 +221,12 @@
             flex-direction: row;
 
             align-items: flex-start;
+
+            li {
+              font-weight: 300;
+              color: $smoothGray;
+              line-height: 24px;
+            }
 
             .marker {
               background-image: url('/assets/svg/biocron_bullet_marker_big_check.svg');
