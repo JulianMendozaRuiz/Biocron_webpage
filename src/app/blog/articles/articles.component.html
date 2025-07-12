@@ -4,18 +4,20 @@
     [article]="featuredArticle"
   ></comp-featured-article>
 
-  <div class="articles-list">
+  <div class="articles-list flex-column flex lg:flex-row">
     <comp-article-card
       *ngFor="let article of articles"
       [article]="article"
     ></comp-article-card>
   </div>
   <div class="load-more">
-    <p-button
+    <button
+      pButton
       class="input-button"
-      [label]="loadMoreText"
       *ngIf="!loading"
       (onClick)="loadMore()"
-    ></p-button>
+    >
+      {{ loadMoreText }}
+    </button>
   </div>
 </div>

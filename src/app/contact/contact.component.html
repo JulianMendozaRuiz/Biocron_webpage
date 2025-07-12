@@ -6,13 +6,11 @@
       [viewTitle]="headingContent.title"
       [viewDescription]="headingContent.description"
     ></comp-view-heading>
-    <div class="contact-form-container-wrapper">
-      <comp-contact-form
-        *ngIf="formContent && formSideImage"
-        [content]="formContent"
-        [sideImage]="formSideImage"
-      ></comp-contact-form>
-    </div>
+    <comp-contact-form
+      *ngIf="formContent && formSideImage"
+      [content]="formContent"
+      [sideImage]="formSideImage"
+    ></comp-contact-form>
     <comp-contact-us></comp-contact-us>
   </div>
 </div>

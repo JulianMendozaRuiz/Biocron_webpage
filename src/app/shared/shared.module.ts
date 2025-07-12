@@ -9,6 +9,7 @@ import { ViewHeadingComponent } from './view-heading/view-heading.component';
 import { BoldPipe } from './pipes/bold.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { TextareaModule } from 'primeng/textarea';
 import { InputMaskModule } from 'primeng/inputmask';
 import { DrawerModule } from 'primeng/drawer';
 import { PanelModule } from 'primeng/panel';
@@ -40,6 +41,7 @@ import { ReactWrapperComponent } from './react-component-wrapper/react-component
     DrawerModule,
     PanelModule,
     ButtonModule,
+    TextareaModule,
   ],
   exports: [
     HeaderComponent,
@@ -52,6 +54,7 @@ import { ReactWrapperComponent } from './react-component-wrapper/react-component
     ButtonModule,
     InputTextModule,
     InputMaskModule,
+    TextareaModule,
     RicosViewerComponent,
   ],
 })

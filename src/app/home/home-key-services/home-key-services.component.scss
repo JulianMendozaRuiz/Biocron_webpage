@@ -15,10 +15,14 @@
   align-items: center;
   justify-content: center;
 
-  .key-services-cards{
+  .key-services-cards {
     width: 100%;
 
-    @media screen and (max-width: 968px) {
+    @media screen and (min-width: 969px) and (max-width: 1200px) {
+      max-width: 1000px;
+    }
+
+    @media screen and (max-width: 816px) {
       max-width: 400px;
     }
 

@@ -1,12 +1,24 @@
 @import '../contact.component.scss';
 
+input {
+  font-size: 14px;
+}
+
+textarea {
+  font-size: 14px;
+}
+
+:host ::ng-deep .p-inputtext {
+  font-size: 14px;
+}
+
 .form {
-  display: flex;
-  flex-direction: row;
   gap: 1.5rem;
 
-  width: 70.5rem;
-  height: 42rem;
+  justify-self: center;
+
+  max-width: 70.5rem;
+  height: fit-content;
 
   background-color: $unpureWhite;
 
@@ -17,18 +29,28 @@
   border: solid 2px rgba(10, 13, 23, 0.05);
 
   margin-block: 4.5rem;
-  margin-inline: auto;
   border-radius: 1rem;
+
+  @media screen and (max-width: 1200px) {
+    margin-inline: 1rem;
+  }
 
   .form-image-box {
     width: 100%;
-    max-height: 39.5rem;
-    height: 100%;
-    gap: 2rem;
+    max-width: 532px;
 
+    height: auto;
     border-radius: 0.5rem;
 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     display: grid;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     .form-side-image {
       height: 100%;
@@ -41,12 +63,6 @@
       z-index: 0;
       grid-row: 1;
       grid-column: 1;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
 
     .form-side-image-gradient {
@@ -103,19 +119,44 @@
   .form-wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     padding: 2.5rem;
     gap: 2rem;
+
+    @media screen and (min-width: 993px) and (max-width: 1200px) {
+      padding-inline: 1.5rem;
+    }
+
+    @media screen and (max-width: 992px) {
+      padding-inline: 1rem;
+      padding-block: 1rem;
+    }
+
+    @media screen and (max-width: 576px) {
+      padding-inline: 0;
+    }
 
     .form-heading {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
 
+      @media screen and (max-width: 576px) {
+        align-items: center;
+        text-align: center;
+      }
+
       .form-heading-title {
         font-size: 2rem;
         font-weight: bold;
+
+        line-height: 40px;
+      }
+
+      .form-heading-description {
+        font-size: 16px;
+        font-weight: 400;
+
+        line-height: 24px;
       }
     }
 
@@ -127,12 +168,17 @@
       grid-column-gap: 1rem;
       grid-row-gap: 1rem;
 
+      @media screen and (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+      }
+
       .input-name {
         grid-area: 1 / 1 / 2 / 2;
       }
 
       .input-email {
-        grid-area: 1 / 2 / 2 / 3;
+        grid-area: 1 / 2 / 2 / 2;
       }
 
       .input-phone {
@@ -151,11 +197,6 @@
         }
       }
 
-      .input-button {
-        grid-area: 4 / 1 / 5 / 3;
-        margin-top: 2rem;
-      }
-
       .input-name,
       .input-email,
       .input-phone,
@@ -170,5 +211,13 @@
         }
       }
     }
+  }
+
+  .input-button {
+    width: min-content;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
   }
 }

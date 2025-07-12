@@ -1,18 +1,22 @@
-<div class="featured-article-container" (click)="goToArticle()">
-  <div
-    class="featured-article-background-image"
-    [ngStyle]="{ 'background-image': 'url(' + article.mainImage + ')' }"
-  ></div>
+<div
+  class="featured-article-container"
+  [ngStyle]="{ 'background-image': 'url(' + article.mainImage + ')' }"
+  (click)="goToArticle()"
+>
   <div class="featured-article-background-gradient"></div>
   <div class="featured-article-content">
-    <div class="featured-article-content-tag">
-      <button *ngIf="article.tag" class="tag p-button" disabled>
-        {{ article.tag }}
-      </button>
+    <div class="featured-article-badges-title flex-column flex gap-3">
+      <div class="featured-article-content-tag secondary-font">
+        <button *ngIf="article.tag" class="tag p-button" disabled>
+          {{ article.tag }}
+        </button>
+      </div>
+      <div class="featured-article-content-title primary-font">
+        {{ article.title }}
+      </div>
     </div>
-    <div class="featured-article-content-title">{{ article.title }}</div>
-    <div class="featured-article-content-published-date">
-      {{ article.datePublished | date : 'MMMM d, y' }}
+    <div class="featured-article-content-published-date secondary-font">
+      {{ article.datePublished | date: 'MMMM d, y' }}
     </div>
   </div>
 </div>

@@ -1,29 +1,31 @@
-@import "../blog.component.scss";
+@import '../blog.component.scss';
 
 .articles-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin-block: 5rem;
+
+  padding-inline: 1rem;
+
+  gap: 2.5rem;
+
+  justify-items: center;
+  align-items: center;
+
+  .articles-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1.5rem;
+
+    justify-content: center;
+    align-items: center;
 
     width: 100%;
 
-    margin-block: 5rem;
+    max-width: 1128px;
 
-    gap: 2.5rem;
-
-    padding-inline: 9.75rem ;
-    justify-items: center;
-    align-items: center;
-
-    .articles-list{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        gap: 1.5rem;
-
-        justify-content: center;
-        align-items: center;
-
-        width: 100%;
-    }
+  }
 }

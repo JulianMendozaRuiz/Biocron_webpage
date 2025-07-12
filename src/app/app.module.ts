@@ -29,11 +29,12 @@ registerLocaleData(localeEs, 'es');
     providePrimeNG({
       theme: {
         preset: Aura,
-
         options: {
+          // eslint-disable-next-line no-constant-binary-expression
+          darkModeSelector: false || 'none',
           cssLayer: {
             name: 'primeng',
-            order: 'app-styles, primeng, another-css-library',
+            order: 'primeng, app-styles, another-css-library',
           },
         },
       },

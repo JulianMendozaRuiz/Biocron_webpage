@@ -118,10 +118,19 @@
   }
 }
 
-@media screen and (min-width: 576px) {
   .card:hover {
     height: 380px;
     width: 380px;
+
+    @media screen and (max-width: 576px) {
+      height: 340px;
+      width: 340px;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 300px;
+      width: 300px;
+    }
 
     .background {
       .background-gradient-dark {
@@ -135,4 +144,3 @@
       }
     }
   }
-}
