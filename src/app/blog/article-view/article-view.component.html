@@ -1,5 +1,10 @@
-<div class="article-view-container" *ngIf="article && articleContentLabels">
-  <div class="article">
+<div
+  class="article-view-container flex-column align-items-center flex"
+  *ngIf="article && articleContentLabels"
+>
+  <div
+    class="article flex-column align-items-center justify-content-center flex p-3"
+  >
     <div class="article-head">
       <div class="article-tag">
         <button *ngIf="article!.tag" class="tag p-button" disabled>
@@ -10,7 +15,7 @@
         {{ article!.title }}
       </div>
       <div class="article-date-published">
-        {{ article!.datePublished | date : 'MMMM d, y' }}
+        {{ article!.datePublished | date: 'MMMM d, y' }}
       </div>
       <div class="article-image">
         <img
@@ -26,16 +31,20 @@
         [article]="article"
       ></comp-ricos-viewer>
     </div>
-    <div class="article-footer">
-      <div class="article-author">
-        <b>{{ articleContentLabels.author }}</b
+    <div
+      class="article-footer align-items-start justify-content-start flex-column flex"
+    >
+      <div class="article-author secondary-font">
+        <b class="primary-font">{{ articleContentLabels.author }}</b
         >{{ article!.author }}
       </div>
       <div class="article-link">
-        <div>{{ articleContentLabels.read_more }}</div>
-        <a [href]="article!.originalPostLink" target="_blank">
-          {{ articleContentLabels.link_label }}
-        </a>
+        <div>
+          {{ articleContentLabels.read_more }}
+          <a [href]="article!.originalPostLink" target="_blank">
+            {{ articleContentLabels.link_label }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -44,7 +53,9 @@
     <div class="other-articles-title">
       {{ articleContentLabels.other_articles }}
     </div>
-    <div class="other-articles-list">
+    <div
+      class="other-articles-list align-items-start lg:align-items-center justify-content-start lg:justify-content-center flex-column flex md:flex-row"
+    >
       <comp-article-card
         *ngFor="let article of otherArticles"
         [article]="article"
