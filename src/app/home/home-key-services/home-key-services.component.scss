@@ -18,6 +18,8 @@
   .key-services-cards {
     width: 100%;
 
+    max-width: 1150px;
+
     @media screen and (min-width: 969px) and (max-width: 1200px) {
       max-width: 1000px;
     }
