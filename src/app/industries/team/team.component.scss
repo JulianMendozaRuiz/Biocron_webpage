@@ -1,65 +1,130 @@
 @import '../industries.component.scss';
-
 .team-container {
-  display: grid;
-  height: 26.25rem;
-  width: 70.5rem;
-  align-self: center;
-  justify-self: center;
-
-  border-radius: 1rem;
-
-  .team-background-image {
-    grid-row: 1;
-    grid-column: 1;
-
-    border-radius: 1rem;
-
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
+  height: 420px;
+  width: 100%;
+  
+  @media screen and (max-width: 768px) {
+    height: 480px;
   }
-
-  .team-background-gradient {
-    grid-row: 1;
-    grid-column: 1;
-
+  
+  justify-content: center;
+  align-items: center;
+  
+  
+  .team-card {
+    display: grid;
     border-radius: 1rem;
-
-    opacity: 90%;
-
-    background-image: url('/assets/svg/biocron_us_card_background_gradient.svg');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .team-content{
-    grid-row: 1;
-    grid-column: 1;
-    text-align: left;
     
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    height: 100%;
+    width: auto;
+    
+    margin-inline: 156px;
+    
+    @media screen and  (min-width: 769px) and (max-width: 1200px) {
+      margin-inline: 78px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      margin-inline: 16px;
+    }
+    
+    .team-background {
+      grid-row: 1;
+      grid-column: 1;
+      height: 100%;
+      z-index: -2;
+      border-radius: 1rem;
+      
+      background-position: 50% 25%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      overflow: hidden;
+    }
+    
+    .team-gradient {
+      background-image: url('/assets/svg/biocron_us_card_background_gradient.svg');
 
-    align-self: flex-end;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left;
 
-    margin-left: 3rem;
-    margin-bottom: 2.5rem;
+      opacity: 0.9;
 
+      border-radius: 16px;
 
-    max-width: 32.375rem;
+      // @media screen and (max-width: 768px) {
+      //   background-image: linear-gradient(
+      //     180deg,
+      //     $primaryDarkColorTransparent 4%,
+      //     $primaryDarkColor 75%
+      //   );
+      // }
 
-    color: $unpureWhite;
-
-    .team-content-title{
-        font-weight: bold;
-
-        font-size: 2.5rem;
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
+    .team-content {
+      grid-row: 1;
+      grid-column: 1;
+      height: 100;
+      width: 100%;
+      z-index: 0;
+
+      display: flex;
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        margin: 2.5rem;
+
+        justify-self: start;
+        align-self: flex-end;
+
+        @media screen and (max-width: 768px) {
+          margin: 24px;
+        }
+
+        @media screen and (max-width: 389px) {
+          gap: 1rem;
+        }
+
+
+        color: $smoothWhite;
+
+        .title {
+          font-size: 2.5rem;
+          font-weight: bold;
+
+          line-height: 3rem;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+          }
+
+          @media screen and (max-width: 389px) {
+            font-size: 2rem;
+            line-height: 2rem;
+          }
+        }
+
+        .description {
+          line-height: 1.5rem;
+
+          max-width: 33rem;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+            font-size: 14px;
+          }
+        }
+      }
+    }
   }
 }

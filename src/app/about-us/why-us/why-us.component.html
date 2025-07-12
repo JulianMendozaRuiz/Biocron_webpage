@@ -1,18 +1,16 @@
 <div class="why-us-container">
   <div class="title-section">
-    <div class="title">{{ whyUsContent.title }}</div>
-    <div class="description">{{ whyUsContent.description }}</div>
+    <div class="title primary-font">{{ whyUsContent.title }}</div>
+    <div class="description secondary-font">{{ whyUsContent.description }}</div>
   </div>
-  <div class="reasons">
+  <div class="reasons flex-column flex flex-wrap md:flex-row">
     <comp-reason-card
       *ngFor="let reason of whyUsContent.reasons"
       [title]="reason.title"
       [description]="reason.description"
     ></comp-reason-card>
   </div>
-  <p-button
-    class="input-button"
-    label="Contáctenos"
-    (onClick)="goToContactUs()"
-  ></p-button>
+  <button pButton class="input-button primary-font" (click)="goToContactUs()">
+    {{ 'Contáctenos' }}
+  </button>
 </div>

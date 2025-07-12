@@ -13,28 +13,28 @@
       [showIndicators]="false"
     >
       <ng-template let-image pTemplate="item">
-        <div class="carousel-image-container">
-          <img
-            [src]="image.media.url"
-            [alt]="image.alt"
-            class="carousel-image"
-          />
-        </div>
+        <div
+          class="carousel-image-container"
+          [ngStyle]="{ 'background-image': 'url(' + image.media.url + ')' }"
+        ></div>
       </ng-template>
     </p-carousel>
+    <div class="gradient-overlay"></div>
   </div>
   <div class="hero-card">
     <div class="card-background"></div>
     <div class="card-content">
       <div class="card-text">
-        <div class="title">{{ title }}</div>
-        <div class="description">{{ description }}</div>
+        <div class="title primary-font">{{ title }}</div>
+        <div class="description secondary-font">{{ description }}</div>
       </div>
-      <p-button
+      <button
+        class="services-button primary-font"
+        pButton
         [routerLink]="['/servicios']"
-        class="services-button"
-        label="Conoce nuestros servicios"
-      ></p-button>
+      >
+        <span pButtonLabel>{{ buttonText }}</span>
+      </button>
     </div>
   </div>
 </div>

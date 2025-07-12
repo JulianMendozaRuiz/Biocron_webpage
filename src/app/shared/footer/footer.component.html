@@ -1,53 +1,71 @@
 <div class="footer">
   <div class="footer-background-gradient"></div>
   <div class="footer-background-particles"></div>
-  <div class="footer-card">
-    <div class="footer-card-body">
-      <div class="top">
-        <div class="logo">
-          <img
-            src="assets/svg/biocron_logo_primary_dark.svg"
-            alt="Logo Biocron"
-          />
-          <div class="text">
-            El aliado experto en geociencias y desarrollo sostenible para la
-            extracción y obtención responsable de recursos.
+  <div
+    class="footer-card-container align-items-end lg:align-items-center justify-content-center flex overflow-hidden text-center lg:text-justify"
+  >
+    <div class="footer-card flex-grow-1 flex px-4 py-5 lg:px-8 lg:py-7">
+      <div class="footer-card-body">
+        <div
+          class="top align-items-center lg:align-items-start flex-column flex lg:flex-row"
+        >
+          <div class="logo lg:w-22rem align-items-center lg:align-items-start">
+            <img
+              class="hidden lg:block"
+              src="assets/svg/footer/biocron_logo_primary_dark_horizontal.svg"
+              alt="Logo Biocron"
+            />
+            <img
+              class="h-4rem block lg:hidden"
+              src="assets/svg/footer/biocron_logo_primary_dark_vertical.svg"
+              alt="Logo Biocron"
+            />
+            <div class="text secondary-font">
+              El aliado experto en geociencias y desarrollo sostenible para la
+              extracción y obtención responsable de recursos.
+            </div>
+          </div>
+          <div class="menu primary-font hidden lg:flex">
+            <a class="link" routerLink="/nosotros">Nosotros</a>
+            <a class="link" routerLink="/servicios">Servicios</a>
+            <a class="link" routerLink="/industrias">Industrias</a>
+            <a class="link" routerLink="/blog">Lo último</a>
+            <a class="link" routerLink="/contacto">Contacto</a>
           </div>
         </div>
-        <div class="menu">
-          <a class="link" routerLink="/nosotros">Nosotros</a>
-          <a class="link" routerLink="/servicios">Servicios</a>
-          <a class="link" routerLink="/industrias">Industrias</a>
-          <a class="link" routerLink="/blog">Lo último</a>
-          <a class="link" routerLink="/contacto">Contacto</a>
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="bottom-vertical">
-          <div class="down-left">
-            <div class="legal">
-              <a>Términos de uso</a>
-              <a>Política de privacidad</a>
-              <a>Política de tratamiento de datos</a>
-            </div>
-            <div>
-              <div class="copyright">
-                © 2024 Biocron. Todos los derechos reservados.
+        <div
+          class="bottom align-items-center lg:align-items-end flex-column-reverse flex gap-5 lg:flex-row lg:gap-0"
+        >
+          <div
+            class="bottom-vertical secondary-font align-items-center lg:align-items-start"
+          >
+            <div class="down-left">
+              <div
+                class="legal flex-column align-items-center lg:align-items-start flex gap-2 text-center lg:flex-row lg:gap-5"
+              >
+                <a>Términos de uso</a>
+                <a>Política de privacidad</a>
+                <a>Política de tratamiento de datos</a>
+              </div>
+              <div>
+                <div class="copyright">
+                  © 2024 Biocron. Todos los derechos reservados.
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="social">
-          <div class="contact-us">Conecte con Biocron</div>
-          <div class="social-buttons">
-            <div class="social-button">
-              <img src="/assets/svg/biocron_instagram_icon.svg" />
-            </div>
-            <div class="social-button">
-              <img src="/assets/svg/biocron_linkedin_icon.svg" />
-            </div>
-            <div class="social-button">
-              <img src="/assets/svg/biocron_email_icon.svg" />
+          <div class="social primary-font">
+            <div class="contact-us">Conecte con Biocron</div>
+            <div class="social-buttons">
+              <div class="social-button">
+                <img src="/assets/svg/biocron_instagram_icon.svg" />
+              </div>
+              <div class="social-button">
+                <img src="/assets/svg/biocron_linkedin_icon.svg" />
+              </div>
+              <div class="social-button">
+                <img src="/assets/svg/biocron_email_icon.svg" />
+              </div>
             </div>
           </div>
         </div>

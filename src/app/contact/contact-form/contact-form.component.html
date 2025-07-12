@@ -1,30 +1,32 @@
-<div class="form" *ngIf="content">
-  <div class="form-image-box">
-    <div class="form-side-image">
-      <img
-        *ngIf="sideImage"
-        [src]="sideImage.media.url"
-        [alt]="sideImage.title"
-        loading="lazy"
-      />
-    </div>
+<div class="form flex flex-row" *ngIf="content">
+  <div
+    class="form-image-box"
+    [ngStyle]="{
+      'background-image': sideImage ? 'url(' + sideImage.media.url + ')' : '',
+    }"
+  >
     <div class="form-side-image-gradient"></div>
     <div class="form-side-image-quote">
       <div class="quote">{{ content.quote }}</div>
-      <div class="quote-author">- {{ content.quote_author }}</div>
+      <div class="quote-author tertiary-font">- {{ content.quote_author }}</div>
     </div>
   </div>
-  <div class="form-wrapper">
+  <div
+    class="form-wrapper flex-column align-items-center md:align-items-start flex"
+  >
     <div class="form-heading">
-      <div class="form-heading-title">{{ content.title }}</div>
-      <div class="form-heading-description">{{ content.description }}</div>
+      <div class="form-heading-title primary-font">{{ content.title }}</div>
+      <div class="form-heading-description secondary-font">
+        {{ content.description }}
+      </div>
     </div>
     <form class="form-inputs" [formGroup]="contactForm">
       <div class="input-name">
-        <label for="contact_name" class="input-title">{{
+        <label for="contact_name" class="input-title tertiary-font">{{
           content.contact_name.label
         }}</label>
         <input
+          class="secondary-font"
           id="contact_name"
           type="text"
           formControlName="name"
@@ -33,10 +35,11 @@
         />
       </div>
       <div class="input-email">
-        <label for="contact_email" class="input-title">{{
+        <label for="contact_email" class="input-title tertiary-font">{{
           content.email.label
         }}</label>
         <input
+          class="secondary-font"
           id="contact_email"
           type="email"
           formControlName="email"
@@ -45,12 +48,12 @@
         />
       </div>
       <div class="input-phone">
-        <label for="contact_phone" class="input-title">{{
+        <label for="contact_phone" class="input-title tertiary-font">{{
           content.phone.label
         }}</label>
-        <p-inputMask
+        <p-inputmask
           id="contact_phone"
-          class="p-inputMask"
+          class="input-contact-phone secondary-font"
           type="text"
           formControlName="phone"
           [mask]="content.phone.placeholder"
@@ -58,10 +61,12 @@
         />
       </div>
       <div class="input-message">
-        <label for="message" class="input-title">{{
+        <label for="message" class="input-title tertiary-font">{{
           content.message.label
         }}</label>
         <textarea
+          pTextarea
+          class="input-style secondary-font"
           id="message"
           rows="6"
           formControlName="message"
@@ -69,12 +74,14 @@
           pTextArea
         ></textarea>
       </div>
-      <p-button
-        class="input-button"
-        [disabled]="!contactForm.valid"
-        [label]="content.button_text"
-        (click)="onSubmit()"
-      />
     </form>
+    <button
+      pButton
+      class="input-button"
+      [disabled]="!contactForm.valid"
+      (click)="onSubmit()"
+    >
+      {{ content.button_text }}
+    </button>
   </div>
 </div>

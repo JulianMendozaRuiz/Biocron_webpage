@@ -1,14 +1,132 @@
-<div class="header-container">
+<div
+  class="header-container"
+  #headerContainer
+  [ngClass]="{
+    'header-absolute': windowIsTop,
+    'header-sticky': !windowIsTop,
+    'header-container-dark':
+      isCurrentRoute('/inicio') && windowIsTop && !drawerVisible,
+    'header-container-light':
+      !isCurrentRoute('/inicio') || !windowIsTop || drawerVisible,
+  }"
+>
   <div class="header-body">
-    <a href="/inicio">
-      <img src="assets/svg/biocron_logo_primary_dark.svg" />
-    </a>
-    <div class="header-links">
-      <a routerLink="/nosotros">Nosotros</a>
-      <a routerLink="/servicios">Servicios</a>
-      <a routerLink="/industrias">Industrias</a>
-      <a routerLink="/contacto">Contacto</a>
-      <a routerLink="/blog">Blog</a>
+    <div class="flex-column flex">
+      <div class="justify-content-between align-items-center flex flex-row">
+        <div class="flex lg:hidden">
+          <!-- Transaprent button only for symmetry purposes -->
+          <p-button
+            [style]="{
+              opacity: 0,
+              mouseEvents: 'none',
+              pointerEvents: 'none',
+              pointer: 'default',
+            }"
+            icon="pi pi-bars"
+            aria-label="Menu"
+          />
+        </div>
+        <a class="biocron-home-link" href="/inicio">
+          <img
+            *ngIf="isCurrentRoute('/inicio') && windowIsTop && !drawerVisible"
+            class="biocron-logo"
+            src="assets/svg/footer/biocron_logo_primary_light_horizontal.svg"
+          />
+
+          <img
+            class="biocron-logo"
+            *ngIf="!isCurrentRoute('/inicio') || !windowIsTop || drawerVisible"
+            src="assets/svg/footer/biocron_logo_primary_dark_horizontal.svg"
+          />
+        </a>
+        <div
+          class="header-links hidden lg:flex"
+          [ngClass]="
+            isCurrentRoute('/inicio') && windowIsTop
+              ? 'header-links-light'
+              : 'header-links-dark'
+          "
+        >
+          <a
+            [ngClass]="{ 'current-route': isCurrentRoute('/nosotros') }"
+            routerLink="/nosotros"
+            >{{ headerTags?.aboutUsTag }}</a
+          >
+          <a
+            [ngClass]="{ 'current-route': isCurrentRoute('/servicios') }"
+            routerLink="/servicios"
+            >{{ headerTags?.servicesTag }}</a
+          >
+          <a
+            [ngClass]="{ 'current-route': isCurrentRoute('/industrias') }"
+            routerLink="/industrias"
+            >{{ headerTags?.industriesTag }}</a
+          >
+          <a
+            [ngClass]="{ 'current-route': isCurrentRoute('/contacto') }"
+            routerLink="/contacto"
+            >{{ headerTags?.contactUsTag }}</a
+          >
+          <a
+            [ngClass]="{ 'current-route': isCurrentRoute('/blog') }"
+            routerLink="/blog"
+            >{{ headerTags?.blogTag }}</a
+          >
+        </div>
+        <button
+          pButton
+          class="menu-button block lg:hidden"
+          (click)="toggleNavigationPanel()"
+          icon="pi pi-bars"
+          [rounded]="true"
+          aria-label="Menu"
+          [ngClass]="{
+            'menu-button-dark':
+              isCurrentRoute('/inicio') && windowIsTop && !drawerVisible,
+            'menu-button-light':
+              !isCurrentRoute('/inicio') || !windowIsTop || drawerVisible,
+          }"
+        ></button>
+      </div>
+
+      <div
+        class="header-links header-links-dark flex-column justify-content-center align-items-center"
+        [ngClass]="{
+          visible: drawerVisible,
+          'not-visible': !drawerVisible,
+        }"
+      >
+        <a
+          (click)="toggleNavigationPanel()"
+          [ngClass]="{ 'current-route': isCurrentRoute('/nosotros') }"
+          routerLink="/nosotros"
+          >{{ headerTags?.aboutUsTag }}</a
+        >
+        <a
+          (click)="toggleNavigationPanel()"
+          [ngClass]="{ 'current-route': isCurrentRoute('/servicios') }"
+          routerLink="/servicios"
+          >{{ headerTags?.servicesTag }}</a
+        >
+        <a
+          (click)="toggleNavigationPanel()"
+          [ngClass]="{ 'current-route': isCurrentRoute('/industrias') }"
+          routerLink="/industrias"
+          >{{ headerTags?.industriesTag }}</a
+        >
+        <a
+          (click)="toggleNavigationPanel()"
+          [ngClass]="{ 'current-route': isCurrentRoute('/contacto') }"
+          routerLink="/contacto"
+          >{{ headerTags?.contactUsTag }}</a
+        >
+        <a
+          (click)="toggleNavigationPanel()"
+          [ngClass]="{ 'current-route': isCurrentRoute('/blog') }"
+          routerLink="/blog"
+          >{{ headerTags?.blogTag }}</a
+        >
+      </div>
     </div>
   </div>
 </div>

@@ -4,8 +4,12 @@
   padding-top: 0;
 }
 
-.view-heading-padded{
+.view-heading-padded {
   padding-top: 10rem;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 120px;
+  }
 }
 
 .view-heading {
@@ -13,6 +17,11 @@
   justify-self: center;
   width: 46.5rem;
   gap: 1.5rem;
+
+  @media screen and (max-width: 968px) {
+    width: 100%;
+    padding-inline: 16px;
+  }
 
   display: flex;
   flex-direction: column;
@@ -27,6 +36,11 @@
     .view-tag {
       font-size: 1rem;
       padding: 0.75rem 1rem;
+
+      @media screen and (max-width: 389px) {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+      }
     }
   }
 
@@ -35,6 +49,14 @@
     line-height: 4rem;
 
     font-size: 3rem;
+
+    letter-spacing: -1px;
+
+    @media screen and (max-width: 389px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
     font-weight: 600;
 
     background: -webkit-linear-gradient(

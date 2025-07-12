@@ -1,38 +1,46 @@
-<div class="container" *ngIf="contactService.contactUsContent">
-  <div class="contact-section">
-    <div class="contact-section-title">
+<div
+  class="flex-column container flex w-auto sm:w-full lg:flex-row"
+  *ngIf="contactService.contactUsContent"
+>
+  <div
+    class="contact-section flex-column align-items-center lg:align-items-start justify-content-center flex text-center lg:text-start"
+  >
+    <div class="contact-section-title primary-font">
       {{ contactService.contactUsContent.title }}
     </div>
-    <div class="contact-section-description">
+    <div class="contact-section-description secondary-font">
       {{ contactService.contactUsContent.description }}
     </div>
-    <p-button
-      [label]="contactService.contactUsContent.contact_button_text"
-      (onClick)="goToContactUs()"
-    />
+    <button
+      class="contact-button primary-font"
+      pButton
+      (click)="goToContactUs()"
+    >
+      {{ contactService.contactUsContent.contact_button_text }}
+    </button>
   </div>
   <div class="info">
     <div class="info-section">
-      <div class="info-section-title">
+      <div class="info-section-title secondary-font">
         {{ contactService.contactUsContent.phone_number_title }}
       </div>
-      <div class="info-description info-phone">
+      <div class="info-description info-phone primary-font">
         {{ contactService.contactUsContent.phone_number }}
       </div>
     </div>
     <div class="info-section">
-      <div class="info-section-title">
+      <div class="info-section-title secondary-font">
         {{ contactService.contactUsContent.emait_title }}
       </div>
-      <div class="info-description info-email">
+      <div class="info-description info-email primary-font">
         {{ contactService.contactUsContent.email_address }}
       </div>
     </div>
     <div class="info-section">
-      <div class="info-section-title">
+      <div class="info-section-title secondary-font">
         {{ contactService.contactUsContent.opening_hours_title }}
       </div>
-      <div class="info-description info-open-hours">
+      <div class="info-description info-open-hours primary-font">
         {{ contactService.contactUsContent.opening_hours }}
       </div>
     </div>

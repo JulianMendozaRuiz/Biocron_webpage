@@ -2,16 +2,16 @@
   <div class="content-container">
     <div class="section-heading">
       <button
-        class="view-tag p-button p-button-outlined p-button-rounded"
+        class="view-tag primary-font p-button p-button-outlined p-button-rounded"
         disabled
       >
         {{ tag }}
       </button>
 
-      <div class="title">{{ title }}</div>
+      <div class="title primary-font text-center">{{ title }}</div>
     </div>
     <form class="form-inputs" [formGroup]="contactForm" *ngIf="formContent">
-      <div class="top-section">
+      <div class="top-section flex-column flex lg:flex-row">
         <div id="email-input" class="text-input">
           <label for="email">{{ formContent.email.label }}</label>
           <input
@@ -41,6 +41,7 @@
         }}</label>
         <textarea
           id="message"
+          class="secondary-font"
           rows="6"
           formControlName="message"
           [placeholder]="formContent.message.placeholder"
@@ -48,12 +49,14 @@
           required
         ></textarea>
       </div>
-      <p-button
+      <button
+        pButton
         [disabled]="!contactForm.valid"
-        class="button-input"
-        [label]="formContent.button_text"
-        (click)="onSubmit()"
-      />
+        class="button-input primary-font"
+        ((click))="onSubmit()"
+      >
+        {{ formContent.button_text }}
+      </button>
     </form>
   </div>
 </div>

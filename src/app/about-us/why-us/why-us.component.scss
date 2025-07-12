@@ -3,14 +3,19 @@
 .why-us-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: auto;
 
   gap: 2.5rem;
 
   padding-top: 7rem;
   padding-bottom: 5rem;
 
+  @media screen and (max-width: 767px) {
+    margin-inline: 14px;
+  }
+
   align-items: center;
+  justify-content: center;
 
   .title-section {
     display: flex;
@@ -30,13 +35,19 @@
     }
   }
   .reasons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-    max-width: 48rem;
-
+    width: 744px;
     gap: 1.5rem;
 
+    @media screen and (max-width: 767px) {
+      width: auto;
+    }
+
+  }
+
+  .input-button {
+
+    font-size: 20px;
+    line-height: 1.5rem;
+    font-weight: 600;
   }
 }

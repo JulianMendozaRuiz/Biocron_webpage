@@ -4,20 +4,33 @@
   display: flex;
   flex-direction: column;
 
-  gap: 2rem;
+  gap: 32px;
 
-  margin-block: 5rem;
-  margin-inline: 9.75rem;
+  margin-block: 80px;
+
+  @media screen and (max-width: 968px) {
+    margin-inline: 16px;
+  }
 
   align-items: center;
   justify-content: center;
 
-  .key-services-cards{
+  .key-services-cards {
+    width: 100%;
+
+    @media screen and (min-width: 969px) and (max-width: 1200px) {
+      max-width: 1000px;
+    }
+
+    @media screen and (max-width: 816px) {
+      max-width: 400px;
+    }
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
-    gap: 1.5rem;
+    gap: 24px;
     justify-content: center;
   }
 }

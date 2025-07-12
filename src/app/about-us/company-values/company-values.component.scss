@@ -6,6 +6,11 @@
 
   gap: 2.5rem;
 
+  @media screen and (max-width: 992px) {
+    gap: 1.5rem;
+    margin-block: 5rem;
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,21 +23,32 @@
     font-size: 3rem;
     font-weight: bold;
     align-self: center;
+
+    @media screen and (max-width: 992px) {
+      margin-inline: 16px;
+    }
   }
 
   .content {
-    height: 33.5rem;
+    height: fit-content;
     align-self: center;
 
-    display: flex;
-    flex-direction: row;
+    margin-inline: 76px;
+
+    @media screen and (max-width: 769px) {
+      width: 100%;
+      margin-inline: 0;
+      gap: 0.5rem;
+    }
+
     gap: 4rem;
 
-    align-items: center;
+    @media screen and (min-width: 770px) and (max-width: 992px) {
+      gap: 2rem;
+    }
 
     .content-img {
-      width: 28.5rem;
-      height: 100%;
+      height: fit-content;
       border-radius: 0.5rem;
       display: flex;
       overflow: hidden;
@@ -40,12 +56,26 @@
       justify-content: center;
       padding-left: 40%;
 
+      width: 456px;
+
+      @media screen and (max-width: 992px) {
+        width: auto;
+        margin-inline: 16px;
+        padding-left: 0;
+      }
 
       img {
-        height: 100%;
-        object-fit: cover;
-        flex: none;
+        height: 532px;
 
+        @media screen and (min-width: 770px) and (max-width: 992px) {
+          width: 100%;
+        }
+
+        @media screen and (max-width: 769px) {
+          height: 240px;
+        }
+
+        object-fit: cover;
         border-radius: 0.5rem;
       }
     }
@@ -56,8 +86,11 @@
 
       justify-content: center;
 
-      width: 28.5rem;
       height: 100%;
+
+      @media screen and (max-width: 769px) {
+        margin-inline: 16px;
+      }
 
       .value {
         width: 100%;
@@ -79,7 +112,11 @@
           gap: 0.5rem;
 
           font-size: 2rem;
-          font-weight: 500;
+          font-weight: 600;
+
+          @media screen and (max-width: 389px) {
+            font-size: 1.5rem;
+          }
 
           line-height: 2.5rem;
 
@@ -90,12 +127,21 @@
             min-height: 1.25rem;
             min-width: 2.5rem;
 
+            @media screen and (max-width: 769px) {
+              min-height: 0.5rem;
+              min-width: 1.5rem;
+            }
+
             margin-right: 0.5rem;
           }
         }
 
         .value-description {
           line-height: 1.5rem;
+
+          @media screen and (max-width: 389px) {
+            font-size: 0.875rem;
+          }
         }
 
         .active-value {

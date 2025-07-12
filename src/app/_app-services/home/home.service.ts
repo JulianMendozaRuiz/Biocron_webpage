@@ -17,7 +17,7 @@ import HomeContactUsClass from '../../models/home/home_contact_us';
 export class HomeService {
   constructor(
     private wixService: WixService,
-    private wixMediaService: WixMediaService
+    private wixMediaService: WixMediaService,
   ) {}
 
   async getHomeHeroContent(): Promise<HomeHeroClass> {
@@ -37,13 +37,15 @@ export class HomeService {
         throw new Error('No content found');
       }
 
-      const { title, description, images } = response.items[0]['content'][0];
+      const { title, description, images, buttonText } =
+        response.items[0]['content'][0];
 
       return new HomeHeroClass(
         response.items[0]._id,
         title,
         description,
-        images
+        images,
+        buttonText,
       );
     } catch (error) {
       console.error('Error fetching home hero content:', error);
@@ -103,7 +105,7 @@ export class HomeService {
         tag,
         description,
         background_image,
-        background_particles
+        background_particles,
       );
     } catch (error) {
       console.error('Error fetching home about us content:', error);
@@ -132,12 +134,12 @@ export class HomeService {
 
       return new GalleryClass(
         id,
-        this.wixMediaService.createMediaGallery(images)
+        this.wixMediaService.createMediaGallery(images),
       );
     } catch (error) {
       console.error(
         'Error fetching home about us images media gallery:',
-        error
+        error,
       );
       throw error;
     }
@@ -218,7 +220,7 @@ export class HomeService {
 
       return new GalleryClass(
         id,
-        this.wixMediaService.createMediaGallery(images)
+        this.wixMediaService.createMediaGallery(images),
       );
     } catch (error) {
       console.error('Error fetching home clients logos:', error);
@@ -277,7 +279,7 @@ export class HomeService {
         response.items[0]._id,
         tag,
         title,
-        form_content
+        form_content,
       );
     } catch (error) {
       console.error('Error fetching contact us content:', error);

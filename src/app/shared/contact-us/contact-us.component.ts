@@ -10,7 +10,7 @@ import { ContactUsService } from '../../_app-services/contact_us/contact-us.serv
 export class ContactUsComponent implements OnInit {
   constructor(
     protected contactService: ContactUsService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async ngOnInit(): Promise<void> {

@@ -1,10 +1,14 @@
 <div class="clients-container">
-  <div class="clients-info">
+  <div class="clients-info flex-column flex lg:flex-row">
     <div class="content-image">
       <img [src]="sideImage?.media?.url" alt="clients" />
     </div>
-    <div class="content-section">
-      <div class="content-header">
+    <div
+      class="content-section align-items-center lg:align-items-start justify-content-center lg:justify-content-start text-center lg:text-left"
+    >
+      <div
+        class="content-header align-items-center justify-content-center lg:justify-content-start lg:align-items-start flex"
+      >
         <button
           *ngIf="tag"
           class="tag p-button p-button-outlined p-button-rounded"
@@ -16,18 +20,20 @@
         <div class="title">{{ title }}</div>
       </div>
       <div class="description">{{ description }}</div>
-      <p-button
+      <button
+        pButton
         [routerLink]="['/industrias']"
-        class="services-button"
-        [label]="buttonText"
-      ></p-button>
+        class="services-button primary-font"
+      >
+        {{ buttonText }}
+      </button>
     </div>
   </div>
   <div class="clients-logos-carousel">
     <div class="carousel-gradient"></div>
 
     <p-carousel
-      class="clients-carousel"
+      class="clients-carousel primary-font"
       [value]="clientLogos?.Images!"
       [numVisible]="10"
       [numScroll]="2"

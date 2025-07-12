@@ -2,9 +2,14 @@
 
 .home-about-us-container {
   width: 100%;
-  height: 45rem;
+  height: 720px;
 
   display: grid;
+
+  @media screen and (max-width: 768px) {
+    height: 480px;
+  }
+
 
   .background-image {
     width: 100%;
@@ -60,12 +65,18 @@
     width: 100%;
     height: 100%;
 
+    align-items: center;
+
     padding-inline: 14rem;
+
+    @media screen and (max-width: 768px) {
+      padding-inline: 16px;
+    }
 
     grid-row: 1;
     grid-column: 1;
 
-    gap: 1.5rem;
+    gap: 24px;
 
     display: flex;
     flex-direction: column;
@@ -76,16 +87,21 @@
 
     .tag {
       font-size: 1rem;
-      padding: 0.75rem 1rem;
+      padding: 12px 16px;
 
       color: $primaryColor;
       border-color: $primaryColor;
     }
 
     .description {
-      font-size: 1.5rem;
+      font-size: 24px;
       color: $unpureWhite;
-      line-height: 2rem;
+      line-height: 32px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
 
       text-align: center;
 

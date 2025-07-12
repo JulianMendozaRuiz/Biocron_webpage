@@ -19,9 +19,9 @@
       position === 0 || position === 3 ? 'card-info-dark' : 'card-info-light'
     "
   >
-    <div class="card-title">{{ title }}</div>
-    <div class="card-description">{{ description }}</div>
-    <div class="card-deep-description">
+    <div class="card-title primary-font">{{ title }}</div>
+    <div class="card-description secondary-font">{{ description }}</div>
+    <div class="card-deep-description secondary-font">
       <div class="." [innerHTML]="deep_description"></div>
     </div>
   </div>

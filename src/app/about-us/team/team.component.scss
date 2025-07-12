@@ -1,70 +1,129 @@
 @import '../about-us.component.scss';
 
 .team-container {
-  display: grid;
-  height: 26.25rem;
-  width: 70.5rem;
+  height: 420px;
+  width: 100%;
 
-  border-radius: 1rem;
-
-  justify-self: center;
-  align-self: center;
-
-  .team-background {
-
-    grid-row: 1;
-    grid-column: 1;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
+  @media screen and (max-width: 768px) {
+    height: 480px;
+  }
+  
+  justify-content: center;
+  align-items: center;
+  
+  
+  .team-card {
+    display: grid;
     border-radius: 1rem;
 
-    overflow: hidden;
-  }
-
-  .team-gradient {
-    background-image: url('/assets/svg/biocron_team_gradient.svg');
-
-    grid-row: 1;
-    grid-column: 1;
-    width: 100%;
     height: 100%;
-    z-index: -1;
-  }
+    width: auto;
 
-  .team-content {
-    grid-row: 1;
-    grid-column: 1;
-    height: 100;
-    width: 100%;
-    z-index: 0;
+    margin-inline: 156px;
 
-    display: flex;
+    @media screen and  (min-width: 769px) and (max-width: 1200px) {
+      margin-inline: 78px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      margin-inline: 16px;
+    }
 
-    .content-container {
-      display: flex;
-      flex-direction: column; 
-      gap: 1.5rem;
+    .team-background {
+      grid-row: 1;
+      grid-column: 1;
+      height: 100%;
+      z-index: -2;
+      border-radius: 1rem;
 
-      margin-block: 2.5rem;
-      margin-inline: 2.5rem;
+      background-position: 50% 25%;
+      background-repeat: no-repeat;
+      background-size: cover;
 
-      justify-self: start;
-      align-self: flex-end;
+      overflow: hidden;
+    }
 
-      color: $smoothWhite;
+    .team-gradient {
+      background-image: url('/assets/svg/biocron_team_gradient.svg');
 
-      .title{
-        font-size: 2.5rem;
-        font-weight: bold;
+      background-size: cover;
+      background-repeat: no-repeat;
 
-        line-height: 3rem;
+      opacity: 0.9;
+
+      border-radius: 16px;
+
+      @media screen and (max-width: 768px) {
+        background-image: linear-gradient(
+          180deg,
+          $primaryDarkColorTransparent 4%,
+          $primaryDarkColor 75%
+        );
       }
 
-      .description{
-        line-height: 1.5rem;
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-        max-width: 33rem;
+    .team-content {
+      grid-row: 1;
+      grid-column: 1;
+      height: 100;
+      width: 100%;
+      z-index: 0;
+
+      display: flex;
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        margin: 2.5rem;
+
+        justify-self: start;
+        align-self: flex-end;
+
+        @media screen and (max-width: 768px) {
+          margin: 24px;
+        }
+
+        @media screen and (max-width: 389px) {
+          gap: 1rem;
+        }
+
+
+        color: $smoothWhite;
+
+        .title {
+          font-size: 2.5rem;
+          font-weight: bold;
+
+          line-height: 3rem;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+          }
+
+          @media screen and (max-width: 389px) {
+            font-size: 2rem;
+            line-height: 2rem;
+          }
+        }
+
+        .description {
+          line-height: 1.5rem;
+
+          max-width: 33rem;
+
+          @media screen and (max-width: 768px) {
+            max-width: 100%;
+            font-size: 14px;
+          }
+        }
       }
     }
   }

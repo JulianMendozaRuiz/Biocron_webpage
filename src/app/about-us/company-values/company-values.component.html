@@ -1,16 +1,16 @@
 <div class="company-values-container">
-  <div class="title">{{ title }}</div>
-  <div class="content">
+  <div class="title primary-font">{{ title }}</div>
+  <div class="content flex-column flex lg:flex-row">
     <div class="content-img">
       <img [src]="image!.media.url" alt="value" />
     </div>
-    <div class="values">
+    <div class="values lg:w-25rem w-auto">
       <div
         *ngFor="let value of aboutUsService.values; index as i"
         class="value"
       >
         <div
-          class="value-title"
+          class="value-title primary-font"
           [ngClass]="
             value.title !== currentValue?.title
               ? 'innactive-value'
@@ -28,7 +28,7 @@
           {{ value.title }}
         </div>
         <div
-          class="value-description"
+          class="value-description secondary-font"
           [ngClass]="
             value.title !== currentValue?.title ? 'innactive' : 'active'
           "
