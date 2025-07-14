@@ -11,4 +11,5 @@ export class EspecialHeadingComponent {
   @Input() viewTitle!: string;
   @Input() viewDescription!: string;
   @Input() backgroundImage!: WixImageClass;
+  @Input() compact: boolean = false;
 }

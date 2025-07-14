@@ -1,8 +1,19 @@
 @import '../about-us.component.scss';
 
+.view-heading-compact {
+  padding-top: 0;
+}
+
+.view-heading-padded {
+  padding-top: 10rem;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 120px;
+  }
+}
+
 .especial-heading-container {
   width: 100%;
-  padding-top: 10rem;
   padding-bottom: 8.75rem;
 
   justify-items: center;
@@ -11,31 +22,34 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
 
   .view-heading {
-    width: 1128px;
-    gap: 16px;
+    align-self: center;
+    justify-self: center;
 
-    padding-inline: 140px;
+    width: 46.5rem;
+    gap: 1.5rem;
 
-    @media screen and (max-width: 1200px) {
-      width: 768px;
+    margin-inline: auto;
 
-      padding-inline: 70px;
-    }
-
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 968px) {
       width: 100%;
       padding-inline: 16px;
     }
 
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
 
     align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+
     text-align: center;
-    
 
     .view-heading-section {
       width: 100%;
