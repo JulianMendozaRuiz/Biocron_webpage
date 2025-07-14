@@ -1,5 +1,6 @@
 <div
   class="especial-heading-container"
+  [ngClass]="compact ? 'view-heading-compact' : 'view-heading-padded'"
   [ngStyle]="{
     'background-image': 'url(' + backgroundImage.media.url + ')',
   }"
