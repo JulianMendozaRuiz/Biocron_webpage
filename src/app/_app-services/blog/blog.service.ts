@@ -105,7 +105,7 @@ export class BlogService {
         content,
         author,
         originalPostLink,
-        isFeatured
+        isFeatured,
       );
     } catch (error) {
       console.error('Error fetching article:', error);
@@ -139,7 +139,7 @@ export class BlogService {
         author,
         read_more,
         link_label,
-        other_articles
+        other_articles,
       );
     } catch (error) {
       console.error('Error fetching article labels:', error);
@@ -149,7 +149,7 @@ export class BlogService {
 
   async getOtherArticles(
     pId: string,
-    pQuantity: number
+    pQuantity: number,
   ): Promise<ArticleCardClass[]> {
     try {
       if (!this.wixService.wixClient) {
@@ -174,7 +174,7 @@ export class BlogService {
           } = item;
 
           return new ArticleCardClass(id, tag, title, mainImage, datePublished);
-        }
+        },
       );
     } catch (error) {
       console.error('Error fetching non-featured articles:', error);
@@ -216,7 +216,7 @@ export class BlogService {
 
   async getNonFeaturedArticlesForBoard(
     articlesPerPage: number,
-    page: number
+    page: number,
   ): Promise<ArticleCardClass[]> {
     try {
       if (!this.wixService.wixClient) {
@@ -250,10 +250,30 @@ export class BlogService {
           } = item;
 
           return new ArticleCardClass(id, tag, title, mainImage, datePublished);
-        }
+        },
       );
     } catch (error) {
       console.error('Error fetching non-featured articles:', error);
+      throw error;
+    }
+  }
+
+  async getNonFeaturedArticlesCount(): Promise<number> {
+    try {
+      if (!this.wixService.wixClient) {
+        await this.wixService.createClient();
+      }
+
+      const response = await this.wixService
+        .wixClient!.items.query('ColombiaEnergyBlog')
+        .eq('featured', false)
+        .count();
+
+      console.log('Total non-featured articles:', response);
+
+      return response;
+    } catch (error) {
+      console.error('Error fetching non-featured articles count:', error);
       throw error;
     }
   }
