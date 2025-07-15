@@ -16,12 +16,21 @@
   align-items: center;
 
   .articles-list {
-    display: flex;
-    flex-direction: row;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+
     gap: 1.5rem;
 
     justify-content: center;
-    align-items: center;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: auto auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+    }
 
     width: 100%;
 

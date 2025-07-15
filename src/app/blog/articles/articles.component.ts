@@ -16,30 +16,37 @@ export class ArticlesComponent implements OnInit {
 
   articlesPerPage = 3;
   currentPage = 1;
+  totalNonFeaturedArticles = 0;
 
   constructor(private blogService: BlogService) {}
 
   async ngOnInit() {
+    this.loading = true;
     try {
+      this.totalNonFeaturedArticles =
+        await this.blogService.getNonFeaturedArticlesCount();
+
       this.featuredArticle =
         await this.blogService.getFeaturedArticleForBoard();
 
       this.articles = await this.blogService.getNonFeaturedArticlesForBoard(
         this.articlesPerPage,
-        this.currentPage
+        this.currentPage,
       );
     } catch (error) {
       console.error('Error fetching articles:', error);
+    } finally {
+      this.loading = false;
     }
   }
 
   async loadMore() {
-    this.currentPage++;
     this.loading = true;
+    this.currentPage++;
     try {
       const newArticles = await this.blogService.getNonFeaturedArticlesForBoard(
         this.articlesPerPage,
-        this.currentPage
+        this.currentPage,
       );
       this.articles = [...this.articles, ...newArticles];
     } catch (error) {
@@ -47,5 +54,9 @@ export class ArticlesComponent implements OnInit {
     } finally {
       this.loading = false;
     }
+  }
+
+  get displayedAllArticles(): boolean {
+    return this.articles.length >= this.totalNonFeaturedArticles;
   }
 }
