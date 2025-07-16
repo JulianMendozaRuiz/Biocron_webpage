@@ -21,16 +21,25 @@
               alt="Logo Biocron"
             />
             <div class="text secondary-font">
-              El aliado experto en geociencias y desarrollo sostenible para la
-              extracción y obtención responsable de recursos.
+              {{ footerContent.description }}
             </div>
           </div>
           <div class="menu primary-font hidden lg:flex">
-            <a class="link" routerLink="/nosotros">Nosotros</a>
-            <a class="link" routerLink="/servicios">Servicios</a>
-            <a class="link" routerLink="/industrias">Industrias</a>
-            <a class="link" routerLink="/blog">Lo último</a>
-            <a class="link" routerLink="/contacto">Contacto</a>
+            <a class="link" routerLink="/nosotros">{{
+              footerContent.routes.aboutUs
+            }}</a>
+            <a class="link" routerLink="/servicios">{{
+              footerContent.routes.services
+            }}</a>
+            <a class="link" routerLink="/industrias">{{
+              footerContent.routes.industries
+            }}</a>
+            <a class="link" routerLink="/blog">{{
+              footerContent.routes.blog
+            }}</a>
+            <a class="link" routerLink="/contacto">{{
+              footerContent.routes.contact
+            }}</a>
           </div>
         </div>
         <div
@@ -43,29 +52,37 @@
               <div
                 class="legal flex-column align-items-center lg:align-items-start flex gap-2 text-center lg:flex-row lg:gap-5"
               >
-                <a>Términos de uso</a>
-                <a>Política de privacidad</a>
-                <a>Política de tratamiento de datos</a>
+                <a>{{ footerContent.documents.termsOfUse }}</a>
+                <a>{{ footerContent.documents.privacyPolicy }}</a>
+                <a>{{ footerContent.documents.dataTreatmentPolicy }}</a>
               </div>
               <div>
                 <div class="copyright">
-                  © 2024 Biocron. Todos los derechos reservados.
+                  {{ footerContent.copyright }}
                 </div>
               </div>
             </div>
           </div>
           <div class="social primary-font">
-            <div class="contact-us">Conecte con Biocron</div>
+            <div class="contact-us">{{ footerContent.socialsTitle }}</div>
             <div class="social-buttons">
-              <div class="social-button">
+              <a class="social-button">
                 <img src="/assets/svg/biocron_instagram_icon.svg" />
-              </div>
-              <div class="social-button">
+              </a>
+              <a
+                class="social-button"
+                [href]="footerContent.socials.linkedin"
+                target="_blank"
+              >
                 <img src="/assets/svg/biocron_linkedin_icon.svg" />
-              </div>
-              <div class="social-button">
+              </a>
+              <a
+                class="social-button"
+                [href]="'mailto:' + footerContent.socials.email"
+                target="_blank"
+              >
                 <img src="/assets/svg/biocron_email_icon.svg" />
-              </div>
+              </a>
             </div>
           </div>
         </div>

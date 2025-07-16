@@ -16,6 +16,7 @@ import { PanelModule } from 'primeng/panel';
 import { RicosViewerComponent } from './ricos-viewer/ricos-viewer.component';
 import { ReactComponentDirective } from '../directives/react-component.directive';
 import { ReactWrapperComponent } from './react-component-wrapper/react-component-wrapper.component';
+import { ItalicPipe } from './pipes/italic.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactWrapperComponent } from './react-component-wrapper/react-component
     FooterComponent,
     ContactUsComponent,
     ViewHeadingComponent,
+    ItalicPipe,
     BoldPipe,
     RicosViewerComponent,
     ReactWrapperComponent,
@@ -49,6 +51,7 @@ import { ReactWrapperComponent } from './react-component-wrapper/react-component
     ContactUsComponent,
     ViewHeadingComponent,
     BoldPipe,
+    ItalicPipe,
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
