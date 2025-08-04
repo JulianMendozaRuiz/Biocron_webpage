@@ -10,6 +10,15 @@
       [article]="article"
     ></comp-article-card>
   </div>
+
+  <!-- No articles message -->
+  <div
+    class="no-articles-message primary-font"
+    *ngIf="!featuredArticle && articles.length === 0 && !loading"
+  >
+    <h2>No hay artículos disponibles en este momento</h2>
+  </div>
+
   <div class="load-more">
     <button
       pButton

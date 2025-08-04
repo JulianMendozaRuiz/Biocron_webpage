@@ -78,6 +78,7 @@ export class BlogService {
       const response = await this.wixService
         .wixClient!.items.query('ColombiaEnergyBlog')
         .eq('_id', pId)
+        .eq('visible', true)
         .find();
 
       if (response.items.length === 0) {
@@ -160,6 +161,7 @@ export class BlogService {
         .wixClient!.items.query('ColombiaEnergyBlog')
         .limit(pQuantity)
         .ne('_id', pId)
+        .eq('visible', true)
         .fields('tag', 'title', 'publishDate', 'mainImage')
         .find();
 
@@ -192,6 +194,7 @@ export class BlogService {
         .wixClient!.items.query('ColombiaEnergyBlog')
         .limit(1)
         .eq('featured', true)
+        .eq('visible', true)
         .fields('tag', 'title', 'publishDate', 'mainImage')
         .find();
 
@@ -236,6 +239,7 @@ export class BlogService {
         .skip((page - 1) * articlesPerPage)
         .limit(articlesPerPage)
         .eq('featured', false)
+        .eq('visible', true)
         .fields('tag', 'title', 'publishDate', 'mainImage')
         .find();
 
@@ -267,6 +271,7 @@ export class BlogService {
       const response = await this.wixService
         .wixClient!.items.query('ColombiaEnergyBlog')
         .eq('featured', false)
+        .eq('visible', true)
         .count();
 
       console.log('Total non-featured articles:', response);
