@@ -169,6 +169,11 @@
 
         justify-content: center;
       }
+
+      .services-button:hover{
+        background-color: $secondaryDarkColor;
+      }
     }
   }
 }
+
