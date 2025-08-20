@@ -89,14 +89,16 @@
 
     .card-title {
       text-align: center;
-      font-size: 1.75rem;
+      font-size: 28px;
       line-height: 36px;
+
+      font-weight: 500;
+
+      margin-block: 0;
 
       @media screen and (min-width: 992px) and (max-width: 1200px) {
         font-size: 1.5rem;
       }
-
-      font-weight: 500;
     }
     .card-description,
     .card-deep-description {
@@ -118,7 +120,7 @@
       display: none;
       grid-template-rows: 0fr;
     }
-    .card-deep-description > div {
+    .card-deep-description > p {
       overflow: hidden;
     }
   }
@@ -170,7 +172,6 @@
       padding-inline: 1rem;
       padding-block-end: 1rem;
       gap: 12px;
-
     }
 
     .card-title {
