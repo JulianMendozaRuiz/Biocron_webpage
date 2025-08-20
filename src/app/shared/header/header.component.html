@@ -40,7 +40,7 @@
           />
         </a>
         <div
-          class="header-links hidden lg:flex"
+          class="header-links primary-font hidden lg:flex"
           [ngClass]="
             isCurrentRoute('/inicio') && windowIsTop
               ? 'header-links-light'
@@ -90,7 +90,7 @@
       </div>
 
       <div
-        class="header-links header-links-dark flex-column justify-content-center align-items-center"
+        class="header-links header-links-dark flex-column justify-content-center align-items-center primary-font"
         [ngClass]="{
           visible: drawerVisible,
           'not-visible': !drawerVisible,

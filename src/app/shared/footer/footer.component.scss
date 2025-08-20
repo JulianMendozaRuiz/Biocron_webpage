@@ -41,7 +41,6 @@
       background-color: $unpureWhite;
       margin-inline: 156px;
 
-      
       @media screen and (max-width: 992px) {
         margin-inline: 16px;
         border-radius: 40px;
@@ -52,7 +51,6 @@
       }
 
       border-radius: 40px;
-
 
       .footer-card-body {
         width: 100%;
@@ -77,6 +75,11 @@
             .text {
               color: $lightgray;
               line-height: 24px;
+
+              font-size: 16px;
+              font-weight: 400;
+
+              margin-block: 0;
             }
           }
           .menu {
@@ -123,6 +126,12 @@
             font-size: 0.75rem;
             color: $lightgray;
 
+            div > .copyright {
+              font-size: 12px;
+              font-weight: 400;
+              margin-block: 0;
+            }
+
             .legal {
               gap: 32px;
 
@@ -139,6 +148,8 @@
             .contact-us {
               color: $primaryDarkColor;
               text-align: center;
+
+              line-height: 24px;
             }
 
             .social-buttons {

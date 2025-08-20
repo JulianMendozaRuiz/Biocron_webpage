@@ -11,8 +11,10 @@
       {{ viewName }}
     </button>
   </div>
-  <h2 *ngIf="viewTitle" class="view-heading-title">{{ viewTitle }}</h2>
-  <div *ngIf="viewDescription" class="view-heading-description">
+  <h2 *ngIf="viewTitle" class="view-heading-title primary-font">
+    {{ viewTitle }}
+  </h2>
+  <p *ngIf="viewDescription" class="view-heading-description secondary-font">
     {{ viewDescription }}
-  </div>
+  </p>
 </div>

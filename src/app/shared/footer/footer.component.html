@@ -20,9 +20,9 @@
               src="assets/svg/footer/biocron_logo_primary_dark_vertical.svg"
               alt="Logo Biocron"
             />
-            <div class="text secondary-font">
+            <p class="text secondary-font">
               {{ footerContent.description }}
-            </div>
+            </p>
           </div>
           <div class="menu primary-font hidden lg:flex">
             <a class="link" routerLink="/nosotros">{{
@@ -50,21 +50,23 @@
           >
             <div class="down-left">
               <div
-                class="legal flex-column align-items-center lg:align-items-start flex gap-2 text-center lg:flex-row lg:gap-5"
+                class="legal flex-column align-items-center lg:align-items-start secondary-font flex gap-2 text-center lg:flex-row lg:gap-5"
               >
                 <a>{{ footerContent.documents.termsOfUse }}</a>
                 <a>{{ footerContent.documents.privacyPolicy }}</a>
                 <a>{{ footerContent.documents.dataTreatmentPolicy }}</a>
               </div>
               <div>
-                <div class="copyright">
+                <p class="copyright secondary-font">
                   {{ footerContent.copyright }}
-                </div>
+                </p>
               </div>
             </div>
           </div>
           <div class="social primary-font">
-            <div class="contact-us">{{ footerContent.socialsTitle }}</div>
+            <p class="contact-us primary-font">
+              {{ footerContent.socialsTitle }}
+            </p>
             <div class="social-buttons">
               <a class="social-button">
                 <img src="/assets/svg/biocron_instagram_icon.svg" />
