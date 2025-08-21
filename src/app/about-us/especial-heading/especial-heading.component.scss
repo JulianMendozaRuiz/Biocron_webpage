@@ -28,7 +28,7 @@
     justify-self: center;
 
     width: 46.5rem;
-    gap: 1.5rem;
+    gap: 1rem;
 
     margin-inline: auto;
 
@@ -57,7 +57,12 @@
 
       .view-tag {
         font-size: 1rem;
-        padding: 0.75rem 1rem;
+        padding-block: 0.75rem;
+        padding-inline: 1rem;
+
+        font-weight: 400;
+        line-height: 10px;
+
       }
     }
 
@@ -67,6 +72,8 @@
 
       font-size: 48px;
       font-weight: 600;
+
+      margin-block: 0;
 
       @media screen and (max-width: 375px) {
         font-size: 36px;
@@ -88,6 +95,8 @@
       white-space: break-spaces;
       text-wrap: pretty;
       line-height: 1.5rem;
+
+      margin-block: 0;
 
       @media screen and (max-width: 375px) {
         font-size: 12px;

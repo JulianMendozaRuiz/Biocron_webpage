@@ -1,24 +1,25 @@
 <div class="form flex flex-row" *ngIf="content">
   <div
     class="form-image-box"
+    [title]="sideImage ? sideImage.alt : ''"
     [ngStyle]="{
       'background-image': sideImage ? 'url(' + sideImage.media.url + ')' : '',
     }"
   >
     <div class="form-side-image-gradient"></div>
     <div class="form-side-image-quote">
-      <div class="quote">{{ content.quote }}</div>
-      <div class="quote-author tertiary-font">- {{ content.quote_author }}</div>
+      <p class="quote secondary-font">{{ content.quote }}</p>
+      <p class="quote-author tertiary-font">- {{ content.quote_author }}</p>
     </div>
   </div>
   <div
     class="form-wrapper flex-column align-items-center md:align-items-start flex"
   >
     <div class="form-heading">
-      <div class="form-heading-title primary-font">{{ content.title }}</div>
-      <div class="form-heading-description secondary-font">
+      <h3 class="form-heading-title primary-font">{{ content.title }}</h3>
+      <p class="form-heading-description secondary-font">
         {{ content.description }}
-      </div>
+      </p>
     </div>
     <form class="form-inputs" [formGroup]="contactForm">
       <div class="input-name">

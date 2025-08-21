@@ -30,6 +30,8 @@
     .tab {
       min-width: fit-content;
 
+      margin-block: 0;
+
       padding-inline: 1.5rem;
       padding-block: 0.5rem;
       font-weight: 400;
@@ -55,9 +57,13 @@
     .innactive-tab {
       background-color: rgba(255, 0, 0, 0);
       color: $lightgray;
-      border-color: $lighterGray;
+      border: solid 1px $lighterGray;
 
       cursor: pointer;
+    }
+
+    .innactive-tab:hover{
+      border: solid 1px $primaryDarkColorAlt;
     }
   }
 
@@ -156,6 +162,8 @@
           font-weight: 400;
           color: $primaryDarkColor;
           line-height: 1.75rem;
+
+          margin-block: 0;
         }
 
         ul {
@@ -204,6 +212,10 @@
           font-size: 1.25rem;
           color: $secondaryDarkColor;
           line-height: 1.75rem;
+
+          font-weight: 400 ;
+
+          margin-block: 0;
         }
 
         ul {

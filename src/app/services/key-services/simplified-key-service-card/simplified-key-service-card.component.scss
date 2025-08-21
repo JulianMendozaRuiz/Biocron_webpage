@@ -14,14 +14,12 @@
   @media screen and (max-width: 480px) {
     height: 280px;
     width: 280px;
-    
   }
 
   transition: all 0.4s ease-out;
   transition-behavior: allow-discrete;
 
   display: grid;
-  
 
   .background {
     width: 100%;
@@ -94,11 +92,25 @@
     .card-name {
       font-size: 0.75rem;
       line-height: 0.875rem;
+
+      font-weight: 400;
+      font-size: 12px;
+
+      line-height: 14px;
+
+      margin-block: 0;
     }
 
     .card-title {
       font-size: 24px;
       line-height: 2rem;
+
+      font-weight: 400;
+      font-size: 24px;
+
+      line-height: 32px;
+
+      margin-block: 0;
     }
 
     .card-description {
@@ -112,35 +124,40 @@
       transition-behavior: allow-discrete;
     }
 
-    .card-description > div {
+    .card-description > p {
       overflow: hidden;
+
+      font-size: 14px;
+      font-weight: 400;
+
+      margin-block: 0;
     }
   }
 }
 
-  .card:hover {
-    height: 380px;
-    width: 380px;
+.card:hover {
+  height: 380px;
+  width: 380px;
 
-    @media screen and (max-width: 576px) {
-      height: 340px;
-      width: 340px;
-    }
+  @media screen and (max-width: 576px) {
+    height: 340px;
+    width: 340px;
+  }
 
-    @media screen and (max-width: 480px) {
-      height: 300px;
-      width: 300px;
-    }
+  @media screen and (max-width: 480px) {
+    height: 300px;
+    width: 300px;
+  }
 
-    .background {
-      .background-gradient-dark {
-        height: 100%;
-      }
-    }
-
-    .card-info {
-      .card-description {
-        grid-template-rows: 1fr;
-      }
+  .background {
+    .background-gradient-dark {
+      height: 100%;
     }
   }
+
+  .card-info {
+    .card-description {
+      grid-template-rows: 1fr;
+    }
+  }
+}

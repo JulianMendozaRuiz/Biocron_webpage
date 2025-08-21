@@ -2,16 +2,16 @@
   <div
     class="industries-area-tabs align-self-start lg:align-self-center flex flex-row overflow-x-scroll px-3 lg:px-0"
   >
-    <div
+    <h3
       *ngFor="let industry of industryService.industries"
-      class="tab active-tab primary-font"
+      class="tab primary-font"
       [ngClass]="
         industry.name !== currentIndustry?.name ? 'innactive-tab' : 'active-tab'
       "
       (click)="setCurrentIndustry(industry)"
     >
       {{ industry.name }}
-    </div>
+    </h3>
   </div>
   <div
     class="industries-area-content flex-column align-items-center flex"
@@ -22,17 +22,20 @@
     >
       <div class="industry-photo">
         <div class="mask">
-          <img [src]="currentIndustry.img.media.url" alt="" />
+          <img
+            [src]="currentIndustry.img.media.url"
+            [alt]="currentIndustry.img.media.altText"
+          />
         </div>
         <img class="frame" alt="" />
       </div>
-      <div class="industry-description secondary-font">
+      <p class="industry-description secondary-font">
         {{ currentIndustry.description }}
-      </div>
+      </p>
     </div>
     <div class="content-bullets">
       <div class="industry-services flex-column flex">
-        <div class="services-title">Servicios</div>
+        <h4 class="services-title">Servicios</h4>
         <ul>
           <div *ngFor="let item of currentIndustry.services" class="list-item">
             <div class="marker"></div>
@@ -43,7 +46,7 @@
         </ul>
       </div>
       <div class="industry-benefits flex-column flex">
-        <div class="benefits-title primary-font">Beneficios</div>
+        <h4 class="benefits-title primary-font">Beneficios</h4>
         <ul>
           <div *ngFor="let item of currentIndustry.benefits" class="list-item">
             <div class="marker"></div>
